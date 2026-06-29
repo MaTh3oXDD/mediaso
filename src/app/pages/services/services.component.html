@@ -1,0 +1,79 @@
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-orb"></div>
+  <div class="container">
+    <p class="page-hero-eyebrow">mediaso</p>
+    <h1>{{ tr().services.hero.title }}</h1>
+    <p class="page-hero-subtitle">{{ tr().services.hero.subtitle }}</p>
+  </div>
+</section>
+
+<!-- WEB SERVICES -->
+<section class="section">
+  <div class="container service-block">
+    <div class="service-block-header">
+      <div class="service-block-icon">🌐</div>
+      <div>
+        <h2>{{ tr().services.web.title }}</h2>
+        <p>{{ tr().services.web.subtitle }}</p>
+      </div>
+    </div>
+    <ul class="features-list">
+      @for (feature of tr().services.web.features; track feature) {
+        <li class="feature-item">
+          <span class="feature-check">✓</span>
+          <span>{{ feature }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- SOCIAL SERVICES -->
+<section class="section alt-bg">
+  <div class="container service-block">
+    <div class="service-block-header">
+      <div class="service-block-icon">📱</div>
+      <div>
+        <h2>{{ tr().services.social.title }}</h2>
+        <p>{{ tr().services.social.subtitle }}</p>
+      </div>
+    </div>
+    <ul class="features-list">
+      @for (feature of tr().services.social.features; track feature) {
+        <li class="feature-item">
+          <span class="feature-check">✓</span>
+          <span>{{ feature }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <app-section-header
+      [label]="'process'"
+      [title]="tr().services.process.title"
+      [centered]="true"
+    />
+    <div class="process-grid">
+      @for (step of tr().services.process.steps; track step.num) {
+        <div class="process-step">
+          <div class="step-num">{{ step.num }}</div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section alt-bg">
+  <div class="container cta-inline">
+    <h2>{{ tr().services.cta.title }}</h2>
+    <a routerLink="/kontakt" class="btn btn-primary">{{ tr().services.cta.button }}</a>
+  </div>
+</section>
