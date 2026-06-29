@@ -1,0 +1,44 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="container nav-inner">
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <span class="logo-text">media<span class="logo-accent">so</span></span>
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      <li>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+           (click)="closeMenu()">{{ tr().nav.home }}</a>
+      </li>
+      <li>
+        <a routerLink="/uslugi" routerLinkActive="active" (click)="closeMenu()">{{ tr().nav.services }}</a>
+      </li>
+      <li>
+        <a routerLink="/o-nas" routerLinkActive="active" (click)="closeMenu()">{{ tr().nav.about }}</a>
+      </li>
+      <li>
+        <a routerLink="/portfolio" routerLinkActive="active" (click)="closeMenu()">{{ tr().nav.portfolio }}</a>
+      </li>
+      <li>
+        <a routerLink="/kontakt" routerLinkActive="active" (click)="closeMenu()">{{ tr().nav.contact }}</a>
+      </li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="lang-toggle" (click)="toggleLang()" [attr.aria-label]="'Switch language'">
+        <span [class.active]="currentLang() === 'pl'">PL</span>
+        <span class="divider">/</span>
+        <span [class.active]="currentLang() === 'en'">EN</span>
+      </button>
+
+      <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  @if (menuOpen()) {
+    <div class="overlay" (click)="closeMenu()"></div>
+  }
+</nav>
