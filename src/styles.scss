@@ -1,0 +1,97 @@
+@use 'styles/variables';
+@use 'styles/reset';
+@use 'styles/animations';
+
+// Global utility classes
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media (min-width: 1024px) {
+    padding: 0 2rem;
+  }
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section {
+  padding: 5rem 0;
+
+  @media (min-width: 1024px) {
+    padding: 7rem 0;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: none;
+  font-family: 'Inter', sans-serif;
+
+  &-primary {
+    background: var(--accent-primary);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-glow);
+
+    &:hover {
+      background: var(--accent-secondary);
+      box-shadow: 0 0 40px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+
+    &:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-secondary);
+      background: rgba(124, 58, 237, 0.08);
+    }
+  }
+}
+
+.card {
+  background: rgba(19, 19, 31, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+
+  &:hover {
+    box-shadow: 0 0 40px var(--accent-glow);
+    border-color: rgba(124, 58, 237, 0.5);
+    transform: translateY(-4px);
+  }
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--accent-secondary);
+  border: 1px solid var(--border);
+}
