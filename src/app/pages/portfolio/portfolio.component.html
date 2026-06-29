@@ -1,0 +1,59 @@
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-orb"></div>
+  <div class="container">
+    <p class="eyebrow">mediaso</p>
+    <h1>{{ tr().portfolio.hero.title }}</h1>
+    <p class="subtitle">{{ tr().portfolio.hero.subtitle }}</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO GRID -->
+<section class="section">
+  <div class="container">
+    <div class="filter-bar">
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter() === 'all'"
+        (click)="setFilter('all')"
+      >{{ tr().portfolio.filters.all }}</button>
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter() === 'web'"
+        (click)="setFilter('web')"
+      >{{ tr().portfolio.filters.web }}</button>
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter() === 'social'"
+        (click)="setFilter('social')"
+      >{{ tr().portfolio.filters.social }}</button>
+    </div>
+
+    <div class="portfolio-grid">
+      @for (project of filteredProjects(); track project.title) {
+        <div class="card portfolio-card">
+          <div class="portfolio-thumb">
+            <span class="thumb-icon">
+              @if (project.tags.includes('web') && project.tags.includes('social')) { 🌐📱 }
+              @else if (project.tags.includes('web')) { 🌐 }
+              @else { 📱 }
+            </span>
+          </div>
+          <div class="portfolio-body">
+            <div class="portfolio-tags">
+              @for (tag of project.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.desc }}</p>
+            <div class="portfolio-result">
+              <span class="result-icon">📈</span>
+              <span>{{ project.result }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
