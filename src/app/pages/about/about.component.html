@@ -1,0 +1,62 @@
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-orb"></div>
+  <div class="container">
+    <p class="eyebrow">mediaso</p>
+    <h1>{{ tr().about.hero.title }}</h1>
+    <p class="subtitle">{{ tr().about.hero.subtitle }}</p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section">
+  <div class="container mission-block">
+    <div class="mission-label">
+      <span>mission</span>
+    </div>
+    <div class="mission-content">
+      <h2>{{ tr().about.mission.title }}</h2>
+      <p>{{ tr().about.mission.text }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section alt-bg">
+  <div class="container">
+    <app-section-header
+      [label]="'values'"
+      [title]="tr().about.values.title"
+    />
+    <div class="values-grid">
+      @for (item of tr().about.values.items; track item.title) {
+        <div class="card value-card">
+          <span class="value-icon">{{ item.icon }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="container">
+    <app-section-header
+      [label]="'team'"
+      [title]="tr().about.team.title"
+    />
+    <div class="team-grid">
+      @for (member of tr().about.team.members; track member.name) {
+        <div class="team-card">
+          <div class="team-avatar">
+            <span>{{ member.name.charAt(0) }}</span>
+          </div>
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.role }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
