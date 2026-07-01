@@ -1,0 +1,452 @@
+### Task 7: Home Page
+
+**Files:**
+- Modify: `src/app/pages/home/home.component.ts`
+- Create: `src/app/pages/home/home.component.html`
+- Create: `src/app/pages/home/home.component.scss`
+
+**Interfaces:**
+- Consumes: `TranslationService.tr`, `SectionHeaderComponent`, RouterLink
+
+- [ ] **Step 1: Replace `src/app/pages/home/home.component.ts`**
+
+```ts
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslationService } from '../../core/services/translation.service';
+import { SectionHeaderComponent } from '../../shared/components/section-header/section-header.component';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [RouterLink, SectionHeaderComponent],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
+})
+export class HomeComponent {
+  private ts = inject(TranslationService);
+  protected tr = this.ts.tr;
+}
+```
+
+- [ ] **Step 2: Create `src/app/pages/home/home.component.html`**
+
+```html
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb--1"></div>
+  <div class="hero-orb hero-orb--2"></div>
+  <div class="container hero-content">
+    <div class="hero-badge animate-fade-in">mediaso × healthcare</div>
+    <h1 class="hero-title animate-fade-in-delay-1">{{ tr().home.hero.title }}</h1>
+    <p class="hero-subtitle animate-fade-in-delay-2">{{ tr().home.hero.subtitle }}</p>
+    <div class="hero-actions animate-fade-in-delay-3">
+      <a routerLink="/uslugi" class="btn btn-primary">{{ tr().home.hero.cta1 }}</a>
+      <a routerLink="/kontakt" class="btn btn-outline">{{ tr().home.hero.cta2 }}</a>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- WHY MEDIASO -->
+<section class="section why-section">
+  <div class="container">
+    <app-section-header
+      [label]="'mediaso'"
+      [title]="tr().home.why.title"
+      [centered]="true"
+    />
+    <div class="why-grid">
+      @for (item of tr().home.why.items; track item.title) {
+        <div class="card why-card">
+          <div class="why-icon">{{ item.icon }}</div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="section services-preview">
+  <div class="container">
+    <app-section-header
+      [title]="tr().home.servicesPreview.title"
+    />
+    <div class="services-grid">
+      <div class="card service-card service-card--web">
+        <div class="service-icon">🌐</div>
+        <h3>{{ tr().home.servicesPreview.web.title }}</h3>
+        <p>{{ tr().home.servicesPreview.web.desc }}</p>
+        <a routerLink="/uslugi" class="service-link">
+          {{ tr().home.servicesPreview.web.link }}
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="card service-card service-card--social">
+        <div class="service-icon">📱</div>
+        <h3>{{ tr().home.servicesPreview.social.title }}</h3>
+        <p>{{ tr().home.servicesPreview.social.desc }}</p>
+        <a routerLink="/uslugi" class="service-link">
+          {{ tr().home.servicesPreview.social.link }}
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-value">{{ tr().home.stats.clients.value }}</span>
+        <span class="stat-label">{{ tr().home.stats.clients.label }}</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value">{{ tr().home.stats.projects.value }}</span>
+        <span class="stat-label">{{ tr().home.stats.projects.label }}</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value">{{ tr().home.stats.years.value }}</span>
+        <span class="stat-label">{{ tr().home.stats.years.label }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-glow"></div>
+      <h2>{{ tr().home.cta.title }}</h2>
+      <p>{{ tr().home.cta.subtitle }}</p>
+      <a routerLink="/kontakt" class="btn btn-primary">{{ tr().home.cta.button }}</a>
+    </div>
+  </div>
+</section>
+```
+
+- [ ] **Step 3: Create `src/app/pages/home/home.component.scss`**
+
+```scss
+@use 'styles/mixins' as *;
+
+// HERO
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--gradient-hero);
+
+  &-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+
+    &--1 {
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      animation: float 10s ease-in-out infinite;
+    }
+
+    &--2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+      bottom: -100px;
+      left: -100px;
+      animation: floatReverse 14s ease-in-out infinite;
+    }
+  }
+
+  &-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  &-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-secondary);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(124, 58, 237, 0.08);
+  }
+
+  &-title {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+
+    // Optionally make last word gradient
+    span {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  &-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--accent-secondary), transparent);
+      margin: 0 auto;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+  }
+}
+
+// WHY
+.why-section {
+  background: var(--bg-secondary);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.why-card {
+  text-align: center;
+
+  .why-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+}
+
+// SERVICES PREVIEW
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--gradient-card), rgba(19, 19, 31, 0.8);
+
+  .service-icon {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-secondary);
+  text-decoration: none;
+  transition: gap var(--transition);
+
+  &:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  .arrow {
+    display: inline-block;
+    transition: transform var(--transition);
+  }
+}
+
+// STATS
+.stats-section {
+  background: var(--bg-secondary);
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 3rem;
+
+  @include tablet {
+    flex: 1;
+  }
+}
+
+.stat-value {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat-divider {
+  display: none;
+
+  @include tablet {
+    display: block;
+    width: 1px;
+    height: 60px;
+    background: var(--border);
+  }
+}
+
+// CTA
+.cta-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 4rem 2rem;
+  text-align: center;
+
+  @include desktop {
+    padding: 5rem 4rem;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+}
+
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+```
+
+- [ ] **Step 4: Run dev server and verify Home page**
+
+```bash
+ng serve
+```
+Open `http://localhost:4200`. Verify: hero visible with animated orbs, "Dlaczego mediaso?" section, services cards, stats row, CTA banner. Switch PL/EN — all text updates. Mobile: hamburger menu works. Stop Ctrl+C.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add src/app/pages/home/
+git commit -m "feat: implement Home page with hero, why, services, stats, CTA sections"
+```
+
+---
+

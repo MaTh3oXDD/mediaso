@@ -1,0 +1,448 @@
+### Task 2: Translation Service
+
+**Files:**
+- Create: `src/app/core/translations/pl.ts`
+- Create: `src/app/core/translations/en.ts`
+- Create: `src/app/core/translations/translations.type.ts`
+- Create: `src/app/core/services/translation.service.ts`
+- Create: `src/app/core/services/translation.service.spec.ts`
+
+**Interfaces:**
+- Produces: `TranslationService` with `tr: Signal<Translations>`, `currentLang: Signal<'pl'|'en'>`, `setLang(lang)`, `toggleLang()`
+- Produces: `Translations` type (derived from `pl.ts`)
+
+- [ ] **Step 1: Create `src/app/core/translations/pl.ts`**
+
+```ts
+export const pl = {
+  nav: {
+    home: 'Strona główna',
+    services: 'Usługi',
+    about: 'O nas',
+    portfolio: 'Portfolio',
+    contact: 'Kontakt',
+  },
+  home: {
+    hero: {
+      title: 'Twoja przychodnia zasługuje na więcej',
+      subtitle: 'Tworzymy strony internetowe i prowadzimy social media dla placówek medycznych. Pomożemy Twojej placówce pozyskać nowych pacjentów.',
+      cta1: 'Zobacz usługi',
+      cta2: 'Skontaktuj się',
+    },
+    why: {
+      title: 'Dlaczego mediaso?',
+      items: [
+        { icon: '🏥', title: 'Specjalizacja w healthcare', desc: 'Znamy specyfikę branży medycznej i wiemy, czego szukają pacjenci online.' },
+        { icon: '📊', title: 'Kompleksowe podejście', desc: 'Strona + social media = spójny, profesjonalny wizerunek Twojej placówki.' },
+        { icon: '📈', title: 'Mierzalne efekty', desc: 'Raportujemy wyniki. Zawsze wiesz, co robią Twoje pieniądze.' },
+      ],
+    },
+    servicesPreview: {
+      title: 'Nasze usługi',
+      web: {
+        title: 'Strony Internetowe',
+        desc: 'Nowoczesne, szybkie strony dla przychodni. Responsywne, SEO-friendly, z systemem zarządzania treścią.',
+        link: 'Dowiedz się więcej',
+      },
+      social: {
+        title: 'Social Media',
+        desc: 'Prowadzimy i odbudowujemy profile Twojej placówki na Facebooku, Instagramie i Google.',
+        link: 'Dowiedz się więcej',
+      },
+    },
+    stats: {
+      clients: { value: '40+', label: 'Klientów' },
+      projects: { value: '80+', label: 'Projektów' },
+      years: { value: '5+', label: 'Lat doświadczenia' },
+    },
+    cta: {
+      title: 'Gotowy na zmianę?',
+      subtitle: 'Umów się na bezpłatną konsultację i dowiedz się, jak możemy pomóc Twojej placówce.',
+      button: 'Zacznijmy współpracę',
+    },
+  },
+  services: {
+    hero: {
+      title: 'Nasze Usługi',
+      subtitle: 'Kompleksowe rozwiązania cyfrowe dla placówek medycznych',
+    },
+    web: {
+      title: 'Strony Internetowe',
+      subtitle: 'Profesjonalna strona to wizytówka Twojej przychodni w internecie.',
+      features: [
+        'Indywidualny projekt graficzny',
+        'Responsywność na każdym urządzeniu',
+        'Optymalizacja SEO',
+        'System zarządzania treścią (CMS)',
+        'Szybki czas ładowania',
+        'Integracja z Google Maps i kalendarzem',
+        'Certyfikat SSL',
+        'Obsługa techniczna i aktualizacje',
+      ],
+    },
+    social: {
+      title: 'Social Media',
+      subtitle: 'Zbuduj obecność w mediach społecznościowych i pozyskaj nowych pacjentów.',
+      features: [
+        'Audyt obecnych profili',
+        'Opracowanie strategii contentu',
+        'Tworzenie treści i grafik',
+        'Prowadzenie profili Facebook i Instagram',
+        'Zarządzanie Google My Business',
+        'Raportowanie miesięczne',
+        'Obsługa komentarzy i wiadomości',
+        'Kampanie reklamowe Meta Ads',
+      ],
+    },
+    process: {
+      title: 'Jak pracujemy',
+      steps: [
+        { num: '01', title: 'Analiza', desc: 'Poznajemy Twoją placówkę, konkurencję i grupę docelową.' },
+        { num: '02', title: 'Strategia', desc: 'Opracowujemy plan działań dopasowany do Twoich celów.' },
+        { num: '03', title: 'Realizacja', desc: 'Wdrażamy uzgodnione rozwiązania w terminie i budżecie.' },
+        { num: '04', title: 'Optymalizacja', desc: 'Monitorujemy efekty i stale poprawiamy wyniki.' },
+      ],
+    },
+    cta: { title: 'Zacznijmy razem', button: 'Skontaktuj się' },
+  },
+  about: {
+    hero: {
+      title: 'O nas',
+      subtitle: 'Znamy branżę medyczną od środka',
+    },
+    mission: {
+      title: 'Nasza misja',
+      text: 'mediaso to agencja cyfrowa stworzona z myślą o placówkach medycznych. Wiemy, że lekarze i zarządzający przychodniami mają ważniejsze rzeczy na głowie niż marketing. Dlatego bierzemy to na siebie — kompleksowo, rzetelnie i z mierzalnymi efektami.',
+    },
+    values: {
+      title: 'Nasze wartości',
+      items: [
+        { icon: '🎯', title: 'Specjalizacja', desc: 'Skupiamy się wyłącznie na branży medycznej. To nasza przewaga.' },
+        { icon: '🤝', title: 'Partnerstwo', desc: 'Traktujemy klientów jak partnerów, nie jak numery na fakturze.' },
+        { icon: '📋', title: 'Rzetelność', desc: 'Dotrzymujemy terminów i obietnic. Zawsze.' },
+        { icon: '📈', title: 'Efekty', desc: 'Liczy się wynik, nie estetyka raportów.' },
+      ],
+    },
+    team: {
+      title: 'Nasz zespół',
+      members: [
+        { name: 'Anna Kowalska', role: 'CEO & Web Strategist' },
+        { name: 'Piotr Nowak', role: 'Social Media Manager' },
+        { name: 'Marta Wiśniewska', role: 'Graphic Designer' },
+        { name: 'Tomasz Zając', role: 'SEO Specialist' },
+      ],
+    },
+  },
+  portfolio: {
+    hero: {
+      title: 'Portfolio',
+      subtitle: 'Nasze realizacje w branży medycznej',
+    },
+    filters: { all: 'Wszystkie', web: 'Strony WWW', social: 'Social Media' },
+    projects: [
+      { title: 'Przychodnia Zdrowie Wrocław', tags: ['web', 'social'] as ('web'|'social')[], result: '+180% ruch organiczny', desc: 'Nowa strona + prowadzenie social media przez 12 miesięcy.' },
+      { title: 'Centrum Medyczne Vita Kraków', tags: ['web'] as ('web'|'social')[], result: '+220% konwersji', desc: 'Strona z systemem zapisów online i CMS.' },
+      { title: 'Gabinet Stomatologiczny SmileUp', tags: ['social'] as ('web'|'social')[], result: '+350% zasięg', desc: 'Odbudowa profili i kampanie reklamowe na Meta.' },
+      { title: 'Poradnia Kardiologiczna Gdańsk', tags: ['web', 'social'] as ('web'|'social')[], result: '2x więcej pacjentów', desc: 'Pełna obecność cyfrowa od zera.' },
+      { title: 'Klinika Ortopedyczna Warszawa', tags: ['web'] as ('web'|'social')[], result: 'Top 3 Google', desc: 'Strona zoptymalizowana pod frazy lokalne.' },
+      { title: 'Centrum Rehabilitacji Łódź', tags: ['social'] as ('web'|'social')[], result: '+500 obserwujących/mies.', desc: 'Strategia contentu i prowadzenie Instagrama.' },
+    ],
+  },
+  contact: {
+    hero: {
+      title: 'Kontakt',
+      subtitle: 'Porozmawiajmy o Twojej placówce',
+    },
+    form: {
+      name: 'Imię i nazwisko',
+      email: 'Adres e-mail',
+      company: 'Nazwa placówki / firmy',
+      message: 'Wiadomość',
+      send: 'Wyślij wiadomość',
+      success: 'Wiadomość wysłana! Odezwiemy się w ciągu 24 godzin.',
+    },
+    info: {
+      title: 'Dane kontaktowe',
+      email: 'kontakt@mediaso.pl',
+      phone: '+48 500 000 000',
+      location: 'Polska — pracujemy zdalnie z całym krajem',
+    },
+  },
+  footer: {
+    tagline: 'Marketing cyfrowy dla placówek medycznych.',
+    nav: { title: 'Nawigacja' },
+    services: { title: 'Usługi', web: 'Strony Internetowe', social: 'Social Media' },
+    copyright: '© 2026 mediaso. Wszystkie prawa zastrzeżone.',
+  },
+} as const;
+```
+
+- [ ] **Step 2: Create `src/app/core/translations/en.ts`**
+
+```ts
+export const en = {
+  nav: {
+    home: 'Home',
+    services: 'Services',
+    about: 'About',
+    portfolio: 'Portfolio',
+    contact: 'Contact',
+  },
+  home: {
+    hero: {
+      title: 'Your clinic deserves more',
+      subtitle: 'We build websites and manage social media for medical practices. Help your clinic attract new patients.',
+      cta1: 'Our services',
+      cta2: 'Get in touch',
+    },
+    why: {
+      title: 'Why mediaso?',
+      items: [
+        { icon: '🏥', title: 'Healthcare Specialists', desc: 'We know the medical industry and understand what patients look for online.' },
+        { icon: '📊', title: 'All-in-One Approach', desc: 'Website + social media = a consistent, professional image for your practice.' },
+        { icon: '📈', title: 'Measurable Results', desc: 'We report results. You always know what your money is doing.' },
+      ],
+    },
+    servicesPreview: {
+      title: 'Our Services',
+      web: {
+        title: 'Websites',
+        desc: 'Modern, fast websites for medical practices. Responsive, SEO-friendly, with a content management system.',
+        link: 'Learn more',
+      },
+      social: {
+        title: 'Social Media',
+        desc: "We manage and rebuild your practice's profiles on Facebook, Instagram, and Google.",
+        link: 'Learn more',
+      },
+    },
+    stats: {
+      clients: { value: '40+', label: 'Clients' },
+      projects: { value: '80+', label: 'Projects' },
+      years: { value: '5+', label: 'Years of experience' },
+    },
+    cta: {
+      title: 'Ready for a change?',
+      subtitle: 'Schedule a free consultation and find out how we can help your practice.',
+      button: "Let's work together",
+    },
+  },
+  services: {
+    hero: {
+      title: 'Our Services',
+      subtitle: 'Complete digital solutions for medical practices',
+    },
+    web: {
+      title: 'Websites',
+      subtitle: "A professional website is your clinic's calling card on the internet.",
+      features: [
+        'Custom graphic design',
+        'Responsive on every device',
+        'SEO optimization',
+        'Content management system (CMS)',
+        'Fast loading times',
+        'Google Maps and calendar integration',
+        'SSL certificate',
+        'Technical support and updates',
+      ],
+    },
+    social: {
+      title: 'Social Media',
+      subtitle: 'Build a social media presence and attract new patients.',
+      features: [
+        'Current profile audit',
+        'Content strategy development',
+        'Content and graphic creation',
+        'Facebook and Instagram management',
+        'Google My Business management',
+        'Monthly reporting',
+        'Comment and message handling',
+        'Meta Ads campaigns',
+      ],
+    },
+    process: {
+      title: 'How we work',
+      steps: [
+        { num: '01', title: 'Analysis', desc: 'We learn about your practice, your competition, and your target audience.' },
+        { num: '02', title: 'Strategy', desc: 'We develop a plan tailored to your goals.' },
+        { num: '03', title: 'Execution', desc: 'We implement agreed solutions on time and on budget.' },
+        { num: '04', title: 'Optimization', desc: 'We monitor results and continuously improve performance.' },
+      ],
+    },
+    cta: { title: "Let's start together", button: 'Get in touch' },
+  },
+  about: {
+    hero: {
+      title: 'About Us',
+      subtitle: 'We know the medical industry inside out',
+    },
+    mission: {
+      title: 'Our Mission',
+      text: "mediaso is a digital agency built for medical practices. We know that doctors and clinic managers have more important things to worry about than marketing. That's why we take it on — comprehensively, reliably, and with measurable results.",
+    },
+    values: {
+      title: 'Our Values',
+      items: [
+        { icon: '🎯', title: 'Specialization', desc: "We focus exclusively on the medical industry. That's our advantage." },
+        { icon: '🤝', title: 'Partnership', desc: 'We treat clients as partners, not invoice numbers.' },
+        { icon: '📋', title: 'Reliability', desc: 'We meet deadlines and keep our promises. Always.' },
+        { icon: '📈', title: 'Results', desc: "Results matter, not the aesthetics of reports." },
+      ],
+    },
+    team: {
+      title: 'Our Team',
+      members: [
+        { name: 'Anna Kowalska', role: 'CEO & Web Strategist' },
+        { name: 'Piotr Nowak', role: 'Social Media Manager' },
+        { name: 'Marta Wiśniewska', role: 'Graphic Designer' },
+        { name: 'Tomasz Zając', role: 'SEO Specialist' },
+      ],
+    },
+  },
+  portfolio: {
+    hero: {
+      title: 'Portfolio',
+      subtitle: 'Our work in the medical industry',
+    },
+    filters: { all: 'All', web: 'Websites', social: 'Social Media' },
+    projects: [
+      { title: 'Przychodnia Zdrowie Wrocław', tags: ['web', 'social'] as ('web'|'social')[], result: '+180% organic traffic', desc: 'New website + social media management for 12 months.' },
+      { title: 'Centrum Medyczne Vita Kraków', tags: ['web'] as ('web'|'social')[], result: '+220% conversions', desc: 'Website with online booking system and CMS.' },
+      { title: 'Gabinet Stomatologiczny SmileUp', tags: ['social'] as ('web'|'social')[], result: '+350% reach', desc: 'Profile rebuild and Meta ad campaigns.' },
+      { title: 'Poradnia Kardiologiczna Gdańsk', tags: ['web', 'social'] as ('web'|'social')[], result: '2x more patients', desc: 'Complete digital presence from scratch.' },
+      { title: 'Klinika Ortopedyczna Warszawa', tags: ['web'] as ('web'|'social')[], result: 'Top 3 on Google', desc: 'Website optimized for local search terms.' },
+      { title: 'Centrum Rehabilitacji Łódź', tags: ['social'] as ('web'|'social')[], result: '+500 followers/month', desc: 'Content strategy and Instagram management.' },
+    ],
+  },
+  contact: {
+    hero: {
+      title: 'Contact',
+      subtitle: "Let's talk about your practice",
+    },
+    form: {
+      name: 'Full name',
+      email: 'Email address',
+      company: 'Practice / company name',
+      message: 'Message',
+      send: 'Send message',
+      success: "Message sent! We'll get back to you within 24 hours.",
+    },
+    info: {
+      title: 'Contact details',
+      email: 'kontakt@mediaso.pl',
+      phone: '+48 500 000 000',
+      location: 'Poland — we work remotely across the country',
+    },
+  },
+  footer: {
+    tagline: 'Digital marketing for medical practices.',
+    nav: { title: 'Navigation' },
+    services: { title: 'Services', web: 'Websites', social: 'Social Media' },
+    copyright: '© 2026 mediaso. All rights reserved.',
+  },
+} as const;
+```
+
+- [ ] **Step 3: Create `src/app/core/translations/translations.type.ts`**
+
+```ts
+import type { pl } from './pl';
+
+export type Translations = typeof pl;
+export type Lang = 'pl' | 'en';
+```
+
+- [ ] **Step 4: Write failing test**
+
+Create `src/app/core/services/translation.service.spec.ts`:
+```ts
+import { TestBed } from '@angular/core/testing';
+import { TranslationService } from './translation.service';
+
+describe('TranslationService', () => {
+  let service: TranslationService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(TranslationService);
+  });
+
+  it('should default to Polish', () => {
+    expect(service.currentLang()).toBe('pl');
+  });
+
+  it('should return Polish translations by default', () => {
+    expect(service.tr().nav.home).toBe('Strona główna');
+  });
+
+  it('should switch to English', () => {
+    service.setLang('en');
+    expect(service.currentLang()).toBe('en');
+    expect(service.tr().nav.home).toBe('Home');
+  });
+
+  it('should toggle language', () => {
+    expect(service.currentLang()).toBe('pl');
+    service.toggleLang();
+    expect(service.currentLang()).toBe('en');
+    service.toggleLang();
+    expect(service.currentLang()).toBe('pl');
+  });
+
+  it('should return updated translations reactively after lang change', () => {
+    expect(service.tr().home.cta.button).toBe('Zacznijmy współpracę');
+    service.setLang('en');
+    expect(service.tr().home.cta.button).toBe("Let's work together");
+  });
+});
+```
+
+- [ ] **Step 5: Run test to see it fail**
+
+```bash
+ng test --include="**/translation.service.spec.ts" --watch=false
+```
+Expected: FAILED — `TranslationService` not found.
+
+- [ ] **Step 6: Implement `src/app/core/services/translation.service.ts`**
+
+```ts
+import { Injectable, computed, signal } from '@angular/core';
+import { pl } from '../translations/pl';
+import { en } from '../translations/en';
+import type { Lang, Translations } from '../translations/translations.type';
+
+@Injectable({ providedIn: 'root' })
+export class TranslationService {
+  private readonly _lang = signal<Lang>('pl');
+  private readonly _map: Record<Lang, Translations> = { pl, en };
+
+  readonly currentLang = computed(() => this._lang());
+  readonly tr = computed(() => this._map[this._lang()]);
+
+  setLang(lang: Lang): void {
+    this._lang.set(lang);
+  }
+
+  toggleLang(): void {
+    this._lang.update(l => (l === 'pl' ? 'en' : 'pl'));
+  }
+}
+```
+
+- [ ] **Step 7: Run tests to verify pass**
+
+```bash
+ng test --include="**/translation.service.spec.ts" --watch=false
+```
+Expected: 5 specs, 0 failures.
+
+- [ ] **Step 8: Commit**
+
+```bash
+git add src/app/core/
+git commit -m "feat: add TranslationService with PL/EN signal-based switching"
+```
+
+---
+

@@ -12,7 +12,6 @@
 <section class="section">
   <div class="container service-block">
     <div class="service-block-header">
-      <div class="service-block-icon">🌐</div>
       <div>
         <h2>{{ tr().services.web.title }}</h2>
         <p>{{ tr().services.web.subtitle }}</p>
@@ -33,7 +32,6 @@
 <section class="section alt-bg">
   <div class="container service-block">
     <div class="service-block-header">
-      <div class="service-block-icon">📱</div>
       <div>
         <h2>{{ tr().services.social.title }}</h2>
         <p>{{ tr().services.social.subtitle }}</p>
@@ -67,6 +65,33 @@
         </div>
       }
     </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section">
+  <div class="container">
+    <p class="section-label">{{ tr().services.pricing.title }}</p>
+    <div class="pricing-grid">
+      @for (plan of tr().services.pricing.plans; track plan.name) {
+        <div class="pricing-plan">
+          <div class="plan-header">
+            <h3 class="plan-name">{{ plan.name }}</h3>
+            <p class="plan-desc">{{ plan.desc }}</p>
+          </div>
+          <div class="plan-price">
+            <span class="price-amount">{{ plan.price }}</span>
+            <span class="price-period">{{ plan.period }}</span>
+          </div>
+          <ul class="plan-features">
+            @for (feature of plan.features; track feature) {
+              <li>{{ feature }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+    <p class="pricing-note">{{ tr().services.pricing.note }}</p>
   </div>
 </section>
 

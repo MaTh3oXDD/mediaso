@@ -30,15 +30,9 @@
         <span [class.active]="currentLang() === 'en'">EN</span>
       </button>
 
-      <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+        {{ menuOpen() ? 'Zamknij' : 'Menu' }}
       </button>
     </div>
   </div>
-
-  @if (menuOpen()) {
-    <div class="overlay" (click)="closeMenu()"></div>
-  }
 </nav>

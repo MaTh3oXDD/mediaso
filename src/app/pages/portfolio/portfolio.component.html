@@ -33,10 +33,10 @@
       @for (project of filteredProjects(); track project.title) {
         <div class="card portfolio-card">
           <div class="portfolio-thumb">
-            <span class="thumb-icon">
-              @if (project.tags.includes('web') && project.tags.includes('social')) { 🌐📱 }
-              @else if (project.tags.includes('web')) { 🌐 }
-              @else { 📱 }
+            <span class="thumb-type">
+              @if (project.tags.includes('web') && project.tags.includes('social')) { WWW · SOC }
+              @else if (project.tags.includes('web')) { WWW }
+              @else { SOC }
             </span>
           </div>
           <div class="portfolio-body">
@@ -48,7 +48,6 @@
             <h3>{{ project.title }}</h3>
             <p>{{ project.desc }}</p>
             <div class="portfolio-result">
-              <span class="result-icon">📈</span>
               <span>{{ project.result }}</span>
             </div>
           </div>

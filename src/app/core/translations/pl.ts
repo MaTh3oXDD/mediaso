@@ -87,6 +87,33 @@ export const pl = {
         { num: '04', title: 'Optymalizacja', desc: 'Monitorujemy efekty i stale poprawiamy wyniki.' },
       ],
     },
+    pricing: {
+      title: 'Cennik',
+      note: '* Ceny netto. Każdy projekt wyceniamy indywidualnie — napisz do nas.',
+      plans: [
+        {
+          name: 'Strona WWW',
+          price: 'od 3 500 zł',
+          period: 'jednorazowo',
+          desc: 'Profesjonalna strona dla Twojej placówki medycznej.',
+          features: ['Projekt graficzny', 'Responsywna na każdym urządzeniu', 'SEO podstawowe', 'Panel CMS', 'Certyfikat SSL'],
+        },
+        {
+          name: 'Social — Start',
+          price: '2 200 zł',
+          period: 'miesięcznie',
+          desc: 'Stała, spójna obecność w mediach społecznościowych.',
+          features: ['4 posty tygodniowo', 'Facebook + Instagram', 'Raportowanie miesięczne', 'Obsługa komentarzy'],
+        },
+        {
+          name: 'Social — Scale',
+          price: '4 500 zł',
+          period: 'miesięcznie',
+          desc: 'Pełna obsługa z kampaniami i dedykowanym opiekunem.',
+          features: ['8 postów tygodniowo', 'Facebook + Instagram + Google', 'Kampanie Meta Ads', 'Dedykowany opiekun'],
+        },
+      ],
+    },
     cta: { title: 'Zacznijmy razem', button: 'Skontaktuj się' },
   },
   about: {

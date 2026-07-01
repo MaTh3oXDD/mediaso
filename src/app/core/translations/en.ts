@@ -87,6 +87,33 @@ export const en = {
         { num: '04', title: 'Optimization', desc: 'We monitor results and continuously improve performance.' },
       ],
     },
+    pricing: {
+      title: 'Pricing',
+      note: '* Prices exclude VAT. Every project is quoted individually — contact us.',
+      plans: [
+        {
+          name: 'Website',
+          price: 'from €800',
+          period: 'one-time',
+          desc: 'A professional website for your medical practice.',
+          features: ['Custom graphic design', 'Responsive on every device', 'Basic SEO', 'CMS panel', 'SSL certificate'],
+        },
+        {
+          name: 'Social — Start',
+          price: '€500',
+          period: 'per month',
+          desc: 'Consistent social media presence for your practice.',
+          features: ['4 posts per week', 'Facebook + Instagram', 'Monthly reporting', 'Comment handling'],
+        },
+        {
+          name: 'Social — Scale',
+          price: '€1 000',
+          period: 'per month',
+          desc: 'Full management with ad campaigns and a dedicated account manager.',
+          features: ['8 posts per week', 'Facebook + Instagram + Google', 'Meta Ads campaigns', 'Dedicated account manager'],
+        },
+      ],
+    },
     cta: { title: "Let's start together", button: 'Get in touch' },
   },
   about: {

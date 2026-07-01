@@ -1,33 +1,41 @@
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-orb hero-orb--1"></div>
-  <div class="hero-orb hero-orb--2"></div>
-  <div class="container hero-content">
-    <div class="hero-badge animate-fade-in">mediaso × healthcare</div>
-    <h1 class="hero-title animate-fade-in-delay-1">{{ tr().home.hero.title }}</h1>
-    <p class="hero-subtitle animate-fade-in-delay-2">{{ tr().home.hero.subtitle }}</p>
-    <div class="hero-actions animate-fade-in-delay-3">
-      <a routerLink="/uslugi" class="btn btn-primary">{{ tr().home.hero.cta1 }}</a>
-      <a routerLink="/kontakt" class="btn btn-outline">{{ tr().home.hero.cta2 }}</a>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <p class="hero-eyebrow animate-fade-in">Marketing cyfrowy dla placówek medycznych</p>
+        <h1 class="hero-title animate-fade-in-delay-1">{{ tr().home.hero.title }}</h1>
+        <p class="hero-subtitle animate-fade-in-delay-2">{{ tr().home.hero.subtitle }}</p>
+        <div class="hero-actions animate-fade-in-delay-3">
+          <a routerLink="/uslugi" class="btn btn-primary">{{ tr().home.hero.cta1 }}</a>
+          <a routerLink="/kontakt" class="btn btn-text">{{ tr().home.hero.cta2 }} →</a>
+        </div>
+      </div>
+      <div class="hero-stats animate-fade-in-delay-2">
+        <div class="hero-stat">
+          <span class="stat-n">{{ tr().home.stats.clients.value }}</span>
+          <span class="stat-l">{{ tr().home.stats.clients.label }}</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-n">{{ tr().home.stats.projects.value }}</span>
+          <span class="stat-l">{{ tr().home.stats.projects.label }}</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-n">{{ tr().home.stats.years.value }}</span>
+          <span class="stat-l">{{ tr().home.stats.years.label }}</span>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="hero-scroll-indicator">
-    <div class="scroll-line"></div>
   </div>
 </section>
 
 <!-- WHY MEDIASO -->
 <section class="section why-section">
   <div class="container">
-    <app-section-header
-      [label]="'mediaso'"
-      [title]="tr().home.why.title"
-      [centered]="true"
-    />
-    <div class="why-grid">
+    <p class="section-label">{{ tr().home.why.title }}</p>
+    <div class="why-row">
       @for (item of tr().home.why.items; track item.title) {
-        <div class="card why-card">
-          <div class="why-icon">{{ item.icon }}</div>
+        <div class="why-item">
           <h3>{{ item.title }}</h3>
           <p>{{ item.desc }}</p>
         </div>
@@ -37,64 +45,38 @@
 </section>
 
 <!-- SERVICES PREVIEW -->
-<section class="section services-preview">
+<section class="section services-section">
   <div class="container">
-    <app-section-header
-      [title]="tr().home.servicesPreview.title"
-    />
-    <div class="services-grid">
-      <div class="card service-card service-card--web">
-        <div class="service-icon">🌐</div>
+    <p class="section-label">{{ tr().home.servicesPreview.title }}</p>
+    <div class="services-row">
+      <div class="service-item">
         <h3>{{ tr().home.servicesPreview.web.title }}</h3>
         <p>{{ tr().home.servicesPreview.web.desc }}</p>
-        <a routerLink="/uslugi" class="service-link">
-          {{ tr().home.servicesPreview.web.link }}
-          <span class="arrow">→</span>
-        </a>
+        <a routerLink="/uslugi" class="link-arrow">{{ tr().home.servicesPreview.web.link }} →</a>
       </div>
-      <div class="card service-card service-card--social">
-        <div class="service-icon">📱</div>
+      <div class="service-item">
         <h3>{{ tr().home.servicesPreview.social.title }}</h3>
         <p>{{ tr().home.servicesPreview.social.desc }}</p>
-        <a routerLink="/uslugi" class="service-link">
-          {{ tr().home.servicesPreview.social.link }}
-          <span class="arrow">→</span>
-        </a>
+        <a routerLink="/uslugi" class="link-arrow">{{ tr().home.servicesPreview.social.link }} →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="section stats-section">
+<!-- MANIFESTO -->
+<section class="manifesto-section">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <span class="stat-value">{{ tr().home.stats.clients.value }}</span>
-        <span class="stat-label">{{ tr().home.stats.clients.label }}</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-value">{{ tr().home.stats.projects.value }}</span>
-        <span class="stat-label">{{ tr().home.stats.projects.label }}</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-value">{{ tr().home.stats.years.value }}</span>
-        <span class="stat-label">{{ tr().home.stats.years.label }}</span>
-      </div>
-    </div>
+    <blockquote class="manifesto-quote">Pomagamy placówkom medycznym budować silną obecność online — i zamieniać ją w nowych pacjentów.</blockquote>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="section cta-section">
-  <div class="container">
-    <div class="cta-card">
-      <div class="cta-glow"></div>
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div class="cta-text">
       <h2>{{ tr().home.cta.title }}</h2>
       <p>{{ tr().home.cta.subtitle }}</p>
-      <a routerLink="/kontakt" class="btn btn-primary">{{ tr().home.cta.button }}</a>
     </div>
+    <a routerLink="/kontakt" class="btn btn-white">{{ tr().home.cta.button }}</a>
   </div>
 </section>
