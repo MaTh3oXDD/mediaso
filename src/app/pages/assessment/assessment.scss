@@ -351,6 +351,15 @@
 
 .result-section {
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include tablet {
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+  }
 }
 
 .result-box {
@@ -358,6 +367,7 @@
   background: var(--bg-alt);
   border-radius: 8px;
   text-align: center;
+  flex: 1;
 
   h2 {
     font-family: 'Cormorant Garamond', Georgia, serif;
@@ -366,6 +376,86 @@
     color: var(--ink);
     margin-bottom: 2rem;
   }
+}
+
+.recommended-package {
+  flex: 1;
+
+  h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
+  }
+}
+
+.package-card {
+  padding: 2.5rem;
+  background: var(--bg-alt);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.package-header {
+  h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+}
+
+.package-desc {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+.package-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  justify-content: center;
+
+  @include tablet {
+    justify-content: flex-start;
+  }
+
+  .price-label {
+    font-size: 0.9rem;
+    color: var(--ink-3);
+    font-weight: 500;
+  }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .price-period {
+    font-size: 0.85rem;
+    color: var(--ink-2);
+  }
+}
+
+.recommended-package .btn {
+  width: 100%;
 }
 
 .score-display {

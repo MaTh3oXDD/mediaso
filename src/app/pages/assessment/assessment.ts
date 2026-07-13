@@ -54,6 +54,7 @@ export class Assessment {
   resultStatus = signal('');
 
   scoreLabels = ['', 'Kiepskie', 'Słabe', 'Średnie', 'Dobre', 'Doskonałe'];
+  recommendedPackage = signal<{name: string, desc: string, price: string, period: string} | null>(null);
 
   selectMode(advanced: boolean) {
     this.isAdvanced.set(advanced);
@@ -103,10 +104,36 @@ export class Assessment {
 
     this.result.set(percentage);
     this.resultStatus.set(this.getStatusLabel(percentage));
+    this.recommendedPackage.set(this.getRecommendedPackage(percentage));
     this.showEmailModal.set(false);
     this.showResult.set(true);
 
     console.log('Email:', this.email(), 'Score:', percentage);
+  }
+
+  getRecommendedPackage(percentage: number) {
+    if (percentage <= 30) {
+      return {
+        name: 'Strona WWW',
+        desc: 'Profesjonalna strona dla Twojej placówki medycznej.',
+        price: '3 500',
+        period: 'zł jednorazowo'
+      };
+    } else if (percentage <= 60) {
+      return {
+        name: 'Social — Start',
+        desc: 'Stała, spójna obecność w mediach społecznościowych.',
+        price: '2 200',
+        period: 'zł miesięcznie'
+      };
+    } else {
+      return {
+        name: 'Social — Scale',
+        desc: 'Pełna obsługa z kampaniami i dedykowanym opiekunem.',
+        price: '4 500',
+        period: 'zł miesięcznie'
+      };
+    }
   }
 
   closeEmailModal() {

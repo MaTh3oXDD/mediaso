@@ -99,6 +99,24 @@
             </div>
             <button type="button" class="btn btn-secondary" (click)="backToModeSelection()">Spróbuj Ponownie</button>
           </div>
+
+          @if (recommendedPackage()) {
+            <div class="recommended-package">
+              <h3>Rekomendowany Pakiet Dla Ciebie</h3>
+              <div class="package-card">
+                <div class="package-header">
+                  <h4>{{ recommendedPackage()?.name }}</h4>
+                  <p class="package-desc">{{ recommendedPackage()?.desc }}</p>
+                </div>
+                <div class="package-price">
+                  <span class="price-label">od</span>
+                  <span class="price-amount">{{ recommendedPackage()?.price }}</span>
+                  <span class="price-period">{{ recommendedPackage()?.period }}</span>
+                </div>
+                <a routerLink="/uslugi" class="btn btn-primary">Dowiedz Się Więcej</a>
+              </div>
+            </div>
+          }
         </div>
       }
 
