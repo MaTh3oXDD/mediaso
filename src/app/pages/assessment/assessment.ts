@@ -44,6 +44,7 @@ export class Assessment {
     { id: 'GS-080', category: 'Skalowalność', text: 'Czy istnieje model zarządzania odpowiedzialnościami?' },
   ];
 
+  modeSelected = signal(false);
   isAdvanced = signal(false);
   responses = signal<{ [key: string]: number }>({});
   email = signal('');
@@ -51,8 +52,18 @@ export class Assessment {
   result = signal(0);
   resultStatus = signal('');
 
-  toggleMode(advanced: boolean) {
+  scoreLabels = ['', 'Kiepskie', 'Słabe', 'Średnie', 'Dobre', 'Doskonałe'];
+
+  selectMode(advanced: boolean) {
     this.isAdvanced.set(advanced);
+    this.modeSelected.set(true);
+    this.responses.set({});
+    this.email.set('');
+    this.showResult.set(false);
+  }
+
+  backToModeSelection() {
+    this.modeSelected.set(false);
     this.responses.set({});
     this.email.set('');
     this.showResult.set(false);

@@ -8,23 +8,43 @@
   </div>
 </section>
 
-<!-- ASSESSMENT FORM -->
+<!-- ASSESSMENT -->
 <section class="section">
   <div class="container">
     <div class="assessment-wrapper">
-      <!-- Mode Toggle -->
-      <div class="mode-toggle">
-        <button class="mode-btn" [class.active]="!isAdvanced()" (click)="toggleMode(false)">
-          Podstawowa (20 pytań)
-        </button>
-        <button class="mode-btn" [class.active]="isAdvanced()" (click)="toggleMode(true)">
-          Zaawansowana (80+ pytań)
-        </button>
-      </div>
 
-      <!-- Questions -->
-      <form (ngSubmit)="calculateResult()" class="assessment-form">
-        @if (!showResult()) {
+      <!-- MODE SELECTION SCREEN -->
+      @if (!modeSelected()) {
+        <div class="mode-selection">
+          <h2>Wybierz Wersję</h2>
+          <p>Zaznacz którą wersję chcesz wypełnić</p>
+
+          <div class="mode-cards">
+            <div class="mode-card">
+              <h3>Podstawowa</h3>
+              <p class="questions-count">20 najważniejszych pytań</p>
+              <p class="duration">~10 minut</p>
+              <button class="btn btn-primary" (click)="selectMode(false)">Wybierz</button>
+            </div>
+
+            <div class="mode-card">
+              <h3>Zaawansowana</h3>
+              <p class="questions-count">80+ pytań szczegółowych</p>
+              <p class="duration">~30 minut</p>
+              <button class="btn btn-primary" (click)="selectMode(true)">Wybierz</button>
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- QUESTIONS SCREEN -->
+      @if (modeSelected() && !showResult()) {
+        <form (ngSubmit)="calculateResult()" class="assessment-form">
+          <div class="form-header">
+            <p class="mode-badge">{{ isAdvanced() ? 'Zaawansowana' : 'Podstawowa' }} Wersja</p>
+            <button type="button" class="btn-back" (click)="backToModeSelection()">← Wróć do wyboru</button>
+          </div>
+
           @for (category of getCategoryNames(); track category) {
             <div class="category-section">
               <h3>{{ category }}</h3>
@@ -37,6 +57,13 @@
                   </div>
 
                   <div class="slider-container">
+                    <div class="slider-labels">
+                      <span>Kiepskie</span>
+                      <span>Słabe</span>
+                      <span>Średnie</span>
+                      <span>Dobre</span>
+                      <span>Doskonałe</span>
+                    </div>
                     <input
                       type="range"
                       min="1"
@@ -44,7 +71,9 @@
                       class="slider"
                       [value]="responses()[question.id] || 0"
                       (input)="setResponse(question.id, $event)">
-                    <div class="slider-value">{{ responses()[question.id] || '—' }}</div>
+                    <div class="slider-value" [attr.data-level]="responses()[question.id] || 0">
+                      {{ responses()[question.id] ? scoreLabels[responses()[question.id]] : '—' }}
+                    </div>
                   </div>
                 </div>
               }
@@ -53,31 +82,35 @@
 
           <!-- Email & Submit -->
           <div class="email-section">
-            <input
-              type="email"
-              placeholder="twoj@email.pl"
-              [(ngModel)]="email"
-              name="email"
-              required>
-            <button type="submit" class="btn btn-primary">Sprawdź Wynik</button>
-          </div>
-        }
-
-        <!-- Result -->
-        @if (showResult()) {
-          <div class="result-section">
-            <div class="result-box">
-              <h2>Twój Wynik</h2>
-              <div class="score-display">
-                <span class="percentage">{{ result() }}%</span>
-                <p class="status">{{ resultStatus() }}</p>
-                <p class="improvement">Możesz jeszcze poprawić: {{ 100 - result() }}%</p>
-              </div>
-              <button type="button" class="btn btn-secondary" (click)="toggleMode(false)">Spróbuj Ponownie</button>
+            <label>Twój e-mail (aby zobaczyć wynik):</label>
+            <div class="email-input-group">
+              <input
+                type="email"
+                placeholder="twoj@email.pl"
+                [(ngModel)]="email"
+                name="email"
+                required>
+              <button type="submit" class="btn btn-primary">Sprawdź Wynik</button>
             </div>
           </div>
-        }
-      </form>
+        </form>
+      }
+
+      <!-- RESULT SCREEN -->
+      @if (showResult()) {
+        <div class="result-section">
+          <div class="result-box">
+            <h2>Twój Wynik</h2>
+            <div class="score-display">
+              <span class="percentage">{{ result() }}%</span>
+              <p class="status">{{ resultStatus() }}</p>
+              <p class="improvement">Możesz jeszcze poprawić: {{ 100 - result() }}%</p>
+            </div>
+            <button type="button" class="btn btn-secondary" (click)="backToModeSelection()">Spróbuj Ponownie</button>
+          </div>
+        </div>
+      }
+
     </div>
   </div>
 </section>
