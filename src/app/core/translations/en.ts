@@ -167,14 +167,14 @@ export const en = {
         },
         {
           name: 'Social — Start',
-          price: '€500',
+          price: 'from €500',
           period: 'per month',
           desc: 'Consistent social media presence for your practice.',
           features: ['4 posts per week', 'Facebook + Instagram', 'Monthly reporting', 'Comment handling'],
         },
         {
           name: 'Social — Scale',
-          price: '€1 000',
+          price: 'from €1 000',
           period: 'per month',
           desc: 'Full management with ad campaigns and a dedicated account manager.',
           features: ['8 posts per week', 'Facebook + Instagram + Google', 'Meta Ads campaigns', 'Dedicated account manager'],

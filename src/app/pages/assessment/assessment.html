@@ -45,6 +45,11 @@
             <button type="button" class="btn-back" (click)="backToModeSelection()">← Wróć do wyboru</button>
           </div>
 
+          <!-- Page Info -->
+          <div class="page-info">
+            <span>Strona {{ currentPage() + 1 }} z {{ getMaxPage() + 1 }}</span>
+          </div>
+
           @for (category of getCategoryNames(); track category) {
             <div class="category-section">
               <h3>{{ category }}</h3>
@@ -80,9 +85,23 @@
             </div>
           }
 
-          <!-- Submit Button -->
+          <!-- Pagination and Submit -->
           <div class="submit-section">
-            <button type="button" class="btn btn-primary" (click)="openEmailModal()">Sprawdź Wynik</button>
+            <div class="pagination-controls">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="prevPage()"
+                [disabled]="currentPage() === 0">
+                ← Poprzednia
+              </button>
+
+              @if (currentPage() < getMaxPage()) {
+                <button type="button" class="btn btn-primary" (click)="nextPage()">Następna →</button>
+              } @else {
+                <button type="button" class="btn btn-primary" (click)="openEmailModal()">Sprawdź Wynik</button>
+              }
+            </div>
           </div>
         </div>
       }

@@ -167,14 +167,14 @@ export const pl = {
         },
         {
           name: 'Social — Start',
-          price: '2 200 zł',
+          price: 'od 2 200 zł',
           period: 'miesięcznie',
           desc: 'Stała, spójna obecność w mediach społecznościowych.',
           features: ['4 posty tygodniowo', 'Facebook + Instagram', 'Raportowanie miesięczne', 'Obsługa komentarzy'],
         },
         {
           name: 'Social — Scale',
-          price: '4 500 zł',
+          price: 'od 4 500 zł',
           period: 'miesięcznie',
           desc: 'Pełna obsługa z kampaniami i dedykowanym opiekunem.',
           features: ['8 postów tygodniowo', 'Facebook + Instagram + Google', 'Kampanie Meta Ads', 'Dedykowany opiekun'],
