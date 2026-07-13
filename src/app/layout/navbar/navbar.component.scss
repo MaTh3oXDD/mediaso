@@ -71,6 +71,14 @@
 
     &:hover { color: var(--ink); }
     &.active { color: var(--ink); }
+
+    &.nav-assessment {
+      color: var(--accent);
+      font-weight: 700;
+
+      &:hover { color: var(--ink); }
+      &.active { color: var(--accent); }
+    }
   }
 
   @media (max-width: 1023px) {

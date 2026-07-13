@@ -334,6 +334,41 @@
   }
 }
 
+// ASSESSMENT CTA
+.assessment-cta-section {
+  padding: 3rem 0 4rem;
+}
+
+.assessment-cta-box {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--bg-alt) 0%, rgba(200, 55, 45, 0.05) 100%);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  text-align: center;
+
+  h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--ink-2);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn {
+    display: inline-block;
+  }
+}
+
 // MANIFESTO
 .manifesto-section {
   padding: 5rem 0;
