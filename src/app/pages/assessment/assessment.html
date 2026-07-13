@@ -39,7 +39,7 @@
 
       <!-- QUESTIONS SCREEN -->
       @if (modeSelected() && !showResult()) {
-        <form (ngSubmit)="calculateResult()" class="assessment-form">
+        <div class="assessment-form">
           <div class="form-header">
             <p class="mode-badge">{{ isAdvanced() ? 'Zaawansowana' : 'Podstawowa' }} Wersja</p>
             <button type="button" class="btn-back" (click)="backToModeSelection()">← Wróć do wyboru</button>
@@ -80,20 +80,11 @@
             </div>
           }
 
-          <!-- Email & Submit -->
-          <div class="email-section">
-            <label>Twój e-mail (aby zobaczyć wynik):</label>
-            <div class="email-input-group">
-              <input
-                type="email"
-                placeholder="twoj@email.pl"
-                [(ngModel)]="email"
-                name="email"
-                required>
-              <button type="submit" class="btn btn-primary">Sprawdź Wynik</button>
-            </div>
+          <!-- Submit Button -->
+          <div class="submit-section">
+            <button type="button" class="btn btn-primary" (click)="openEmailModal()">Sprawdź Wynik</button>
           </div>
-        </form>
+        </div>
       }
 
       <!-- RESULT SCREEN -->
@@ -114,3 +105,26 @@
     </div>
   </div>
 </section>
+
+<!-- EMAIL MODAL -->
+@if (showEmailModal()) {
+  <div class="modal-overlay" (click)="closeEmailModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button type="button" class="modal-close" (click)="closeEmailModal()">✕</button>
+
+      <h2>Pobierz Swój Wynik</h2>
+      <p>Podaj adres e-mail, aby otrzymać szczegółowy raport</p>
+
+      <form (ngSubmit)="submitEmail()" class="email-form">
+        <input
+          type="email"
+          placeholder="twoj@email.pl"
+          [(ngModel)]="email"
+          name="email"
+          required
+          autofocus>
+        <button type="submit" class="btn btn-primary">Wyślij Wynik</button>
+      </form>
+    </div>
+  </div>
+}

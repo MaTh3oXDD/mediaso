@@ -49,6 +49,7 @@ export class Assessment {
   responses = signal<{ [key: string]: number }>({});
   email = signal('');
   showResult = signal(false);
+  showEmailModal = signal(false);
   result = signal(0);
   resultStatus = signal('');
 
@@ -75,12 +76,7 @@ export class Assessment {
     this.responses.set({ ...current, [questionId]: +value });
   }
 
-  calculateResult() {
-    if (!this.email().trim()) {
-      alert('Proszę podać adres e-mail');
-      return;
-    }
-
+  openEmailModal() {
     const questions = this.minimalQuestions;
     const responses = this.responses();
 
@@ -89,15 +85,32 @@ export class Assessment {
       return;
     }
 
+    this.showEmailModal.set(true);
+    this.email.set('');
+  }
+
+  submitEmail() {
+    if (!this.email().trim()) {
+      alert('Proszę podać adres e-mail');
+      return;
+    }
+
+    const questions = this.minimalQuestions;
+    const responses = this.responses();
+
     const avgScore = Object.values(responses).reduce((a, b) => a + b, 0) / Object.keys(responses).length;
     const percentage = Math.round((avgScore / 5) * 100);
-    const improvementPercent = 100 - percentage;
 
     this.result.set(percentage);
     this.resultStatus.set(this.getStatusLabel(percentage));
+    this.showEmailModal.set(false);
     this.showResult.set(true);
 
     console.log('Email:', this.email(), 'Score:', percentage);
+  }
+
+  closeEmailModal() {
+    this.showEmailModal.set(false);
   }
 
   getStatusLabel(score: number): string {
