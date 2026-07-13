@@ -151,3 +151,18 @@
   padding-top: 0.875rem;
   border-top: 1px solid var(--border);
 }
+
+.portfolio-coming-soon {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--bg-alt);
+  border-radius: 4px;
+
+  p {
+    font-size: 1rem;
+    color: var(--ink-2);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}

@@ -1,7 +1,5 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslationService } from '../../core/services/translation.service';
-
-type Filter = 'all' | 'web' | 'social';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,16 +11,4 @@ type Filter = 'all' | 'web' | 'social';
 export class PortfolioComponent {
   private ts = inject(TranslationService);
   protected tr = this.ts.tr;
-  protected activeFilter = signal<Filter>('all');
-
-  protected filteredProjects = computed(() => {
-    const projects = this.tr().portfolio.projects;
-    const filter = this.activeFilter();
-    if (filter === 'all') return projects;
-    return projects.filter(p => p.tags.includes(filter));
-  });
-
-  protected setFilter(filter: Filter): void {
-    this.activeFilter.set(filter);
-  }
 }

@@ -3,26 +3,12 @@
   <div class="container">
     <div class="hero-inner">
       <div class="hero-main">
-        <p class="hero-eyebrow animate-fade-in">Marketing cyfrowy dla placówek medycznych</p>
+        <p class="hero-eyebrow animate-fade-in">{{ tr().home.hero.eyebrow }}</p>
         <h1 class="hero-title animate-fade-in-delay-1">{{ tr().home.hero.title }}</h1>
         <p class="hero-subtitle animate-fade-in-delay-2">{{ tr().home.hero.subtitle }}</p>
         <div class="hero-actions animate-fade-in-delay-3">
-          <a routerLink="/uslugi" class="btn btn-primary">{{ tr().home.hero.cta1 }}</a>
-          <a routerLink="/kontakt" class="btn btn-text">{{ tr().home.hero.cta2 }} →</a>
-        </div>
-      </div>
-      <div class="hero-stats animate-fade-in-delay-2">
-        <div class="hero-stat">
-          <span class="stat-n">{{ tr().home.stats.clients.value }}</span>
-          <span class="stat-l">{{ tr().home.stats.clients.label }}</span>
-        </div>
-        <div class="hero-stat">
-          <span class="stat-n">{{ tr().home.stats.projects.value }}</span>
-          <span class="stat-l">{{ tr().home.stats.projects.label }}</span>
-        </div>
-        <div class="hero-stat">
-          <span class="stat-n">{{ tr().home.stats.years.value }}</span>
-          <span class="stat-l">{{ tr().home.stats.years.label }}</span>
+          <a routerLink="/kontakt" class="btn btn-primary">{{ tr().home.hero.cta1 }}</a>
+          <a routerLink="/uslugi" class="btn btn-text">{{ tr().home.hero.cta2 }} →</a>
         </div>
       </div>
     </div>
@@ -32,12 +18,17 @@
 <!-- WHY MEDIASO -->
 <section class="section why-section">
   <div class="container">
-    <p class="section-label">{{ tr().home.why.title }}</p>
+    <h2 class="section-title">{{ tr().home.why.title }}</h2>
+    <p class="why-intro">{{ tr().home.why.intro }}</p>
     <div class="why-row">
       @for (item of tr().home.why.items; track item.title) {
         <div class="why-item">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.desc }}</p>
+          <ul class="features-list">
+            <li class="feature-item">
+              <span class="feature-check">✓</span>
+              <span>{{ item.title }}</span>
+            </li>
+          </ul>
         </div>
       }
     </div>
@@ -63,10 +54,38 @@
   </div>
 </section>
 
+<!-- CHECKLIST -->
+<section class="section checklist-section">
+  <div class="container">
+    <h2 class="section-title">{{ tr().home.checklist.title }}</h2>
+    <div class="checklist-grid">
+      @for (item of tr().home.checklist.items; track item) {
+        <div class="checklist-item">
+          <span class="checklist-box">☐</span>
+          <span>{{ item }}</span>
+        </div>
+      }
+    </div>
+    <p class="checklist-footer">{{ tr().home.checklist.footer }}</p>
+  </div>
+</section>
+
 <!-- MANIFESTO -->
 <section class="manifesto-section">
   <div class="container">
-    <blockquote class="manifesto-quote">Pomagamy placówkom medycznym budować silną obecność online — i zamieniać ją w nowych pacjentów.</blockquote>
+    <blockquote class="manifesto-quote">{{ tr().home.manifesto }}</blockquote>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section experience-section">
+  <div class="container">
+    <h2 class="section-title">{{ tr().home.experience.title }}</h2>
+    <ul class="experience-list">
+      @for (item of tr().home.experience.items; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
   </div>
 </section>
 
