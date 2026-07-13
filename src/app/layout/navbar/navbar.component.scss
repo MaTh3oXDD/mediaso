@@ -36,6 +36,7 @@
   flex: 1; // push nav-links and nav-actions to the right
 
   &-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 1.375rem;
     font-weight: 700;
     color: var(--ink);
@@ -60,11 +61,13 @@
   li a {
     display: block;
     padding: 0.5rem 0.875rem;
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 600;
     color: var(--ink-2);
     transition: color var(--transition);
     text-decoration: none;
+    letter-spacing: -0.01em;
 
     &:hover { color: var(--ink); }
     &.active { color: var(--ink); }
