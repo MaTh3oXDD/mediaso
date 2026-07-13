@@ -145,28 +145,6 @@ export const en = {
         'Commercial service sales support',
       ],
     },
-    salesGrowth: {
-      title: 'Increasing Medical Services Sales',
-      subtitle: 'We help increase commercial services sales by analyzing the entire process — from first patient contact through treatment completion. We do not focus on ads alone. We optimize the entire sales process.',
-      features: [
-        'Analysis of entire sales process',
-        'Patient journey optimization',
-        'Sales procedure implementation',
-        'Sales team training',
-        'Monitoring and result optimization',
-      ],
-    },
-    facilityManagement: {
-      title: 'Practice Management',
-      subtitle: 'We support practice owners in daily management. We help grow clinics, implement new services, and increase profitability.',
-      features: [
-        'Operational support',
-        'Resource and staff management',
-        'New service implementation',
-        'Systems and process building',
-        'Profitability and cost analysis',
-      ],
-    },
     process: {
       title: 'How we work',
       steps: [

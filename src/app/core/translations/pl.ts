@@ -145,28 +145,6 @@ export const pl = {
         'Wsparcie sprzedaży usług komercyjnych',
       ],
     },
-    salesGrowth: {
-      title: 'Zwiększanie sprzedaży usług medycznych',
-      subtitle: 'Pomagamy zwiększać sprzedaż usług komercyjnych poprzez analizę całego procesu - od pierwszego kontaktu pacjenta z placówką aż po zakończenie leczenia. Nie skupiamy się wyłącznie na reklamie. Optymalizujemy cały proces sprzedaży.',
-      features: [
-        'Analiza całego procesu sprzedaży',
-        'Optymalizacja ścieżki pacjenta',
-        'Wdrażanie procedur sprzedaży',
-        'Szkolenia zespołu sprzedaży',
-        'Monitoring i optymalizacja wyników',
-      ],
-    },
-    facilityManagement: {
-      title: 'Zarządzanie placówką',
-      subtitle: 'Wspieramy właścicieli placówek w codziennym zarządzaniu. Pomagamy rozwijać poradnie, wdrażać nowe usługi oraz zwiększać rentowność.',
-      features: [
-        'Operacyjne wsparcie',
-        'Zarządzanie zasobami i personelem',
-        'Wdrażanie nowych usług',
-        'Budowa systemów i procesów',
-        'Analiza rentowności i kosztów',
-      ],
-    },
     process: {
       title: 'Jak pracujemy',
       steps: [
