@@ -1,0 +1,83 @@
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-orb"></div>
+  <div class="container">
+    <p class="page-hero-eyebrow">mediaso</p>
+    <h1>Diagnostyka Wzrostu Placówki</h1>
+    <p class="page-hero-subtitle">Sprawdź potencjał rozwojowy swojej placówki medycznej.</p>
+  </div>
+</section>
+
+<!-- ASSESSMENT FORM -->
+<section class="section">
+  <div class="container">
+    <div class="assessment-wrapper">
+      <!-- Mode Toggle -->
+      <div class="mode-toggle">
+        <button class="mode-btn" [class.active]="!isAdvanced()" (click)="toggleMode(false)">
+          Podstawowa (20 pytań)
+        </button>
+        <button class="mode-btn" [class.active]="isAdvanced()" (click)="toggleMode(true)">
+          Zaawansowana (80+ pytań)
+        </button>
+      </div>
+
+      <!-- Questions -->
+      <form (ngSubmit)="calculateResult()" class="assessment-form">
+        @if (!showResult()) {
+          @for (category of getCategoryNames(); track category) {
+            <div class="category-section">
+              <h3>{{ category }}</h3>
+
+              @for (question of getQuestionsInCategory(category); track question.id) {
+                <div class="question-block">
+                  <div class="question-text">
+                    <span class="q-id">{{ question.id }}</span>
+                    <p>{{ question.text }}</p>
+                  </div>
+
+                  <div class="slider-container">
+                    <input
+                      type="range"
+                      min="1"
+                      max="5"
+                      class="slider"
+                      [value]="responses()[question.id] || 0"
+                      (input)="setResponse(question.id, $event)">
+                    <div class="slider-value">{{ responses()[question.id] || '—' }}</div>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+
+          <!-- Email & Submit -->
+          <div class="email-section">
+            <input
+              type="email"
+              placeholder="twoj@email.pl"
+              [(ngModel)]="email"
+              name="email"
+              required>
+            <button type="submit" class="btn btn-primary">Sprawdź Wynik</button>
+          </div>
+        }
+
+        <!-- Result -->
+        @if (showResult()) {
+          <div class="result-section">
+            <div class="result-box">
+              <h2>Twój Wynik</h2>
+              <div class="score-display">
+                <span class="percentage">{{ result() }}%</span>
+                <p class="status">{{ resultStatus() }}</p>
+                <p class="improvement">Możesz jeszcze poprawić: {{ 100 - result() }}%</p>
+              </div>
+              <button type="button" class="btn btn-secondary" (click)="toggleMode(false)">Spróbuj Ponownie</button>
+            </div>
+          </div>
+        }
+      </form>
+    </div>
+  </div>
+</section>

@@ -26,5 +26,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/contact/contact.component').then(m => m.ContactComponent),
   },
+  {
+    path: 'diagnostyka',
+    loadComponent: () =>
+      import('./pages/assessment/assessment').then(m => m.Assessment),
+  },
   { path: '**', redirectTo: '' },
 ];
