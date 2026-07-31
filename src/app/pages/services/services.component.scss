@@ -16,7 +16,7 @@
   }
 
   h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: 300;
     color: var(--ink);
@@ -59,7 +59,7 @@
   }
 
   h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 400;
     color: var(--ink);
@@ -157,7 +157,7 @@
   }
 
   h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--ink);
@@ -254,7 +254,7 @@
 }
 
 .price-amount {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--ink);
@@ -300,13 +300,13 @@
 
 .assessment-cta-box {
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, var(--bg-alt) 0%, rgba(200, 55, 45, 0.05) 100%);
+  background: linear-gradient(135deg, var(--bg-alt) 0%, var(--accent-soft) 100%);
   border-left: 4px solid var(--accent);
   border-radius: 4px;
   text-align: center;
 
   h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 600;
     color: var(--ink);
@@ -341,7 +341,7 @@
   }
 
   h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 400;
     color: var(--ink);

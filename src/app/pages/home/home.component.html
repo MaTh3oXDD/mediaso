@@ -1,15 +1,42 @@
 <!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-main">
-        <p class="hero-eyebrow animate-fade-in">{{ tr().home.hero.eyebrow }}</p>
-        <h1 class="hero-title animate-fade-in-delay-1">{{ tr().home.hero.title }}</h1>
-        <p class="hero-subtitle animate-fade-in-delay-2">{{ tr().home.hero.subtitle }}</p>
-        <div class="hero-actions animate-fade-in-delay-3">
-          <a routerLink="/kontakt" class="btn btn-primary">{{ tr().home.hero.cta1 }}</a>
-          <a routerLink="/uslugi" class="btn btn-text">{{ tr().home.hero.cta2 }} →</a>
-        </div>
+<section class="hero" #heroSection>
+  <div class="hero-video-wrap" #heroVideoWrap>
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      (loadedmetadata)="onHeroVideoLoaded($any($event.target))"
+    >
+      <source src="video/hero-bg.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-stack">
+    <div class="hero-content">
+      <p class="hero-glass hero-eyebrow-pill" [class.is-in]="heroReady()">
+        {{ tr().home.hero.eyebrow }}
+      </p>
+      <h1 class="hero-headline" [class.is-in]="heroReady()">
+        <span class="hero-headline-strong">{{ tr().home.hero.titleLine1 }}</span>
+        <span class="hero-headline-soft">{{ tr().home.hero.titleLine2 }}</span>
+      </h1>
+    </div>
+
+    <div class="hero-bottom" [class.is-in]="heroReady()">
+      <p class="hero-bottom-text">
+        <span class="is-strong">{{ tr().home.hero.subtitleStrong }}</span
+        ><span class="is-soft">{{ tr().home.hero.subtitleSoft }}</span>
+      </p>
+      <a routerLink="/kontakt" class="hero-cta">{{ tr().home.hero.cta1 }}</a>
+      <div class="hero-trust">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>{{ tr().home.hero.trust }}</span>
       </div>
     </div>
   </div>
@@ -18,17 +45,14 @@
 <!-- WHY MEDIASO -->
 <section class="section why-section">
   <div class="container">
+    <p class="eyebrow-label">Różnica MediaSO</p>
     <h2 class="section-title">{{ tr().home.why.title }}</h2>
     <p class="why-intro">{{ tr().home.why.intro }}</p>
-    <div class="why-row">
-      @for (item of tr().home.why.items; track item.title) {
-        <div class="why-item">
-          <ul class="features-list">
-            <li class="feature-item">
-              <span class="feature-check">✓</span>
-              <span>{{ item.title }}</span>
-            </li>
-          </ul>
+    <div class="hairline-list">
+      @for (item of tr().home.why.items; track item.title; let i = $index) {
+        <div class="hairline-row">
+          <span class="row-index">{{ (i + 1) < 10 ? '0' + (i + 1) : (i + 1) }}</span>
+          <span class="row-text">{{ item.title }}</span>
         </div>
       }
     </div>
@@ -38,17 +62,19 @@
 <!-- SERVICES PREVIEW -->
 <section class="section services-section">
   <div class="container">
-    <p class="section-label">{{ tr().home.servicesPreview.title }}</p>
+    <p class="eyebrow-label">{{ tr().home.servicesPreview.title }}</p>
     <div class="services-row">
       <div class="service-item">
+        <span class="service-index">01</span>
         <h3>{{ tr().home.servicesPreview.web.title }}</h3>
         <p>{{ tr().home.servicesPreview.web.desc }}</p>
-        <a routerLink="/uslugi" class="link-arrow">{{ tr().home.servicesPreview.web.link }} →</a>
+        <a routerLink="/uslugi" class="link-arrow">{{ tr().home.servicesPreview.web.link }} <span>→</span></a>
       </div>
       <div class="service-item">
+        <span class="service-index">02</span>
         <h3>{{ tr().home.servicesPreview.social.title }}</h3>
         <p>{{ tr().home.servicesPreview.social.desc }}</p>
-        <a routerLink="/uslugi" class="link-arrow">{{ tr().home.servicesPreview.social.link }} →</a>
+        <a routerLink="/uslugi" class="link-arrow">{{ tr().home.servicesPreview.social.link }} <span>→</span></a>
       </div>
     </div>
   </div>
@@ -57,11 +83,12 @@
 <!-- CHECKLIST -->
 <section class="section checklist-section">
   <div class="container">
+    <p class="eyebrow-label">Audyt placówki</p>
     <h2 class="section-title">{{ tr().home.checklist.title }}</h2>
     <div class="checklist-grid">
       @for (item of tr().home.checklist.items; track item) {
         <div class="checklist-item">
-          <span class="checklist-box">☐</span>
+          <span class="checklist-dot"></span>
           <span>{{ item }}</span>
         </div>
       }
@@ -80,12 +107,15 @@
 <!-- EXPERIENCE -->
 <section class="section experience-section">
   <div class="container">
+    <p class="eyebrow-label">Doświadczenie</p>
     <h2 class="section-title">{{ tr().home.experience.title }}</h2>
-    <ul class="experience-list">
+    <div class="hairline-list">
       @for (item of tr().home.experience.items; track item) {
-        <li>{{ item }}</li>
+        <div class="hairline-row">
+          <span class="row-text">{{ item }}</span>
+        </div>
       }
-    </ul>
+    </div>
   </div>
 </section>
 
@@ -93,9 +123,10 @@
 <section class="section assessment-cta-section">
   <div class="container">
     <div class="assessment-cta-box">
-      <h2>Sprawdź Ile Możesz Poprawić U Siebie</h2>
-      <p>Odpowiedz na 20 pytań o Twoją placówkę i dowiedz się, o ile procent możesz jeszcze poprawić swój biznes</p>
-      <a routerLink="/diagnostyka" class="btn btn-primary">Sprawdź Teraz</a>
+      <p class="eyebrow-label">Bezpłatna diagnostyka</p>
+      <h2>Sprawdź, ile możesz poprawić u siebie</h2>
+      <p class="assessment-cta-desc">Odpowiedz na 20 pytań o Twoją placówkę i dowiedz się, o ile procent możesz jeszcze poprawić swój biznes.</p>
+      <a routerLink="/diagnostyka" class="pill-cta">Sprawdź teraz</a>
     </div>
   </div>
 </section>
@@ -107,6 +138,6 @@
       <h2>{{ tr().home.cta.title }}</h2>
       <p>{{ tr().home.cta.subtitle }}</p>
     </div>
-    <a routerLink="/kontakt" class="btn btn-white">{{ tr().home.cta.button }}</a>
+    <a routerLink="/kontakt" class="pill-cta">{{ tr().home.cta.button }}</a>
   </div>
 </section>

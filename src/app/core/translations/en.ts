@@ -10,7 +10,12 @@ export const en = {
     hero: {
       eyebrow: 'We develop medical practices, not just their marketing',
       title: 'Helping clinics increase patient numbers, profitability, and operational efficiency',
-      subtitle: 'From marketing through medical registration to process optimization — comprehensive support for growing your practice.',
+      titleLine1: 'More patients. Less chaos.',
+      titleLine2: 'Marketing and operations for growing clinics.',
+      subtitle: 'From marketing through medical registration to process optimization - comprehensive support for growing your practice.',
+      subtitleStrong: 'From marketing, through registration, to process optimization -',
+      subtitleSoft: ' comprehensive support for growing your practice.',
+      trust: 'PATIENT DATA FULLY SECURE.',
       cta1: 'Schedule a free consultation',
       cta2: 'See how we can increase your practice revenue',
     },
@@ -54,7 +59,7 @@ export const en = {
         'We want to open a new clinic',
         'We want to increase private patients',
       ],
-      footer: 'If you checked even one item — we can probably help.',
+      footer: 'If you checked even one item - we can probably help.',
     },
     experience: {
       title: 'MediaSO team has experience gained through:',
@@ -156,7 +161,7 @@ export const en = {
     },
     pricing: {
       title: 'Pricing',
-      note: '* Prices exclude VAT. Every project is quoted individually — contact us.',
+      note: '* Prices exclude VAT. Every project is quoted individually - contact us.',
       plans: [
         {
           name: 'Website',
@@ -166,14 +171,14 @@ export const en = {
           features: ['Custom graphic design', 'Responsive on every device', 'Basic SEO', 'CMS panel', 'SSL certificate'],
         },
         {
-          name: 'Social — Start',
+          name: 'Social - Start',
           price: 'from €500',
           period: 'per month',
           desc: 'Consistent social media presence for your practice.',
           features: ['4 posts per week', 'Facebook + Instagram', 'Monthly reporting', 'Comment handling'],
         },
         {
-          name: 'Social — Scale',
+          name: 'Social - Scale',
           price: 'from €1 000',
           period: 'per month',
           desc: 'Full management with ad campaigns and a dedicated account manager.',
@@ -190,7 +195,7 @@ export const en = {
     },
     mission: {
       title: 'Our Mission',
-      text: "mediaso is a digital agency built for medical practices. We know that doctors and clinic managers have more important things to worry about than marketing. That's why we take it on — comprehensively, reliably, and with measurable results.",
+      text: "mediaso is a digital agency built for medical practices. We know that doctors and clinic managers have more important things to worry about than marketing. That's why we take it on - comprehensively, reliably, and with measurable results.",
     },
     values: {
       title: 'Our Values',
@@ -235,7 +240,7 @@ export const en = {
       title: 'Contact details',
       email: 'kontakt@mediaso.pl',
       phone: '+48 500 000 000',
-      location: 'Poland — we work remotely across the country',
+      location: 'Poland - we work remotely across the country',
     },
   },
   footer: {

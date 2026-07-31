@@ -1,11 +1,18 @@
 :root {
-  --bg: #FFFFFF;
-  --bg-alt: #F5F5F5;
-  --ink: #111111;
-  --ink-2: #585858;
-  --ink-3: #9A9A9A;
-  --accent: #C8372D;
-  --border: #E0E0E0;
+  // Dusk-field palette — pulled from the hero video (teal dusk sky
+  // fading into warm amber grass, near-black shadow foreground) so
+  // the whole site reads as one continuous material, not a hero
+  // that switches to a generic theme past the fold.
+  --bg: #081316;
+  --bg-alt: #0e1f24;
+  --ink: #f5efe4;
+  --ink-2: rgba(245, 239, 228, 0.64);
+  --ink-3: rgba(245, 239, 228, 0.4);
+  --accent: #dda552;
+  --accent-soft: rgba(221, 165, 82, 0.2);
+  --teal: #4f8b96;
+  --teal-soft: rgba(79, 139, 150, 0.24);
+  --border: rgba(224, 168, 92, 0.16);
   --transition: 0.2s ease;
   --container-max: 1200px;
   --nav-height: 68px;

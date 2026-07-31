@@ -16,7 +16,7 @@
   }
 
   h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: 300;
     color: var(--ink);
@@ -43,7 +43,7 @@
   padding: 3rem 0;
 
   h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: var(--ink);
@@ -77,11 +77,11 @@
 
   &:hover {
     border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(200, 55, 45, 0.1);
+    box-shadow: 0 4px 12px var(--accent-soft);
   }
 
   h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.75rem;
     font-weight: 600;
     color: var(--ink);
@@ -151,7 +151,7 @@
 
 .category-section {
   h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--ink);
@@ -336,7 +336,7 @@
 }
 
 .modal-content h2 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: 600;
   color: var(--ink);
@@ -364,7 +364,7 @@
     &:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(200, 55, 45, 0.1);
+      box-shadow: 0 0 0 2px var(--accent-soft);
     }
   }
 
@@ -394,7 +394,7 @@
   flex: 1;
 
   h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: var(--ink);
@@ -406,7 +406,7 @@
   flex: 1;
 
   h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--ink);
@@ -431,7 +431,7 @@
 
 .package-header {
   h4 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.75rem;
     font-weight: 600;
     color: var(--ink);
@@ -465,7 +465,7 @@
   }
 
   .price-amount {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--accent);
@@ -490,7 +490,7 @@
 
   .percentage {
     display: block;
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 4rem;
     font-weight: 700;
     color: var(--accent);
@@ -524,7 +524,7 @@
 
   &.btn-primary {
     background: var(--accent);
-    color: #FFFFFF;
+    color: var(--bg);
 
     &:hover {
       opacity: 0.9;
@@ -537,7 +537,7 @@
 
     &:hover {
       background: var(--ink-3);
-      color: #FFFFFF;
+      color: var(--bg);
     }
   }
 }

@@ -36,10 +36,10 @@
 
   &-primary {
     background: var(--ink);
-    color: #FFFFFF;
+    color: var(--bg);
 
     &:hover {
-      background: #2a2a2a;
+      opacity: 0.88;
     }
   }
 
@@ -55,7 +55,7 @@
 
   &-white {
     background: #FFFFFF;
-    color: var(--ink);
+    color: var(--bg);
 
     &:hover {
       background: rgba(255, 255, 255, 0.88);

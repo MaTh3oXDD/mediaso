@@ -77,7 +77,7 @@
                       [value]="responses()[question.id] || 0"
                       (input)="setResponse(question.id, $event)">
                     <div class="slider-value" [attr.data-level]="responses()[question.id] || 0">
-                      {{ responses()[question.id] ? scoreLabels[responses()[question.id]] : '—' }}
+                      {{ responses()[question.id] ? scoreLabels[responses()[question.id]] : '-' }}
                     </div>
                   </div>
                 </div>

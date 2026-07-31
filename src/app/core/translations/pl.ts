@@ -10,7 +10,12 @@ export const pl = {
     hero: {
       eyebrow: 'Rozwijamy placówki medyczne, nie tylko ich marketing',
       title: 'Pomagamy klinikom, gabinetom i centrom medycznym zwiększać liczbę pacjentów, poprawiać rentowność oraz usprawniać codzienną pracę',
-      subtitle: 'Od marketingu, przez rejestrację medyczną, po optymalizację procesów — oferujemy kompleksowe wsparcie dla rozwoju Twojej placówki.',
+      titleLine1: 'Więcej pacjentów. Mniej chaosu.',
+      titleLine2: 'Marketing i operacje dla klinik, które rosną.',
+      subtitle: 'Od marketingu, przez rejestrację medyczną, po optymalizację procesów - oferujemy kompleksowe wsparcie dla rozwoju Twojej placówki.',
+      subtitleStrong: 'Od marketingu, przez rejestrację, po optymalizację procesów -',
+      subtitleSoft: ' oferujemy kompleksowe wsparcie dla rozwoju Twojej placówki.',
+      trust: 'DANE PACJENTÓW W PEŁNI BEZPIECZNE.',
       cta1: 'Umów bezpłatną konsultację',
       cta2: 'Sprawdź jak możemy zwiększyć przychody Twojej placówki',
     },
@@ -156,7 +161,7 @@ export const pl = {
     },
     pricing: {
       title: 'Cennik',
-      note: '* Ceny netto. Każdy projekt wyceniamy indywidualnie — napisz do nas.',
+      note: '* Ceny netto. Każdy projekt wyceniamy indywidualnie - napisz do nas.',
       plans: [
         {
           name: 'Strona WWW',
@@ -166,14 +171,14 @@ export const pl = {
           features: ['Projekt graficzny', 'Responsywna na każdym urządzeniu', 'SEO podstawowe', 'Panel CMS', 'Certyfikat SSL'],
         },
         {
-          name: 'Social — Start',
+          name: 'Social - Start',
           price: 'od 2 200 zł',
           period: 'miesięcznie',
           desc: 'Stała, spójna obecność w mediach społecznościowych.',
           features: ['4 posty tygodniowo', 'Facebook + Instagram', 'Raportowanie miesięczne', 'Obsługa komentarzy'],
         },
         {
-          name: 'Social — Scale',
+          name: 'Social - Scale',
           price: 'od 4 500 zł',
           period: 'miesięcznie',
           desc: 'Pełna obsługa z kampaniami i dedykowanym opiekunem.',
@@ -190,7 +195,7 @@ export const pl = {
     },
     mission: {
       title: 'Nasza misja',
-      text: 'mediaso to agencja cyfrowa stworzona z myślą o placówkach medycznych. Wiemy, że lekarze i zarządzający przychodniami mają ważniejsze rzeczy na głowie niż marketing. Dlatego bierzemy to na siebie — kompleksowo, rzetelnie i z mierzalnymi efektami.',
+      text: 'mediaso to agencja cyfrowa stworzona z myślą o placówkach medycznych. Wiemy, że lekarze i zarządzający przychodniami mają ważniejsze rzeczy na głowie niż marketing. Dlatego bierzemy to na siebie - kompleksowo, rzetelnie i z mierzalnymi efektami.',
     },
     values: {
       title: 'Nasze wartości',
@@ -235,7 +240,7 @@ export const pl = {
       title: 'Dane kontaktowe',
       email: 'kontakt@mediaso.pl',
       phone: '+48 500 000 000',
-      location: 'Polska — pracujemy zdalnie z całym krajem',
+      location: 'Polska - pracujemy zdalnie z całym krajem',
     },
   },
   footer: {

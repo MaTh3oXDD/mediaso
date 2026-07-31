@@ -226,14 +226,14 @@ export class Assessment {
       };
     } else if (percentage <= 60) {
       return {
-        name: 'Social — Start',
+        name: 'Social - Start',
         desc: 'Stała, spójna obecność w mediach społecznościowych.',
         price: '2 200',
         period: 'zł miesięcznie'
       };
     } else {
       return {
-        name: 'Social — Scale',
+        name: 'Social - Scale',
         desc: 'Pełna obsługa z kampaniami i dedykowanym opiekunem.',
         price: '4 500',
         period: 'zł miesięcznie'

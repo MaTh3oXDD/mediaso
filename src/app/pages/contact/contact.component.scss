@@ -16,7 +16,7 @@
   }
 
   h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: 300;
     color: var(--ink);
@@ -128,7 +128,7 @@
   padding-top: 0.25rem;
 
   h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--ink);
@@ -165,10 +165,10 @@
 }
 
 .info-icon {
-  font-size: 1rem;
+  display: flex;
   flex-shrink: 0;
   margin-top: 0.1rem;
-  opacity: 0.4;
+  color: var(--accent);
 }
 
 .info-glow-card {
