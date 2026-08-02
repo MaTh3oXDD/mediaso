@@ -59,6 +59,22 @@
   </div>
 </section>
 
+<!-- BENEFITS -->
+<section class="section benefits-section">
+  <div class="container">
+    <p class="eyebrow-label">{{ tr().home.benefits.eyebrow }}</p>
+    <h2 class="section-title">{{ tr().home.benefits.title }}</h2>
+    <div class="checklist-grid">
+      @for (item of tr().home.benefits.items; track item) {
+        <div class="checklist-item">
+          <span class="checklist-dot"></span>
+          <span>{{ item }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES PREVIEW -->
 <section class="section services-section">
   <div class="container">
