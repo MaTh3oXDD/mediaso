@@ -200,6 +200,66 @@
   }
 }
 
+// ECG trace along the foot of the hero — the one literal medical cue in
+// an otherwise abstract background. Sits above the overlay so the bottom
+// scrim does not swallow it, below the content so it never fights the text.
+.hero-ecg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  // Pulled below the fold edge so the taller waveform grows downward-heavy:
+  // the spikes stay in the lower band instead of climbing into the headline.
+  bottom: -7%;
+  z-index: 1;
+  width: 100%;
+  height: clamp(230px, 40vh, 460px);
+  pointer-events: none;
+  overflow: visible;
+}
+
+.hero-ecg-trace,
+.hero-ecg-pulse {
+  fill: none;
+  // Keeps the line an even weight even though preserveAspectRatio="none"
+  // stretches the viewBox horizontally.
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hero-ecg-trace {
+  stroke: rgba(var(--accent-rgb), 0.3);
+  stroke-width: 2.25;
+}
+
+// pathLength="1000" normalises the dash maths, so the pulse timing is
+// independent of the path's real geometry.
+.hero-ecg-pulse {
+  stroke: var(--accent);
+  stroke-width: 3.25;
+  stroke-dasharray: 55 1000;
+  filter: drop-shadow(0 0 5px rgba(var(--accent-rgb), 0.85));
+  animation: ecgSweep 5s linear infinite;
+}
+
+@keyframes ecgSweep {
+  from {
+    stroke-dashoffset: 55;
+  }
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ecg-pulse {
+    animation: none;
+    stroke-dasharray: none;
+    stroke: rgba(var(--accent-rgb), 0.45);
+    filter: none;
+  }
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -316,6 +376,10 @@
 
 .hero-headline-soft {
   color: var(--ink-2);
+}
+
+.hero-headline-accent {
+  color: var(--accent);
 }
 
 .hero-bottom {
@@ -505,12 +569,22 @@
   gap: 1rem;
 
   @include tablet {
-    padding-right: 3rem;
+    // Keyed to grid column, not sibling order. With four cards the second
+    // row has to line up with the first, so the divider belongs to whichever
+    // card sits in the right-hand column - not to "every card after the first".
+    &:nth-child(odd) {
+      padding-right: 3rem;
+    }
 
-    & + .service-item {
-      padding-right: 0;
+    &:nth-child(even) {
       padding-left: 3rem;
       border-left: 1px solid var(--hline);
+    }
+
+    // Hairline between rows, completing the grid.
+    &:nth-child(n + 3) {
+      border-top: 1px solid var(--hline);
+      padding-top: 2.5rem;
     }
   }
 }
@@ -716,7 +790,7 @@
   h2 {
     font-family: 'Inter', sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
+    font-weight: 600;
     color: var(--hink);
     line-height: 1.2;
     margin-bottom: 0.75rem;

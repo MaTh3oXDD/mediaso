@@ -48,8 +48,28 @@
   </div>
 </section>
 
-<!-- FACILITY DEVELOPMENT -->
+<!-- GOOGLE OPTIMIZATION -->
 <section class="section">
+  <div class="container service-block">
+    <div class="service-block-header">
+      <div>
+        <h2>{{ tr().services.google.title }}</h2>
+        <p>{{ tr().services.google.subtitle }}</p>
+      </div>
+    </div>
+    <ul class="features-list">
+      @for (feature of tr().services.google.features; track feature) {
+        <li class="feature-item">
+          <span class="feature-check">✓</span>
+          <span>{{ feature }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- FACILITY DEVELOPMENT -->
+<section class="section alt-bg">
   <div class="container service-block">
     <div class="service-block-header">
       <div>
@@ -69,7 +89,7 @@
 </section>
 
 <!-- REGISTRATION OPTIMIZATION -->
-<section class="section alt-bg">
+<section class="section">
   <div class="container service-block">
     <div class="service-block-header">
       <div>
@@ -89,7 +109,7 @@
 </section>
 
 <!-- MEDICAL HELPLINE -->
-<section class="section">
+<section class="section alt-bg">
   <div class="container service-block">
     <div class="service-block-header">
       <div>
@@ -167,7 +187,7 @@
 </section>
 
 <!-- CTA -->
-<section class="section alt-bg">
+<section class="section">
   <div class="container cta-inline">
     <h2>{{ tr().services.cta.title }}</h2>
     <a routerLink="/kontakt" class="btn btn-primary">{{ tr().services.cta.button }}</a>

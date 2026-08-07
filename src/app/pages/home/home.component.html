@@ -11,6 +11,11 @@
   </div>
   <div class="hero-overlay"></div>
 
+  <svg class="hero-ecg" viewBox="0 0 900 200" preserveAspectRatio="none" aria-hidden="true">
+    <path class="hero-ecg-trace" pathLength="1000" d="M0 100 H40 q12 -16 24 0 H100 l7 12 l10 -78 l10 92 l7 -26 H172 q18 -28 36 0 H300 H340 q12 -16 24 0 H400 l7 12 l10 -78 l10 92 l7 -26 H472 q18 -28 36 0 H600 H640 q12 -16 24 0 H700 l7 12 l10 -78 l10 92 l7 -26 H772 q18 -28 36 0 H900" />
+    <path class="hero-ecg-pulse" pathLength="1000" d="M0 100 H40 q12 -16 24 0 H100 l7 12 l10 -78 l10 92 l7 -26 H172 q18 -28 36 0 H300 H340 q12 -16 24 0 H400 l7 12 l10 -78 l10 92 l7 -26 H472 q18 -28 36 0 H600 H640 q12 -16 24 0 H700 l7 12 l10 -78 l10 92 l7 -26 H772 q18 -28 36 0 H900" />
+  </svg>
+
   <div class="hero-stack">
     <div class="hero-content">
       <p class="hero-glass hero-eyebrow-pill" [class.is-in]="heroReady()">
@@ -18,7 +23,9 @@
       </p>
       <h1 class="hero-headline" [class.is-in]="heroReady()">
         <span class="hero-headline-strong">{{ tr().home.hero.titleLine1 }}</span>
-        <span class="hero-headline-soft">{{ tr().home.hero.titleLine2 }}</span>
+        <span class="hero-headline-soft">{{ tr().home.hero.titleLine2 }}
+          <span class="hero-headline-accent">{{ tr().home.hero.titleLine2Accent }}</span>
+        </span>
       </h1>
     </div>
 
@@ -56,6 +63,13 @@
   </div>
 </section>
 
+<!-- MANIFESTO -->
+<section class="manifesto-section">
+  <div class="container">
+    <blockquote class="manifesto-quote">{{ tr().home.manifesto }}</blockquote>
+  </div>
+</section>
+
 <!-- BENEFITS -->
 <section class="section benefits-section">
   <div class="container">
@@ -89,6 +103,12 @@
         <p>{{ tr().home.servicesPreview.social.desc }}</p>
         <a routerLink="/uslugi" class="link-arrow">{{ tr().home.servicesPreview.social.link }} <span>→</span></a>
       </div>
+      <div class="service-item">
+        <span class="service-index">03</span>
+        <h3>{{ tr().home.servicesPreview.google.title }}</h3>
+        <p>{{ tr().home.servicesPreview.google.desc }}</p>
+        <a routerLink="/uslugi" class="link-arrow">{{ tr().home.servicesPreview.google.link }} <span>→</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -107,13 +127,6 @@
       }
     </div>
     <p class="checklist-footer">{{ tr().home.checklist.footer }}</p>
-  </div>
-</section>
-
-<!-- MANIFESTO -->
-<section class="manifesto-section">
-  <div class="container">
-    <blockquote class="manifesto-quote">{{ tr().home.manifesto }}</blockquote>
   </div>
 </section>
 
