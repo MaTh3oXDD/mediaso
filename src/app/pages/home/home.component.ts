@@ -23,7 +23,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   protected tr = this.ts.tr;
 
   @ViewChild('heroSection') private heroSectionRef?: ElementRef<HTMLElement>;
-  @ViewChild('heroVideoWrap') private heroVideoWrapRef?: ElementRef<HTMLElement>;
+  @ViewChild('heroBg') private heroBgRef?: ElementRef<HTMLElement>;
 
   protected heroReady = signal(false);
 
@@ -52,9 +52,9 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     const tick = () => {
       this.currentX += (this.targetX - this.currentX) * 0.06;
       this.currentY += (this.targetY - this.currentY) * 0.06;
-      const videoWrap = this.heroVideoWrapRef?.nativeElement;
-      if (videoWrap) {
-        gsap.set(videoWrap, { x: this.currentX, y: this.currentY });
+      const bg = this.heroBgRef?.nativeElement;
+      if (bg) {
+        gsap.set(bg, { x: this.currentX, y: this.currentY });
       }
       this.rafId = requestAnimationFrame(tick);
     };
@@ -66,9 +66,5 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     if (this.rafId !== undefined) {
       cancelAnimationFrame(this.rafId);
     }
-  }
-
-  protected onHeroVideoLoaded(video: HTMLVideoElement): void {
-    video.playbackRate = 1.25;
   }
 }

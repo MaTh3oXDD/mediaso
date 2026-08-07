@@ -18,14 +18,13 @@
 
 .footer-brand {
   .logo {
-    font-size: 1.375rem;
-    font-weight: 700;
-    color: var(--ink);
+    display: inline-block;
     text-decoration: none;
-    letter-spacing: -0.02em;
 
-    .accent {
-      color: var(--accent);
+    img {
+      display: block;
+      height: 28px;
+      width: auto;
     }
   }
 

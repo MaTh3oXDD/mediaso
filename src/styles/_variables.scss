@@ -1,18 +1,20 @@
 :root {
-  // Dusk-field palette — pulled from the hero video (teal dusk sky
-  // fading into warm amber grass, near-black shadow foreground) so
-  // the whole site reads as one continuous material, not a hero
-  // that switches to a generic theme past the fold.
-  --bg: #081316;
-  --bg-alt: #0e1f24;
-  --ink: #f5efe4;
-  --ink-2: rgba(245, 239, 228, 0.64);
-  --ink-3: rgba(245, 239, 228, 0.4);
-  --accent: #dda552;
-  --accent-soft: rgba(221, 165, 82, 0.2);
-  --teal: #4f8b96;
-  --teal-soft: rgba(79, 139, 150, 0.24);
-  --border: rgba(224, 168, 92, 0.16);
+  // Core palette — three colours only: black, white, orange.
+  // Channel tokens (*-rgb) exist so every alpha derivation below
+  // and in the components stays tied to its source colour instead
+  // of drifting into a hand-written near-miss.
+  --black-rgb: 0, 0, 0;
+  --white-rgb: 255, 255, 255;
+  --accent-rgb: 240, 94, 43;
+
+  --bg: #000000;
+  --bg-alt: #0a0a0a;
+  --ink: #ffffff;
+  --ink-2: rgba(var(--white-rgb), 0.64);
+  --ink-3: rgba(var(--white-rgb), 0.4);
+  --accent: #f05e2b;
+  --accent-soft: rgba(var(--accent-rgb), 0.2);
+  --border: rgba(var(--white-rgb), 0.14);
   --transition: 0.2s ease;
   --container-max: 1200px;
   --nav-height: 68px;

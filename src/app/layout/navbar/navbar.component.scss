@@ -7,7 +7,7 @@
   right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: rgba(8, 19, 22, 0.4);
+  background: rgba(var(--black-rgb), 0.45);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
@@ -21,7 +21,7 @@
   }
 
   &.scrolled {
-    background: rgba(8, 19, 22, 0.72);
+    background: rgba(var(--black-rgb), 0.78);
     border-bottom-color: var(--border);
   }
 }
@@ -38,16 +38,13 @@
   z-index: 101;
   flex: 1; // push nav-links and nav-actions to the right
 
-  &-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.375rem;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-  }
-
-  &-accent {
-    color: var(--accent);
+  // The mark carries its own colour, so height is the only knob.
+  // width:auto keeps the 4.52:1 ratio regardless of the width attr,
+  // which is there purely to reserve space and avoid layout shift.
+  &-img {
+    display: block;
+    height: 28px;
+    width: auto;
   }
 }
 
