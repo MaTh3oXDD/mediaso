@@ -56,7 +56,12 @@
                   "maximumError": "14kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "outputPath": {
+                "base": "docs",
+                "browser": ""
+              },
+              "baseHref": "/mediaso/"
             },
             "development": {
               "optimization": false,
