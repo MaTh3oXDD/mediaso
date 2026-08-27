@@ -269,4 +269,55 @@ export class Assessment {
   getQuestionsInCategory(categoryName: string) {
     return this.getQuestions().filter(q => q.category === categoryName);
   }
+
+  /**
+   * Pelna lista kryteriow pogrupowana w obszary, renderowana na ekranie wyboru
+   * wersji. Az do tej pory tresc pytan powstawala dopiero po kliknieciu, wiec
+   * w statycznym HTML nie bylo jej wcale - ani dla wyszukiwarek, ani dla osob
+   * chcacych zobaczyc zakres audytu przed jego rozpoczeciem.
+   */
+  protected readonly criteriaOutline = computed(() => {
+    // Te same obszary bywaja zapisane dwiema nazwami w obu zestawach pytan.
+    const canonical: Record<string, string> = {
+      'Automatyzacja i AI': 'Automatyzacja',
+      'Opinie i reputacja': 'Opinie',
+      'Skalowalność biznesu': 'Skalowalność',
+    };
+
+    const order = [
+      'Strategia',
+      'Pozyskiwanie',
+      'Rejestracja',
+      'Strona',
+      'Marketing',
+      'Rentowność',
+      'KPI',
+      'Automatyzacja',
+      'Opinie',
+      'Skalowalność',
+    ];
+
+    const groups = new Map<string, string[]>();
+    for (const question of [...this.minimalQuestions, ...this.advancedQuestions]) {
+      const name = canonical[question.category] ?? question.category;
+      const bucket = groups.get(name) ?? [];
+      // Oba zestawy pokrywaja sie tematycznie - powtorzone pytania odpadaja.
+      if (!bucket.includes(question.text)) {
+        bucket.push(question.text);
+      }
+      groups.set(name, bucket);
+    }
+
+    return [...groups.entries()]
+      .sort((a, b) => {
+        const ia = order.indexOf(a[0]);
+        const ib = order.indexOf(b[0]);
+        return (ia === -1 ? order.length : ia) - (ib === -1 ? order.length : ib);
+      })
+      .map(([name, questions]) => ({ name, questions }));
+  });
+
+  protected readonly criteriaCount = computed(() =>
+    this.criteriaOutline().reduce((sum, group) => sum + group.questions.length, 0)
+  );
 }

@@ -7,22 +7,29 @@
   right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: rgba(var(--black-rgb), 0.45);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
-  transition: border-color var(--transition), background var(--transition);
+  transition: border-color var(--transition);
 
-  // width: 100vw pins the navbar to exactly the viewport width on mobile.
-  // When width is explicit alongside left:0, CSS drops the right:0 constraint,
-  // preventing the ICB from widening the navbar when page content overflows.
-  @media (max-width: 1023px) {
-    width: 100vw;
+  // Rozmycie i tlo siedza w warstwie ::before, nie na samym .navbar.
+  // backdrop-filter na elemencie czyni go blokiem zawierajacym dla potomkow
+  // position:fixed - menu mobilne dostawalo wtedy wysokosc paska zamiast ekranu.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(var(--black-rgb), 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background var(--transition);
   }
 
   &.scrolled {
-    background: rgba(var(--black-rgb), 0.78);
     border-bottom-color: var(--border);
+
+    &::before {
+      background: rgba(var(--black-rgb), 0.78);
+    }
   }
 }
 
@@ -92,8 +99,14 @@
       right: 0;
       bottom: 0;
       background: var(--bg);
-      padding: var(--nav-height) 2.5rem 3rem;
+      // Dolny padding uwzglednia pasek gestow na telefonach z wycieciem.
+      padding:
+        calc(var(--nav-height) + 1rem)
+        clamp(1.5rem, 6vw, 2.5rem)
+        calc(2rem + env(safe-area-inset-bottom, 0px));
       z-index: 99;
+      overflow-y: auto;
+      overscroll-behavior: contain;
 
       @for $i from 1 through 5 {
         li:nth-child(#{$i}) {
@@ -102,23 +115,52 @@
       }
 
       li a {
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
         font-family: 'Inter', sans-serif;
-        font-size: clamp(2.5rem, 11vw, 4rem);
+        // Mniejsza skala niz wczesniej: "Strona glowna" lamalo sie na dwie linie.
+        font-size: clamp(1.75rem, 8vw, 2.75rem);
         font-weight: 300;
         letter-spacing: -0.02em;
-        line-height: 1;
-        padding: 1rem 0;
+        line-height: 1.1;
+        padding: 0.85rem 0;
         border-bottom: 1px solid var(--border);
         color: var(--ink);
         text-decoration: none;
-        transition: color var(--transition);
+        transition: color var(--transition), padding-left var(--transition);
 
-        &.active { color: var(--accent); }
-        &:hover  { color: var(--accent); }
+        // Akcent w tekscie jest zarezerwowany dla Diagnostyki. Biezaca strona
+        // dostaje akcentowana linie pod spodem - inaczej na stronie glownej
+        // swiecily sie dwie pozycje naraz i wyroznienie tracilo sens.
+        &.active {
+          color: var(--ink);
+          border-bottom-color: var(--accent);
+        }
+
+        &:hover,
+        &:focus-visible {
+          color: var(--accent);
+          padding-left: 0.5rem;
+        }
       }
 
       li:first-child a {
         border-top: 1px solid var(--border);
+      }
+
+      // Diagnostyka to jedyny punkt wyrozniony w nawigacji - zostaje w akcencie.
+      li a.nav-assessment {
+        color: var(--accent);
+
+        &::after {
+          content: '';
+          width: 0.4rem;
+          height: 0.4rem;
+          border-radius: 50%;
+          background: var(--accent);
+          align-self: center;
+        }
       }
     }
   }
@@ -145,9 +187,14 @@
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  // Jak wyzej: 50x15 px tekstu to za malo na palec.
+  padding: 15px 8px;
+  margin: -15px -8px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--ink-3);
+  // var(--ink-3) to biel 40% = kontrast 3.66:1 na czarnym tle, ponizej
+  // progu WCAG AA (4.5:1) dla tekstu 12 px. 62% daje ok. 5.4:1.
+  color: rgba(var(--white-rgb), 0.62);
   cursor: pointer;
   background: none;
   border: none;
@@ -168,7 +215,10 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  // Sam tekst ma 39x14 px. Padding dobija pole dotyku do wymaganych 44x44,
+  // ujemny margines zdejmuje ten padding z ukladu paska.
+  padding: 15px 10px;
+  margin: -15px -10px;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;

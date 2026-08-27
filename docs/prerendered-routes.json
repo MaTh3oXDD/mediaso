@@ -1,3 +1,11 @@
 {
-  "routes": {}
+  "routes": {
+    "/": {},
+    "/diagnostyka": {},
+    "/kontakt": {},
+    "/o-nas": {},
+    "/polityka-prywatnosci": {},
+    "/portfolio": {},
+    "/uslugi": {}
+  }
 }

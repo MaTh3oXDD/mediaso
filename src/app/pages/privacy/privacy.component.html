@@ -1,0 +1,25 @@
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-orb"></div>
+  <div class="container">
+    <p class="eyebrow">mediaso</p>
+    <h1>{{ tr().privacy.hero.title }}</h1>
+    <p class="subtitle">{{ tr().privacy.hero.subtitle }}</p>
+  </div>
+</section>
+
+<!-- TRESC -->
+<section class="section">
+  <div class="container">
+    <p class="updated">{{ tr().privacy.updated }}</p>
+
+    <div class="policy">
+      @for (section of tr().privacy.sections; track section.title) {
+        <article class="policy-item">
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.body }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

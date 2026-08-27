@@ -14,8 +14,8 @@
 
     <!-- FORM -->
     <div class="form-wrapper">
-      @if (!submitted()) {
-        <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      @if (status() !== 'sent') {
+        <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm" novalidate>
           <div class="form-group">
             <label [for]="'name'">{{ tr().contact.form.name }}</label>
             <input
@@ -59,12 +59,20 @@
               [placeholder]="tr().contact.form.message"
             ></textarea>
           </div>
-          <button type="submit" class="btn btn-primary submit-btn" [disabled]="contactForm.invalid">
-            {{ tr().contact.form.send }}
+          @if (status() === 'error') {
+            <p class="form-error" role="alert">{{ errorMessage() }}</p>
+          }
+
+          <button
+            type="submit"
+            class="btn btn-primary submit-btn"
+            [disabled]="contactForm.invalid || status() === 'sending'"
+          >
+            {{ status() === 'sending' ? tr().contact.form.sending : tr().contact.form.send }}
           </button>
         </form>
       } @else {
-        <div class="success-message">
+        <div class="success-message" role="status">
           <div class="success-icon">✓</div>
           <p>{{ tr().contact.form.success }}</p>
         </div>

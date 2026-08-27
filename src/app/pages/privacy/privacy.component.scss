@@ -1,0 +1,59 @@
+@use 'styles/mixins' as *;
+
+.page-hero {
+  position: relative;
+  padding: calc(var(--nav-height) + 4rem) 0 3rem;
+  overflow: hidden;
+
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .subtitle {
+    margin-top: 1rem;
+    color: var(--ink-2);
+    font-size: 1.05rem;
+    max-width: 46ch;
+  }
+}
+
+.updated {
+  font-size: 0.8rem;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  margin-bottom: 3rem;
+}
+
+// Waska kolumna: tekst prawny czyta sie tylko wtedy, gdy linia ma sensowna dlugosc.
+.policy {
+  max-width: 68ch;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.policy-item {
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: var(--ink-2);
+    line-height: 1.75;
+  }
+}

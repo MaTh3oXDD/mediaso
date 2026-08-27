@@ -22,6 +22,8 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "outputMode": "static",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -61,7 +63,7 @@
                 "base": "docs",
                 "browser": ""
               },
-              "baseHref": "/mediaso/"
+              "baseHref": "/"
             },
             "development": {
               "optimization": false,
@@ -87,7 +89,11 @@
           "builder": "@angular/build:unit-test"
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+            "options": {
+              "name": "John Doe",
+              "email": "john.doe@foo.bar"
+            }
         }
       }
     }

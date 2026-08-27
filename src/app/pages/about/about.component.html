@@ -38,24 +38,3 @@
     </div>
   </div>
 </section>
-
-<!-- TEAM -->
-<section class="section">
-  <div class="container">
-    <app-section-header
-      [label]="'team'"
-      [title]="tr().about.team.title"
-    />
-    <div class="team-grid">
-      @for (member of tr().about.team.members; track member.name) {
-        <div class="team-card">
-          <div class="team-avatar">
-            <span>{{ member.name.charAt(0) }}</span>
-          </div>
-          <h3>{{ member.name }}</h3>
-          <p>{{ member.role }}</p>
-        </div>
-      }
-    </div>
-  </div>
-</section>

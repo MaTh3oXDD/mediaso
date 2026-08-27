@@ -237,15 +237,6 @@ export const pl = {
         { icon: '📈', title: 'Efekty', desc: 'Liczy się wynik, nie estetyka raportów.' },
       ],
     },
-    team: {
-      title: 'Nasz zespół',
-      members: [
-        { name: 'Anna Kowalska', role: 'CEO & Web Strategist' },
-        { name: 'Piotr Nowak', role: 'Social Media Manager' },
-        { name: 'Marta Wiśniewska', role: 'Graphic Designer' },
-        { name: 'Tomasz Zając', role: 'SEO Specialist' },
-      ],
-    },
   },
   portfolio: {
     hero: {
@@ -265,12 +256,16 @@ export const pl = {
       company: 'Nazwa placówki / firmy',
       message: 'Wiadomość',
       send: 'Wyślij wiadomość',
+      sending: 'Wysyłanie...',
       success: 'Wiadomość wysłana! Odezwiemy się w ciągu 24 godzin.',
+      errorValidation: 'Sprawdź uzupełnione pola i spróbuj ponownie.',
+      errorRateLimited: 'Wysłałeś już kilka wiadomości. Spróbuj ponownie za godzinę.',
+      errorGeneric: 'Nie udało się wysłać wiadomości. Napisz bezpośrednio na kontakt@mediaso.pl.',
     },
     info: {
       title: 'Dane kontaktowe',
       email: 'kontakt@mediaso.pl',
-      phone: '+48 500 000 000',
+      phone: '+48 517 910 330',
       location: 'Polska - pracujemy zdalnie z całym krajem',
     },
   },
@@ -279,5 +274,84 @@ export const pl = {
     nav: { title: 'Nawigacja' },
     services: { title: 'Usługi', web: 'Strony Internetowe', social: 'Social Media' },
     copyright: '© 2026 mediaso. Wszystkie prawa zastrzeżone.',
+    privacy: 'Polityka prywatności',
+  },
+  privacy: {
+    hero: {
+      title: 'Polityka prywatności',
+      subtitle: 'Co robimy z danymi, które nam zostawiasz',
+    },
+    updated: 'Ostatnia aktualizacja: 24 sierpnia 2026',
+    sections: [
+      {
+        title: 'Kto odpowiada za Twoje dane',
+        body: 'Administratorem danych osobowych przekazanych przez formularz kontaktowy jest Mateusz Jędrzejczak, prowadzący działalność pod marką mediaso. Kontakt w sprawach danych: kontakt@mediaso.pl.',
+      },
+      {
+        title: 'Jakie dane zbieramy',
+        body: 'Formularz kontaktowy zbiera imię i nazwisko, adres e-mail, opcjonalnie nazwę placówki oraz treść wiadomości. Razem ze zgłoszeniem zapisujemy adres IP, datę wysłania i identyfikator przeglądarki - służą wyłącznie do ograniczania spamu. Formularz Diagnostyki Wzrostu działa w Twojej przeglądarce i nie wysyła odpowiedzi na serwer, dopóki sam ich nie prześlesz.',
+      },
+      {
+        title: 'Po co ich używamy',
+        body: 'Wyłącznie po to, żeby odpowiedzieć na Twoje zapytanie i przygotować ofertę. Podstawą prawną jest nasz prawnie uzasadniony interes w prowadzeniu korespondencji handlowej oraz podjęcie działań przed zawarciem umowy na Twoje żądanie. Nie wykorzystujemy tych danych do profilowania ani do wysyłki marketingowej bez osobnej zgody.',
+      },
+      {
+        title: 'Komu je przekazujemy',
+        body: 'Nie sprzedajemy i nie udostępniamy danych podmiotom trzecim w celach marketingowych. Z konieczności technicznej powierzamy je dostawcom, którzy utrzymują naszą infrastrukturę: dostawcy serwera, na którym stoi strona, oraz dostawcy poczty, przez którą przychodzi zgłoszenie z formularza. Każdy z nich przetwarza dane wyłącznie na nasze polecenie.',
+      },
+      {
+        title: 'Jak długo je trzymamy',
+        body: 'Korespondencję przechowujemy do 24 miesięcy od ostatniego kontaktu, a potem usuwamy. Jeśli dojdzie do współpracy, dane związane z umową trzymamy tak długo, jak wymagają tego przepisy o rozliczeniach.',
+      },
+      {
+        title: 'Twoje prawa',
+        body: 'Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także prawo sprzeciwu wobec przetwarzania i prawo do przeniesienia danych. Napisz na kontakt@mediaso.pl - odpowiadamy w ciągu 30 dni. Jeśli uznasz, że przetwarzamy dane niezgodnie z prawem, możesz złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych.',
+      },
+      {
+        title: 'Pliki cookie i statystyki',
+        body: 'Strona nie używa plików cookie do śledzenia ani nie korzysta z zewnętrznych narzędzi analitycznych. Wybór języka zapamiętywany jest wyłącznie na czas wizyty, w pamięci przeglądarki. Czcionki wczytujemy z serwerów Google Fonts, co oznacza, że przy wejściu na stronę Twój adres IP trafia do Google.',
+      },
+      {
+        title: 'Zmiany',
+        body: 'Jeśli zmienimy sposób przetwarzania danych, zaktualizujemy tę stronę i datę na jej górze.',
+      },
+    ],
+  },
+  seo: {
+    home: {
+      title: 'Marketing dla placówek medycznych | mediaso',
+      description:
+        'Prowadzimy marketing klinik, przychodni i gabinetów: strony internetowe, social media i wizytówka Google. Więcej zapytań od pacjentów, silniejsza marka.',
+    },
+    services: {
+      title: 'Usługi marketingowe dla placówek medycznych | mediaso',
+      description:
+        'Strony internetowe zoptymalizowane pod SEO, prowadzenie Facebooka i Instagrama, optymalizacja wizytówki Google i map. Kompleksowa obsługa placówek medycznych.',
+    },
+    about: {
+      title: 'O nas - znamy branżę medyczną od środka | mediaso',
+      description:
+        'Łączymy strategię, kreatywność i analizę danych, żeby marketing realnie wspierał rozwój placówki. Zobacz, jak pracujemy z klinikami, przychodniami i gabinetami.',
+    },
+    portfolio: {
+      title: 'Portfolio realizacji dla placówek medycznych | mediaso',
+      description:
+        'Nasze realizacje w branży medycznej: strony internetowe, kampanie i profile social media klinik oraz gabinetów. Szczegółowe case studies w przygotowaniu.',
+    },
+    contact: {
+      title: 'Kontakt | mediaso - marketing placówek medycznych',
+      description:
+        'Napisz na kontakt@mediaso.pl lub zadzwoń +48 517 910 330. Odpowiadamy w ciągu 24 godzin. Umów bezpłatną konsultację rozwoju Twojej placówki.',
+    },
+    privacy: {
+      title: 'Polityka prywatności | mediaso',
+      description:
+        'Kto odpowiada za dane z formularza kontaktowego mediaso, w jakim celu je przetwarzamy, komu je powierzamy i jak długo je przechowujemy.',
+    },
+    assessment: {
+      title: 'Diagnostyka wzrostu placówki medycznej | mediaso',
+      description:
+        'Bezpłatny test dla właścicieli placówek: 20 pytań o marketing, obecność online i pozyskiwanie pacjentów. Sprawdź, co blokuje rozwój Twojej przychodni.',
+    },
   },
 } as const;

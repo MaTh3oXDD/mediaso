@@ -1,0 +1,67 @@
+# mediaso - konfiguracja Apache dla hostingu PHP
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. HTTPS i kanoniczna domena bez www.
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://mediaso.pl%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^www\.mediaso\.pl$ [NC]
+  RewriteRule ^ https://mediaso.pl%{REQUEST_URI} [L,R=301]
+
+  # 2. Endpointy PHP obsluguje serwer, nie router Angulara.
+  RewriteRule ^api/ - [L]
+
+  # 3. Jeden adres na strone: /kontakt/ przekierowuje na /kontakt (zgodnie z canonical).
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} ^(.+)/$
+  RewriteRule ^ %1 [R=301,L]
+
+  # 4. Istniejacy plik (js, css, obrazek) serwuj wprost.
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # 5. Prerenderowane strony leza jako katalogi z index.html - podaj je bez przekierowania.
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
+</IfModule>
+
+# Bez tego Apache dokladalby 301 na adres z ukosnikiem na koncu.
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
+# Nieistniejacy adres ma zwrocic 404, a nie strone glowna ze statusem 200.
+ErrorDocument 404 /404.html
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Pliki z hashem w nazwie moga lezec w cache na stale.
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType image/gif "access plus 6 months"
+  ExpiresByType font/woff2 "access plus 1 year"
+  # HTML musi byc swiezy, zeby wdrozenie bylo widoczne od razu.
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+AddDefaultCharset UTF-8
+AddType image/svg+xml .svg

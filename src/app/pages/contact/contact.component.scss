@@ -184,3 +184,26 @@
     color: var(--ink-2);
   }
 }
+
+// Honeypot - poza ekranem, niedostepny dla czytnikow i klawiatury.
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-error {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #c0392b;
+  background: rgba(192, 57, 43, 0.08);
+  color: #c0392b;
+  font-size: 0.875rem;
+}
+
+.submit-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

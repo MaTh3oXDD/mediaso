@@ -76,3 +76,23 @@
     color: var(--ink-3);
   }
 }
+
+// Copyright i polityka prywatnosci w jednej linii, na waskim ekranie jedno pod drugim.
+.footer-bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+
+  a {
+    font-size: 0.8rem;
+    color: var(--ink-3);
+    transition: color var(--transition);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--ink-2);
+    }
+  }
+}

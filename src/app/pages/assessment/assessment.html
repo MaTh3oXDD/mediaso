@@ -35,6 +35,34 @@
             </div>
           </div>
         </div>
+
+        <!--
+          Pelny zakres audytu w statycznym HTML. Do tej pory tresc pytan
+          powstawala dopiero po wyborze wersji, wiec ani wyszukiwarki, ani
+          osoba wahajaca sie przed wypelnieniem nie widzialy, co obejmuje.
+        -->
+        <section class="criteria">
+          <h2>Co sprawdzamy</h2>
+          <p class="criteria-intro">
+            Diagnostyka opiera się na {{ criteriaCount() }} kryteriach z
+            {{ criteriaOutline().length }} obszarów pracy placówki. Poniżej pełna lista -
+            rozwiń obszar, żeby zobaczyć pytania.
+          </p>
+
+          @for (group of criteriaOutline(); track group.name) {
+            <details class="criteria-group">
+              <summary>
+                <span class="criteria-name">{{ group.name }}</span>
+                <span class="criteria-count">{{ group.questions.length }}</span>
+              </summary>
+              <ul>
+                @for (question of group.questions; track question) {
+                  <li>{{ question }}</li>
+                }
+              </ul>
+            </details>
+          }
+        </section>
       }
 
       <!-- QUESTIONS SCREEN -->

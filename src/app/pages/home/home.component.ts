@@ -7,6 +7,8 @@ import {
   inject,
   signal,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import gsap from 'gsap';
 import { TranslationService } from '../../core/services/translation.service';
@@ -20,12 +22,14 @@ import { TranslationService } from '../../core/services/translation.service';
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
   private ts = inject(TranslationService);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   protected tr = this.ts.tr;
 
   @ViewChild('heroSection') private heroSectionRef?: ElementRef<HTMLElement>;
   @ViewChild('heroBg') private heroBgRef?: ElementRef<HTMLElement>;
 
-  protected heroReady = signal(false);
+  // Na serwerze (prerender) tresc ma byc od razu widoczna dla botow i trybu bez JS.
+  protected heroReady = signal(!this.isBrowser);
 
   private targetX = 0;
   private targetY = 0;
@@ -43,6 +47,8 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   };
 
   ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
+
     requestAnimationFrame(() => this.heroReady.set(true));
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -62,6 +68,8 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!this.isBrowser) return;
+
     window.removeEventListener('mousemove', this.onMouseMove);
     if (this.rafId !== undefined) {
       cancelAnimationFrame(this.rafId);

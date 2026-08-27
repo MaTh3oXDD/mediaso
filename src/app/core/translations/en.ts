@@ -237,15 +237,6 @@ export const en = {
         { icon: '📈', title: 'Results', desc: "Results matter, not the aesthetics of reports." },
       ],
     },
-    team: {
-      title: 'Our Team',
-      members: [
-        { name: 'Anna Kowalska', role: 'CEO & Web Strategist' },
-        { name: 'Piotr Nowak', role: 'Social Media Manager' },
-        { name: 'Marta Wiśniewska', role: 'Graphic Designer' },
-        { name: 'Tomasz Zając', role: 'SEO Specialist' },
-      ],
-    },
   },
   portfolio: {
     hero: {
@@ -265,12 +256,16 @@ export const en = {
       company: 'Practice / company name',
       message: 'Message',
       send: 'Send message',
+      sending: 'Sending...',
       success: "Message sent! We'll get back to you within 24 hours.",
+      errorValidation: 'Please check the fields and try again.',
+      errorRateLimited: 'You have already sent a few messages. Try again in an hour.',
+      errorGeneric: 'The message could not be sent. Email us directly at kontakt@mediaso.pl.',
     },
     info: {
       title: 'Contact details',
       email: 'kontakt@mediaso.pl',
-      phone: '+48 500 000 000',
+      phone: '+48 517 910 330',
       location: 'Poland - we work remotely across the country',
     },
   },
@@ -279,5 +274,84 @@ export const en = {
     nav: { title: 'Navigation' },
     services: { title: 'Services', web: 'Websites', social: 'Social Media' },
     copyright: '© 2026 mediaso. All rights reserved.',
+    privacy: 'Privacy policy',
+  },
+  privacy: {
+    hero: {
+      title: 'Privacy policy',
+      subtitle: 'What we do with the data you leave us',
+    },
+    updated: 'Last updated: 24 August 2026',
+    sections: [
+      {
+        title: 'Who is responsible for your data',
+        body: 'The controller of personal data submitted through the contact form is Mateusz Jędrzejczak, trading as mediaso. For data matters, write to kontakt@mediaso.pl.',
+      },
+      {
+        title: 'What we collect',
+        body: 'The contact form collects your name, email address, optionally a practice name, and your message. Alongside the enquiry we record the IP address, submission time and browser identifier, used solely to limit spam. The Growth Assessment runs in your browser and sends nothing to the server unless you submit it yourself.',
+      },
+      {
+        title: 'Why we use it',
+        body: 'Only to answer your enquiry and prepare a quote. The legal basis is our legitimate interest in business correspondence and taking steps at your request before entering into a contract. We do not profile this data or use it for marketing without separate consent.',
+      },
+      {
+        title: 'Who we share it with',
+        body: 'We do not sell or share data with third parties for marketing. Out of technical necessity we entrust it to the providers running our infrastructure: the server host and the mail provider that delivers form submissions. Each processes the data solely on our instructions.',
+      },
+      {
+        title: 'How long we keep it',
+        body: 'We keep correspondence for up to 24 months after the last contact, then delete it. If we start working together, contract-related data is kept as long as accounting rules require.',
+      },
+      {
+        title: 'Your rights',
+        body: 'You have the right to access, rectify, erase or restrict processing of your data, to object to processing and to data portability. Write to kontakt@mediaso.pl - we reply within 30 days. If you believe we process data unlawfully, you may lodge a complaint with the Polish data protection authority (UODO).',
+      },
+      {
+        title: 'Cookies and analytics',
+        body: 'This site uses no tracking cookies and no third-party analytics. Your language choice is kept only for the duration of your visit, in browser memory. Fonts are loaded from Google Fonts, which means your IP address reaches Google when you open the page.',
+      },
+      {
+        title: 'Changes',
+        body: 'If we change how we process data, we will update this page and the date at the top.',
+      },
+    ],
+  },
+  seo: {
+    home: {
+      title: 'Digital marketing for medical practices | mediaso',
+      description:
+        'We run marketing for clinics and medical practices: websites, social media and Google Business Profile. More patient enquiries, a stronger brand.',
+    },
+    services: {
+      title: 'Marketing services for medical practices | mediaso',
+      description:
+        'SEO-ready websites, Facebook and Instagram management, Google Business Profile and maps optimisation. Full-service marketing for medical practices.',
+    },
+    about: {
+      title: 'About us - we know healthcare from the inside | mediaso',
+      description:
+        'We combine strategy, creative work and data analysis so marketing actually drives practice growth. See how we work with clinics and medical practices.',
+    },
+    portfolio: {
+      title: 'Portfolio of work for medical practices | mediaso',
+      description:
+        'Our work in healthcare: websites, campaigns and social media profiles for clinics and practices. Detailed case studies coming soon.',
+    },
+    contact: {
+      title: 'Contact | mediaso - marketing for medical practices',
+      description:
+        'Email kontakt@mediaso.pl or call +48 517 910 330. We reply within 24 hours. Book a free consultation about growing your practice.',
+    },
+    privacy: {
+      title: 'Privacy policy | mediaso',
+      description:
+        'Who controls the data from the mediaso contact form, why we process it, who we entrust it to and how long we keep it.',
+    },
+    assessment: {
+      title: 'Practice growth assessment | mediaso',
+      description:
+        'A free test for practice owners: 20 questions on marketing, online presence and patient acquisition. Find out what is holding your clinic back.',
+    },
   },
 } as const;

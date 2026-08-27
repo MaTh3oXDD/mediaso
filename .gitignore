@@ -42,3 +42,7 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Konfiguracja z haslem SMTP - nigdy do repo
+mediaso-config.php
+/etc-mediaso/

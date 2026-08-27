@@ -4,7 +4,7 @@
       <img src="MediasoLogo.svg" alt="MediaSO" class="logo-img" width="127" height="28" />
     </a>
 
-    <ul class="nav-links" [class.open]="menuOpen()">
+    <ul id="nav-links" class="nav-links" [class.open]="menuOpen()">
       <li>
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
            (click)="closeMenu()">{{ tr().nav.home }}</a>
@@ -35,7 +35,13 @@
         <span [class.active]="currentLang() === 'en'">EN</span>
       </button>
 
-      <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <button
+        class="menu-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="nav-links"
+        aria-label="Menu"
+      >
         {{ menuOpen() ? 'Zamknij' : 'Menu' }}
       </button>
     </div>

@@ -87,3 +87,13 @@
   letter-spacing: 0.1em;
   color: var(--ink-3);
 }
+
+// Przy otwartym menu mobilnym plywajacy przycisk kontaktu lezalby na liscie
+// odnosnikow. Regula musi byc globalna - w stylach komponentu Angular dokleja
+// atrybut skopu takze do selektora `body`, ktory go nigdy nie ma, i regula
+// nigdy nie trafia.
+body.menu-open .floating-contact-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
