@@ -4,9 +4,17 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { TranslationService } from '../services/translation.service';
 import { SITE, SeoPageKey, absoluteUrl } from './site.config';
+import { findArticle, findService } from '../../content/content.registry';
+import type { FaqItem } from '../../content/content.types';
 
 const OG_LOCALE: Record<string, string> = { pl: 'pl_PL', en: 'en_GB' };
 const LD_SCRIPT_ID = 'ld-json-page';
+
+/** Tytuł i opis strony - z tłumaczeń albo z danych treści. */
+interface PageMeta {
+  title: string;
+  description: string;
+}
 
 @Injectable({ providedIn: 'root' })
 export class SeoService {
@@ -30,14 +38,19 @@ export class SeoService {
 
   private apply(): void {
     const lang = this.ts.currentLang();
-    const seo = this.ts.tr().seo;
     const key = this.currentPageKey();
-    const page = seo[key];
+    const slug = this.currentSlug();
+    const page = this.pageMeta(key, slug);
     const path = this.currentPath();
     const canonical = absoluteUrl(path);
-    const image = absoluteUrl(SITE.ogImagePath);
+    const articleImage = key === 'articleDetail' ? findArticle(slug)?.image : undefined;
+    const image = absoluteUrl(articleImage?.src ?? SITE.ogImagePath);
 
-    this.doc.documentElement.lang = lang;
+    // Strony usługowe i artykuły istnieją wyłącznie po polsku - deklarujemy to
+    // niezależnie od przełącznika języka, żeby nie kłamać w atrybucie lang.
+    const contentLang = key === 'serviceDetail' || key === 'articleDetail' ? 'pl' : lang;
+
+    this.doc.documentElement.lang = contentLang;
     this.titleService.setTitle(page.title);
 
     this.setName('description', page.description);
@@ -57,9 +70,10 @@ export class SeoService {
     this.setProperty('og:description', page.description);
     this.setProperty('og:url', canonical);
     this.setProperty('og:image', image);
-    this.setProperty('og:image:width', SITE.ogImageWidth);
-    this.setProperty('og:image:height', SITE.ogImageHeight);
-    this.setProperty('og:locale', OG_LOCALE[lang] ?? 'pl_PL');
+    this.setProperty('og:image:width', String(articleImage?.width ?? SITE.ogImageWidth));
+    this.setProperty('og:image:height', String(articleImage?.height ?? SITE.ogImageHeight));
+    this.setProperty('og:image:alt', articleImage?.alt ?? page.title);
+    this.setProperty('og:locale', OG_LOCALE[contentLang] ?? 'pl_PL');
 
     this.setName('twitter:card', 'summary_large_image');
     this.setName('twitter:title', page.title);
@@ -67,23 +81,47 @@ export class SeoService {
     this.setName('twitter:image', image);
 
     this.setCanonical(canonical);
-    this.setStructuredData(key, page.title, page.description, canonical, path);
+    this.setStructuredData(key, slug, page, canonical, path, contentLang);
+  }
+
+  private pageMeta(key: SeoPageKey, slug?: string): PageMeta {
+    if (key === 'serviceDetail') {
+      const service = findService(slug);
+      if (service) {
+        return { title: service.seoTitle, description: service.seoDescription };
+      }
+    }
+
+    if (key === 'articleDetail') {
+      const article = findArticle(slug);
+      if (article) {
+        return { title: article.seoTitle, description: article.seoDescription };
+      }
+    }
+
+    const seo = this.ts.tr().seo;
+    const entry = seo[key as keyof typeof seo];
+    return entry ?? seo.home;
+  }
+
+  private routeData(): Record<string, unknown> {
+    let route = this.router.routerState.snapshot.root;
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+    return route.data;
   }
 
   private currentPageKey(): SeoPageKey {
-    let route = this.router.routerState.snapshot.root;
-    while (route.firstChild) {
-      route = route.firstChild;
-    }
-    return (route.data['seo'] as SeoPageKey) ?? 'home';
+    return (this.routeData()['seo'] as SeoPageKey) ?? 'home';
+  }
+
+  private currentSlug(): string | undefined {
+    return this.routeData()['slug'] as string | undefined;
   }
 
   private currentNoindex(): boolean {
-    let route = this.router.routerState.snapshot.root;
-    while (route.firstChild) {
-      route = route.firstChild;
-    }
-    return route.data['noindex'] === true;
+    return this.routeData()['noindex'] === true;
   }
 
   private currentPath(): string {
@@ -111,33 +149,99 @@ export class SeoService {
 
   private setStructuredData(
     key: SeoPageKey,
-    title: string,
-    description: string,
+    slug: string | undefined,
+    page: PageMeta,
     canonical: string,
-    path: string
+    path: string,
+    lang: string
   ): void {
+    const inLanguage = lang === 'pl' ? 'pl-PL' : 'en-GB';
     const graph: Record<string, unknown>[] = [
       {
         '@type': key === 'contact' ? 'ContactPage' : 'WebPage',
         '@id': `${canonical}#webpage`,
         url: canonical,
-        name: title,
-        description,
+        name: page.title,
+        description: page.description,
         isPartOf: { '@id': `${SITE.origin}/#website` },
-        inLanguage: this.ts.currentLang() === 'pl' ? 'pl-PL' : 'en-GB',
+        inLanguage,
         publisher: { '@id': `${SITE.origin}/#organization` },
       },
     ];
 
-    if (path !== '/') {
+    const crumbs = this.breadcrumbTrail(key, slug, page.title, canonical, path);
+    if (crumbs.length > 1) {
       graph.push({
         '@type': 'BreadcrumbList',
         '@id': `${canonical}#breadcrumb`,
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: SITE.name, item: `${SITE.origin}/` },
-          { '@type': 'ListItem', position: 2, name: title.split('|')[0].trim(), item: canonical },
-        ],
+        itemListElement: crumbs.map((crumb, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: crumb.name,
+          item: crumb.item,
+        })),
       });
+    }
+
+    if (key === 'serviceDetail') {
+      const service = findService(slug);
+      if (service) {
+        graph.push({
+          '@type': 'Service',
+          '@id': `${canonical}#service`,
+          name: service.schemaName,
+          serviceType: service.schemaServiceType,
+          description: service.seoDescription,
+          url: canonical,
+          provider: { '@id': `${SITE.origin}/#organization` },
+          areaServed: { '@type': 'Country', name: 'Polska' },
+          ...(service.priceFrom
+            ? {
+                offers: {
+                  '@type': 'Offer',
+                  priceCurrency: 'PLN',
+                  price: service.priceFrom,
+                  // Cena wyjściowa; pełna wycena zależy od zakresu.
+                  priceSpecification: {
+                    '@type': 'PriceSpecification',
+                    priceCurrency: 'PLN',
+                    minPrice: service.priceFrom,
+                    valueAddedTaxIncluded: false,
+                  },
+                },
+              }
+            : {}),
+        });
+        this.pushFaq(graph, canonical, service.faq);
+      }
+    }
+
+    if (key === 'articleDetail') {
+      const article = findArticle(slug);
+      if (article) {
+        graph.push({
+          '@type': 'Article',
+          '@id': `${canonical}#article`,
+          headline: article.h1,
+          description: article.seoDescription,
+          datePublished: article.datePublished,
+          dateModified: article.dateModified,
+          inLanguage: 'pl-PL',
+          mainEntityOfPage: { '@id': `${canonical}#webpage` },
+          author: { '@id': `${SITE.origin}/#organization` },
+          publisher: { '@id': `${SITE.origin}/#organization` },
+          image: article.image
+            ? {
+                '@type': 'ImageObject',
+                url: absoluteUrl(article.image.src),
+                width: article.image.width,
+                height: article.image.height,
+                caption: article.image.alt,
+              }
+            : absoluteUrl(SITE.ogImagePath),
+        });
+        this.pushFaq(graph, canonical, article.faq);
+      }
     }
 
     const payload = { '@context': 'https://schema.org', '@graph': graph };
@@ -150,5 +254,51 @@ export class SeoService {
       this.doc.head.appendChild(script);
     }
     script.textContent = JSON.stringify(payload);
+  }
+
+  private pushFaq(
+    graph: Record<string, unknown>[],
+    canonical: string,
+    faq: readonly FaqItem[]
+  ): void {
+    if (!faq.length) return;
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
+      mainEntity: faq.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    });
+  }
+
+  /** Okruszki: strona główna, ewentualny hub i strona bieżąca. */
+  private breadcrumbTrail(
+    key: SeoPageKey,
+    slug: string | undefined,
+    title: string,
+    canonical: string,
+    path: string
+  ): { name: string; item: string }[] {
+    const trail: { name: string; item: string }[] = [{ name: SITE.name, item: `${SITE.origin}/` }];
+    if (path === '/') return trail;
+
+    if (key === 'serviceDetail') {
+      trail.push({ name: 'Usługi', item: absoluteUrl('/uslugi') });
+      const service = findService(slug);
+      trail.push({ name: service?.navLabel ?? title, item: canonical });
+      return trail;
+    }
+
+    if (key === 'articleDetail') {
+      trail.push({ name: 'Wiedza', item: absoluteUrl('/wiedza') });
+      const article = findArticle(slug);
+      trail.push({ name: article?.title ?? title, item: canonical });
+      return trail;
+    }
+
+    trail.push({ name: title.split('|')[0].trim(), item: canonical });
+    return trail;
   }
 }

@@ -1,0 +1,1 @@
+var o={origin:"https://mediaso.pl",name:"mediaso",email:"kontakt@mediaso.pl",phone:"+48504103154",phoneDisplay:"+48 504 103 154",logoPath:"/MediasoLogo.svg",logoRasterPath:"/logo-mediaso.png",ogImagePath:"/og-image.png",ogImageWidth:"1200",ogImageHeight:"630",themeColor:"#0b1220",areaServed:"PL",sameAs:[]},a=e=>`${o.origin}${e.startsWith("/")?e:`/${e}`}`;export{o as a,a as b};

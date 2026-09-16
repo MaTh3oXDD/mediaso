@@ -6,8 +6,8 @@ export const SITE = {
   origin: 'https://mediaso.pl',
   name: 'mediaso',
   email: 'kontakt@mediaso.pl',
-  phone: '+48517910330',
-  phoneDisplay: '+48 517 910 330',
+  phone: '+48504103154',
+  phoneDisplay: '+48 504 103 154',
   logoPath: '/MediasoLogo.svg',
   // Google nie akceptuje SVG w Organization.logo - potrzebny raster.
   logoRasterPath: '/logo-mediaso.png',
@@ -25,7 +25,13 @@ export type SeoPageKey =
   | 'about'
   | 'portfolio'
   | 'contact'
-  | 'assessment';
+  | 'assessment'
+  | 'privacy'
+  | 'knowledge'
+  | 'landing'
+  // Tytuł i opis tych dwóch bierzemy z danych treści, nie z tłumaczeń.
+  | 'serviceDetail'
+  | 'articleDetail';
 
 export const absoluteUrl = (path: string): string =>
   `${SITE.origin}${path.startsWith('/') ? path : `/${path}`}`;

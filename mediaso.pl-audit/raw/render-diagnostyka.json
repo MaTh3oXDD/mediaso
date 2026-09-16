@@ -1,0 +1,66 @@
+{
+  "url": "https://mediaso.pl/diagnostyka",
+  "status_code": 200,
+  "content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Diagnostyka wzrostu plac\u00f3wki medycznej | mediaso</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Bezp\u0142atny test dla w\u0142a\u015bcicieli plac\u00f3wek: 20 pyta\u0144 o marketing, obecno\u015b\u0107 online i pozyskiwanie pacjent\u00f3w. Sprawd\u017a, co blokuje rozw\u00f3j Twojej przychodni.\">\n  <meta name=\"robots\" content=\"index, follow, max-image-preview:large...",
+  "raw_content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Diagnostyka wzrostu plac\u00f3wki medycznej | mediaso</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" conte...",
+  "is_spa": false,
+  "extracted_text": "mediaso\nDiagnostyka Wzrostu Plac\u00f3wki\nSprawd\u017a potencja\u0142 rozwojowy swojej plac\u00f3wki medycznej.\nWybierz Wersj\u0119\nZaznacz kt\u00f3r\u0105 wersj\u0119 chcesz wype\u0142ni\u0107\nPodstawowa\n20 najwa\u017cniejszych pyta\u0144\n~10 minut\nZaawansowana\n80+ pyta\u0144 szczeg\u00f3\u0142owych\n~30 minut\nCo sprawdzamy\nDiagnostyka opiera si\u0119 na 84 kryteriach z 10 obszar\u00f3w pracy plac\u00f3wki. Poni\u017cej pe\u0142na lista - rozwi\u0144 obszar, \u017ceby zobaczy\u0107 pytania.\nStrategia5\n- Czy strategia zawiera konkretne cele liczbowe, np. przych\u00f3d, liczba pacjent\u00f3w?\n- Czy w\u0142a\u015bciciel regularnie...",
+  "publication_date": "2026-01-01",
+  "accessibility_tree": null,
+  "headers": {
+    "Server": "nginx/1.28.3 (Ubuntu)",
+    "Date": "Thu, 27 Aug 2026 16:44:28 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Last-Modified": "Thu, 27 Aug 2026 16:31:41 GMT",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Accept-Encoding",
+    "ETag": "W/\"6a90666d-11513\"",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Encoding": "gzip"
+  },
+  "redirect_chain": [],
+  "console_errors": [],
+  "render_diagnostics": [],
+  "render_engine": null,
+  "render_ms": null,
+  "mode_used": "raw",
+  "error": null,
+  "structured_data": {
+    "block_count": 2,
+    "processed_count": 2,
+    "total_bytes": 4254,
+    "truncated": false,
+    "blocks": [
+      {
+        "index": 1,
+        "size_bytes": 3443,
+        "valid": true,
+        "types": [
+          "ContactPoint",
+          "Country",
+          "ImageObject",
+          "Offer",
+          "OfferCatalog",
+          "Organization",
+          "Service",
+          "WebSite"
+        ],
+        "types_truncated": false
+      },
+      {
+        "index": 2,
+        "size_bytes": 811,
+        "valid": true,
+        "types": [
+          "BreadcrumbList",
+          "ListItem",
+          "WebPage"
+        ],
+        "types_truncated": false
+      }
+    ]
+  }
+}

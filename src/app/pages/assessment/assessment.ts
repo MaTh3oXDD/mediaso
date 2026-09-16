@@ -226,17 +226,17 @@ export class Assessment {
       };
     } else if (percentage <= 60) {
       return {
-        name: 'Social - Start',
-        desc: 'Stała, spójna obecność w mediach społecznościowych.',
-        price: '2 200',
-        period: 'zł miesięcznie'
+        name: 'Social media - Pakiet 1',
+        desc: 'Stała, spójna obecność w mediach społecznościowych: 12 postów i karuzel miesięcznie, relacje, moderacja komentarzy.',
+        price: '2 999',
+        period: 'zł pierwszy miesiąc, potem 2 700 zł miesięcznie'
       };
     } else {
       return {
-        name: 'Social - Scale',
-        desc: 'Pełna obsługa z kampaniami i dedykowanym opiekunem.',
-        price: '4 500',
-        period: 'zł miesięcznie'
+        name: 'Social media - Pakiet 3',
+        desc: 'Rolki, TikTok i comiesięczna sesja nagraniowo-zdjęciowa w placówce. Kampanie Meta Ads wyceniamy osobno.',
+        price: '4 499',
+        period: 'zł pierwszy miesiąc, potem 3 900 zł miesięcznie'
       };
     }
   }

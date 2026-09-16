@@ -1,0 +1,10 @@
+# Docelowe przegladarki buildu. Domyslna lista Angulara siega starszych wydan,
+# co zmusza esbuild do downlevelowania skladni i puchnie bundle startowy.
+# Placowki medyczne wchodza z aktualnego Chrome, Safari i Edge - to wystarczy.
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 iOS versions
+last 2 Edge versions
+Firefox ESR
+not dead

@@ -1,0 +1,258 @@
+@use 'styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+.lp-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.lp-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--nav-height);
+}
+
+.lp-logo {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.lp-header-phone {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--accent);
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.lp-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin: 0 0 1.25rem;
+}
+
+.lp-hero {
+  padding: clamp(3.5rem, 10vh, 6rem) 0 clamp(3rem, 8vh, 5rem);
+  border-bottom: 1px solid var(--border);
+
+  h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.25rem, 7vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 1.5rem;
+    max-width: 18ch;
+  }
+}
+
+.lp-lead {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--ink-2);
+  max-width: 60ch;
+  margin: 0 0 2rem;
+}
+
+.lp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+.lp-call {
+  color: var(--ink-2);
+  text-decoration: none;
+
+  strong {
+    color: var(--ink);
+  }
+
+  &:hover strong {
+    color: var(--accent);
+  }
+}
+
+.lp-benefits-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.lp-benefit {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0.75rem 0;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+}
+
+.lp-index {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.lp-proof {
+  background: var(--bg-alt);
+}
+
+.lp-proof-text {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+  max-width: 64ch;
+
+  strong {
+    color: var(--ink);
+  }
+}
+
+.lp-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 1.5rem;
+}
+
+.lp-price-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  border-top: 1px solid var(--border);
+
+  li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border);
+
+    @include tablet {
+      grid-template-columns: 1.2fr 0.8fr 1.5fr;
+      align-items: baseline;
+    }
+  }
+}
+
+.lp-price-name {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.lp-price-amount {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: right;
+
+  @include tablet {
+    text-align: left;
+  }
+}
+
+.lp-price-period {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  color: var(--ink-3);
+
+  @include tablet {
+    grid-column: auto;
+  }
+}
+
+.lp-note {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin: 0;
+}
+
+.lp-contact {
+  background: var(--bg-alt);
+  scroll-margin-top: 1rem;
+}
+
+.lp-contact-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+
+  @include desktop {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: start;
+  }
+}
+
+.lp-big-phone {
+  display: inline-block;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.lp-form-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.lp-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+    color: var(--ink-3);
+  }
+
+  a {
+    color: var(--ink-3);
+
+    &:hover {
+      color: var(--ink);
+    }
+  }
+}

@@ -4,6 +4,7 @@ export const en = {
     services: 'Services',
     about: 'About',
     portfolio: 'Portfolio',
+    knowledge: 'Knowledge',
     contact: 'Contact',
   },
   floatingContact: 'Contact us',
@@ -17,19 +18,22 @@ export const en = {
       subtitle: 'We build marketing strategies for clinics and medical practices. We build brand awareness, attract new patients, and support the growth of medical facilities.',
       subtitleStrong: 'We help medical practices grow faster -',
       subtitleSoft: ' building brand awareness, attracting new patients, and supporting your growth.',
-      trust: 'PATIENT DATA FULLY SECURE.',
-      cta1: 'Schedule a free consultation',
+      trust: 'MARKETING COMPLIANT WITH GDPR AND MEDICAL ADVERTISING RULES.',
+      cta1: 'Book a free consultation (30 min)',
+      ctaPortfolio: 'See our work',
+      callLabel: 'or call',
       cta2: "Let's talk about growing your practice - get a tailored strategy",
     },
     why: {
       title: 'Why us?',
-      intro: 'We know how to build patient trust, communicate effectively, and create campaigns that fit the character of the healthcare industry. We combine strategy, creativity, and data analysis so marketing genuinely supports the growth of your practice.',
+      intro: 'We have worked on both sides of a medical practice: building websites and social profiles for clinics, and running schedules, reception desks and procedures. So we start by asking what happens to a patient phone call, not how many people a post reached.',
       items: [
-        { title: 'We know how to build patient trust' },
-        { title: 'We communicate effectively' },
-        { title: 'We create campaigns that fit the healthcare industry' },
-        { title: 'We combine strategy, creativity, and data analysis' },
-        { title: 'We make sure marketing genuinely supports practice growth' },
+        { title: 'We work only with medical practices: clinics, outpatient centres and private offices' },
+        { title: 'Our content follows medical advertising rules and GDPR' },
+        { title: 'Medical content goes live only after a specialist at your practice approves it' },
+        { title: 'No bought reviews and no promises of the top Google spot within a month' },
+        { title: 'Your domain, hosting and website code stay with you' },
+        { title: 'We work remotely with practices across Poland' },
       ],
     },
     benefits: {
@@ -92,6 +96,18 @@ export const en = {
       ],
     },
     manifesto: 'Before a patient calls a clinic, they check reviews, the website, social media, and specialists. Professional marketing makes sure they choose your practice.',
+    pricingPreview: {
+      label: 'Pricing',
+      title: 'What does it cost?',
+      intro: 'Starting ranges for the three scopes we are asked for most often. Full packages, with page limits and revision rounds, live on the services page.',
+      items: [
+        { name: 'Website', price: 'from €800', period: 'one-time' },
+        { name: 'Social media management', price: 'from €500', period: 'per month' },
+        { name: 'Hosting', price: 'from €20', period: 'per month' },
+      ],
+      note: 'Prices exclude VAT. Booking systems and shops are quoted separately.',
+      link: 'See the full pricing',
+    },
     cta: {
       title: 'Ready for a change?',
       subtitle: 'Schedule a free consultation and find out how we can help your practice.',
@@ -143,44 +159,6 @@ export const en = {
         'Visibility reporting',
       ],
     },
-    facilityDevelopment: {
-      title: 'Medical Practice Development',
-      subtitle: 'We help clinic owners grow their business. We analyze how your practice operates, identify areas for improvement, and implement solutions that increase revenue and efficiency.',
-      features: [
-        'Organizational analysis',
-        'Clinic profitability analysis',
-        'Doctor schedule analysis',
-        'Cabinet utilization analysis',
-        'Patient journey analysis',
-      ],
-    },
-    registrationOptimization: {
-      title: 'Medical Registration Optimization',
-      subtitle: 'Registration is the first contact a patient has with your practice. We help make it an effective sales and customer service center.',
-      features: [
-        'Call audit',
-        'Service standards',
-        'Procedures',
-        'Training',
-        'KPIs',
-        'Quality monitoring',
-        'Call scripts',
-        'Work organization',
-        'Workload analysis',
-        'Queue system implementation',
-      ],
-    },
-    medicalHelpline: {
-      title: 'Medical Helpline',
-      subtitle: 'We help create a professional helpline from scratch. We offer phone answering, appointment scheduling, reminders, patient qualification, and commercial service sales support.',
-      features: [
-        'Phone answering',
-        'Appointment scheduling',
-        'Appointment reminders',
-        'Patient qualification',
-        'Commercial service sales support',
-      ],
-    },
     process: {
       title: 'How we work',
       steps: [
@@ -228,6 +206,23 @@ export const en = {
       title: 'Our Mission',
       text: "MediaSO is a digital agency built for medical practices. We understand that doctors and clinic managers focus every day on what matters most – the health and care of their patients. That is why they entrust the whole of marketing to us. We plan comprehensively, attract new patients effectively, and grow the practice's reputation, basing our work on hard data and measurable results.",
     },
+    story: {
+      title: 'Where we come from',
+      paragraphs: [
+        'mediaso grew out of work on both sides of a medical practice: building websites and social profiles for clinics, and managing the practice itself - schedules, front desk, procedures and opening new departments. That combination shapes how we run marketing.',
+        'An agency that only knows advertising delivers phone calls and stops there. We start by asking what happens to those calls: who answers them, during which hours, how many are missed, and whether there are free slots in the schedule at all.',
+        'So our scope covers the website, the Google Business Profile and social media, as well as what happens on the other end of the line. We work with practices remotely, across Poland, and report numbers rather than reach.',
+      ],
+    },
+    promise: {
+      title: 'What you will not get from us',
+      items: [
+        'Promises of a first place in Google within a month. Medical SEO takes quarters, not weeks.',
+        'Bought reviews or cherry-picked patients asked for ratings. That breaks Google policy and backfires later.',
+        'Medical content published without approval from a clinician at the practice.',
+        'Contracts that lock away the domain, hosting or source code. Everything we build stays with the client.',
+      ],
+    },
     values: {
       title: 'Our Values',
       items: [
@@ -243,7 +238,9 @@ export const en = {
       title: 'Portfolio',
       subtitle: 'Our work in the medical industry',
     },
-    comingSoon: 'We are working on case studies from our projects. Soon we will share detailed analyses of our client projects.',
+    ctaTitle: 'Want to see how we work?',
+    ctaText: 'Book a free consultation. We will walk you through the scope of a rollout and the numbers we track along the way.',
+    comingSoon: 'We do not publish case studies yet. We describe work for medical practices only after several months of results and written consent from the client to use their name.',
   },
   contact: {
     hero: {
@@ -255,6 +252,15 @@ export const en = {
       email: 'Email address',
       company: 'Practice / company name',
       message: 'Message',
+      service: 'What are you interested in?',
+      servicePlaceholder: 'Choose (optional)',
+      serviceOptions: ['Website', 'Social media', 'SEO', 'Google Business Profile', 'Not sure yet'],
+      consentBefore: 'I agree to the processing of my data to answer this message. Details in the',
+      consentLink: 'privacy policy',
+      errorName: 'Enter your full name.',
+      errorEmail: 'Enter a valid email address.',
+      errorMessage: 'Write a few words about your practice.',
+      errorConsent: 'Tick the consent box so we can reply.',
       send: 'Send message',
       sending: 'Sending...',
       success: "Message sent! We'll get back to you within 24 hours.",
@@ -265,7 +271,7 @@ export const en = {
     info: {
       title: 'Contact details',
       email: 'kontakt@mediaso.pl',
-      phone: '+48 517 910 330',
+      phone: '+48 504 103 154',
       location: 'Poland - we work remotely across the country',
     },
   },
@@ -309,7 +315,7 @@ export const en = {
       },
       {
         title: 'Cookies and analytics',
-        body: 'This site uses no tracking cookies and no third-party analytics. Your language choice is kept only for the duration of your visit, in browser memory. Fonts are loaded from Google Fonts, which means your IP address reaches Google when you open the page.',
+        body: 'This site uses no tracking cookies and no third-party analytics. Your language choice is kept only for the duration of your visit, in browser memory. Fonts are served from our own server, so opening the page does not connect you to any third-party provider.',
       },
       {
         title: 'Changes',
@@ -341,12 +347,17 @@ export const en = {
     contact: {
       title: 'Contact | mediaso - marketing for medical practices',
       description:
-        'Email kontakt@mediaso.pl or call +48 517 910 330. We reply within 24 hours. Book a free consultation about growing your practice.',
+        'Email kontakt@mediaso.pl or call +48 504 103 154. We reply within 24 hours. Book a free consultation about growing your practice.',
     },
     privacy: {
       title: 'Privacy policy | mediaso',
       description:
         'Who controls the data from the mediaso contact form, why we process it, who we entrust it to and how long we keep it.',
+    },
+    landing: {
+      title: 'Marketing for medical practices | mediaso',
+      description:
+        'Website, social media and Google Business Profile for clinics and private practices. Public pricing and a free 30-minute consultation.',
     },
     assessment: {
       title: 'Practice growth assessment | mediaso',

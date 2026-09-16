@@ -1,0 +1,64 @@
+{
+  "url": "https://mediaso.pl/",
+  "status_code": 200,
+  "content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Marketing dla plac\u00f3wek medycznych | mediaso</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Prowadzimy marketing klinik, przychodni i gabinet\u00f3w: strony internetowe, social media i wizyt\u00f3wka Google. Wi\u0119cej zapyta\u0144 od pacjent\u00f3w, silniejsza marka.\">\n  <meta name=\"robots\" content=\"index, follow, max-image-preview:large, m...",
+  "raw_content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Marketing dla plac\u00f3wek medycznych | mediaso</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" content=\"w...",
+  "is_spa": false,
+  "extracted_text": "Rozwijamy kliniki dzi\u0119ki skutecznemu marketingowi\nWi\u0119cej pacjent\u00f3w.Silniejsza marka. Lepsze wyniki.\nPomagamy plac\u00f3wkom medycznym rosn\u0105\u0107 szybciej - budujemy rozpoznawalno\u015b\u0107 marki, pozyskujemy nowych pacjent\u00f3w i wspieramy rozw\u00f3j.\nUm\u00f3w bezp\u0142atn\u0105 konsultacj\u0119\nR\u00f3\u017cnica MediaSO\nDlaczego my?\nWiemy, jak budowa\u0107 zaufanie pacjent\u00f3w, prowadzi\u0107 skuteczn\u0105 komunikacj\u0119 i tworzy\u0107 kampanie zgodne z charakterem bran\u017cy medycznej. \u0141\u0105czymy strategi\u0119, kreatywno\u015b\u0107 i analiz\u0119 danych, aby marketing realnie wspiera\u0142 rozw\u00f3j ...",
+  "publication_date": "2026-01-01",
+  "accessibility_tree": null,
+  "headers": {
+    "Server": "nginx/1.28.3 (Ubuntu)",
+    "Date": "Thu, 27 Aug 2026 16:38:54 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Last-Modified": "Thu, 27 Aug 2026 16:31:41 GMT",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Accept-Encoding",
+    "ETag": "W/\"6a90666d-11f65\"",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Encoding": "gzip"
+  },
+  "redirect_chain": [],
+  "console_errors": [],
+  "render_diagnostics": [],
+  "render_engine": null,
+  "render_ms": null,
+  "mode_used": "raw",
+  "error": null,
+  "structured_data": {
+    "block_count": 2,
+    "processed_count": 2,
+    "total_bytes": 3924,
+    "truncated": false,
+    "blocks": [
+      {
+        "index": 1,
+        "size_bytes": 3443,
+        "valid": true,
+        "types": [
+          "ContactPoint",
+          "Country",
+          "ImageObject",
+          "Offer",
+          "OfferCatalog",
+          "Organization",
+          "Service",
+          "WebSite"
+        ],
+        "types_truncated": false
+      },
+      {
+        "index": 2,
+        "size_bytes": 481,
+        "valid": true,
+        "types": [
+          "WebPage"
+        ],
+        "types_truncated": false
+      }
+    ]
+  }
+}

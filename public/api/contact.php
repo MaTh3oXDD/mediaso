@@ -189,6 +189,10 @@ $name = $field('name');
 $email = $field('email');
 $company = $field('company');
 $message = $field('message');
+$service = $field('service');
+$source = $field('source');
+// Checkbox przychodzi jako JSON-owe true; z formularza bez JS jako "on".
+$consent = ($data['consent'] ?? false) === true || ($data['consent'] ?? '') === 'on';
 
 $errors = [];
 
@@ -203,6 +207,15 @@ if (len($company) > 150) {
 }
 if (len($message) < 2 || len($message) > 5000) {
     $errors[] = 'message';
+}
+if (len($service) > 100) {
+    $errors[] = 'service';
+}
+if (len($source) > 50) {
+    $errors[] = 'source';
+}
+if (!$consent) {
+    $errors[] = 'consent';
 }
 
 if ($errors !== []) {
@@ -232,6 +245,9 @@ $body = implode("\r\n", [
     'Imie i nazwisko: ' . $name,
     'E-mail: ' . $email,
     'Placowka / firma: ' . ($company !== '' ? $company : '-'),
+    'Zainteresowanie: ' . ($service !== '' ? $service : '-'),
+    'Zrodlo: ' . ($source !== '' ? $source : '-'),
+    'Zgoda na przetwarzanie danych: tak',
     '',
     'Wiadomosc:',
     $message,

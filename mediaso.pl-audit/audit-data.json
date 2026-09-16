@@ -1,0 +1,349 @@
+{
+  "summary": {
+    "health_score": 54,
+    "business_type": "B2B marketing agency for medical facilities (service-area business, Poland)",
+    "audit_date": "2026-08-27",
+    "pages_crawled": 7,
+    "top_findings": [
+      "No content architecture: six services bundled onto one 475-word page at ~79 words each, while competitors run a dedicated 500-1500 word URL per service",
+      "No informational layer: blog posts win ~67% of results for the head term 'marketing medyczny' and the site has no blog at all",
+      "No proof: /portfolio is a 76-word placeholder, no client names, numbers or testimonials anywhere; trust scored 5.6/25 averaged across all buyer personas",
+      "No backlinks: Common Crawl (Jan-Mar 2026 release) has no record of the domain - no PageRank, no centrality, zero linking hosts",
+      "www.mediaso.pl is dead: dangling IPv6-only AAAA record, no A record, and the www redirect rule lives in .htaccess while nginx serves the site"
+    ],
+    "quick_wins": [
+      "Add an A record for www plus an nginx 301 to the apex",
+      "Add the Strict-Transport-Security header",
+      "Enable HTTP/2 in the nginx listen directive - all first-party assets currently ship over HTTP/1.1",
+      "Fix tel: links containing spaces, which break click-to-call per RFC 3966",
+      "Restore Polish diacritics in the hardcoded JSON-LD in src/index.html"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 74,
+      "what_works": [
+        "robots.txt and sitemap.xml both valid; sitemap correctly excludes the two noindex pages",
+        "Self-referencing canonicals on every page",
+        "HTTP-to-HTTPS and trailing-slash redirects are correct 301s",
+        "Prerendered static HTML, not client-rendered (is_spa: false)",
+        "Hashed JS chunks carry immutable one-year cache headers",
+        "No soft-404s; correct mobile viewport"
+      ],
+      "findings": [
+        {
+          "title": "www subdomain does not resolve",
+          "severity": "Critical",
+          "description": "DNS holds a dangling IPv6-only AAAA record with nothing listening and no A record, so www.mediaso.pl times out instead of redirecting. The .htaccess www-to-apex rule never executes because nginx serves the site, not Apache.",
+          "recommendation": "Point an A record for www at 54.38.204.179 and add an nginx server block returning 301 to the apex."
+        },
+        {
+          "title": "No Strict-Transport-Security header",
+          "severity": "High",
+          "description": "HTTP-to-HTTPS 301 works, but without HSTS every first visit is a plaintext round-trip.",
+          "recommendation": "Add Strict-Transport-Security with max-age=31536000 and includeSubDomains once www is fixed."
+        },
+        {
+          "title": "No Content-Security-Policy header",
+          "severity": "High",
+          "description": "Absent from all responses checked. X-Content-Type-Options, X-Frame-Options and Referrer-Policy are already present.",
+          "recommendation": "Add a CSP starting in report-only mode, allowing fonts.googleapis.com and fonts.gstatic.com."
+        },
+        {
+          "title": "74 inline @font-face declarations per page",
+          "severity": "Medium",
+          "description": "The Beasties prerender step inlines full Cyrillic, Greek and Vietnamese unicode-range coverage a Polish-only site never uses, duplicated in every page head. Raw HTML runs about 73 KB, most of it this CSS.",
+          "recommendation": "Request only latin and latin-ext subsets from Google Fonts before Beasties inlines the result."
+        },
+        {
+          "title": "No Permissions-Policy header and no IndexNow",
+          "severity": "Low",
+          "description": "/indexnow-key.txt returns 404 and no Permissions-Policy is sent.",
+          "recommendation": "Low priority; add once higher-severity items are closed."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 34,
+      "what_works": [
+        "Real phone and email published, privacy policy linked, HTTPS enforced",
+        "Transparent pricing on the services page",
+        "The /diagnostyka tool encodes genuine operational knowledge: 84 criteria across 10 areas of running a practice"
+      ],
+      "findings": [
+        {
+          "title": "/o-nas carries no E-E-A-T signal",
+          "severity": "Critical",
+          "description": "164 words, no named people, no photos, no credentials, no founding year, no headcount, no partner badges - despite the company selling Google Business Profile and Meta Ads services. No Person entity exists in structured data either.",
+          "recommendation": "Rewrite with named principals, healthcare-sector background, certifications, and NIP/REGON. The homepage claims the team has experience managing medical facilities - if true, that is the strongest differentiator on the site and it is currently an unverifiable sentence."
+        },
+        {
+          "title": "/portfolio is an empty placeholder",
+          "severity": "High",
+          "description": "76 words stating case studies are in preparation. Correctly noindexed, so it does not harm the index - it harms conversion. Trust averaged 5.6/25 across all five buyer personas, the lowest of any measured dimension, and this page is the root cause.",
+          "recommendation": "Publish 2-3 named case studies with a before state, the work done, and a resulting number. Then remove noindex."
+        },
+        {
+          "title": "/uslugi bundles six services at ~79 words each",
+          "severity": "High",
+          "description": "475 words covering strony internetowe, social media, optymalizacja Google, rozwoj placowki, optymalizacja rejestracji and infolinia medyczna. Competing dedicated pages run 500-1500 words per single service.",
+          "recommendation": "Split into six dedicated URLs, each 800+ words with a process section, industry-specific pain points and its own FAQ."
+        },
+        {
+          "title": "No informational content layer",
+          "severity": "Critical",
+          "description": "No blog, no knowledge base, no glossary. No coverage of RODO, medical advertising ethics rules, ROI benchmarks, or specialty verticals (stomatologia, medycyna estetyczna, fizjoterapia).",
+          "recommendation": "Launch /wiedza or /blog. The 84 diagnostic questions grouped into 10 operational areas are ready-made source material for explanatory articles."
+        },
+        {
+          "title": "Unsubstantiated absolute claim about patient data",
+          "severity": "Medium",
+          "description": "The homepage states 'DANE PACJENTOW W PELNI BEZPIECZNE' with no supporting detail - no RODO process, no data processing agreement, no hosting location, no certification. Google's quality guidelines treat unsupported absolute claims as a low-quality signal, and this one concerns patient data.",
+          "recommendation": "Either substantiate with specifics or soften the wording."
+        },
+        {
+          "title": "Homepage below its own word floor",
+          "severity": "Medium",
+          "description": "415 words, mostly restating value propositions already covered on /uslugi rather than adding anything.",
+          "recommendation": "Add a methodology section and at least one case study reference."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 55,
+      "what_works": [
+        "Unique, well-sized title tags carrying both keyword and brand on every page",
+        "Unique meta descriptions written as ad copy, not truncated boilerplate",
+        "Exactly one H1 per page, verified live"
+      ],
+      "findings": [
+        {
+          "title": "Internal linking is navigation-only",
+          "severity": "High",
+          "description": "Every page carries the identical 12 links from the navbar and footer. No contextual links from body copy anywhere on the site, so nothing passes authority into any page in particular.",
+          "recommendation": "Add contextual links once service pages and articles exist; each article should link to its related service page and offer /diagnostyka as a secondary CTA."
+        },
+        {
+          "title": "/portfolio linked from footer but removed from main nav",
+          "severity": "Low",
+          "description": "The page was commented out of the navbar but remains live in the footer navigation.",
+          "recommendation": "Decide one way or the other; if it is meant to stay hidden until it has content, pull the footer link too."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 65,
+      "what_works": [
+        "Correct graph pattern: stable @id on Organization, services reference it via provider rather than duplicating data",
+        "BreadcrumbList on every subpage; correctly absent from the homepage",
+        "ContactPage used instead of generic WebPage on /kontakt",
+        "hasOfferCatalog carries all six services with name, description, serviceType, url, provider and areaServed",
+        "areaServed Country/Polska applied consistently at organization, contact point and service level",
+        "All blocks parse without errors"
+      ],
+      "findings": [
+        {
+          "title": "JSON-LD text is stripped of Polish diacritics",
+          "severity": "Medium",
+          "description": "Descriptions read 'placowek', 'Uslugi mediaso', 'Zarzadzanie mediami spolecznosciowymi'. The visible HTML has correct diacritics - the mismatch is confined to structured data, which Google reads directly. Source is the hardcoded JSON-LD in src/index.html.",
+          "recommendation": "Restore diacritics in src/index.html."
+        },
+        {
+          "title": "No sameAs array",
+          "severity": "High",
+          "description": "Not a single link to an external profile - no LinkedIn, Facebook, Instagram or Google Business Profile - in a company that sells social media management. sameAs is the primary way Google links a site to its Knowledge Graph entity.",
+          "recommendation": "Create the profiles, then add sameAs to Organization."
+        },
+        {
+          "title": "No FAQ section and no FAQPage markup",
+          "severity": "Medium",
+          "description": "No question-and-answer content anywhere. Caveat: Google has restricted FAQ rich results to authoritative government and health sites since August 2023 and may have withdrawn the format further - this was not verified against current documentation, so do not expect rich results from the markup. The value is in the visible prose, which closes the 'no citable passages' gap from the GEO audit. The 84 items on /diagnostyka are yes/no diagnostic criteria with no answer text and do not qualify as FAQ content in their current form.",
+          "recommendation": "Write a genuine FAQ section in full sentences on /uslugi and each future service page. Check current Google documentation before adding FAQPage markup on the assumption of a rich result."
+        },
+        {
+          "title": "No Person entity",
+          "severity": "High",
+          "description": "Zero people in structured data, matching zero names in the content.",
+          "recommendation": "Add Person entities linked to Organization via employee or founder once /o-nas is rewritten."
+        },
+        {
+          "title": "All six Service entities point at one URL",
+          "severity": "High",
+          "description": "Each Service has its own fragment @id but url is https://mediaso.pl/uslugi for all of them.",
+          "recommendation": "When /uslugi is split, give each Service its own url and @id on the destination page, otherwise the markup points at the hub instead of the page meant to rank."
+        },
+        {
+          "title": "No business registration identifiers",
+          "severity": "Medium",
+          "description": "No NIP or REGON in content or schema. Polish B2B buyers check this before signing.",
+          "recommendation": "Add vatID and taxID to Organization and display them in the footer."
+        },
+        {
+          "title": "No AggregateRating or Review",
+          "severity": "Medium",
+          "description": "No reviews in schema because there are none on the site, in a company selling patient review management.",
+          "recommendation": "Implement only after collecting genuine reviews; markup without visible reviews risks a manual action."
+        }
+      ]
+    },
+    {
+      "name": "Performance (Core Web Vitals)",
+      "score": 55,
+      "what_works": [
+        "CLS is 0 on both tested pages",
+        "gzip enabled with correct Vary header",
+        "Hashed JS chunks carry public, immutable, max-age=31536000",
+        "hero-bg.png (527 KB) and hero-ekg.gif confirmed not shipping - absent from network traces and from the source tree"
+      ],
+      "findings": [
+        {
+          "title": "LCP fails on both tested pages",
+          "severity": "High",
+          "description": "Homepage 3.8s and /uslugi 2.8s against a 2.5s threshold. Not an image problem - 78-84% of LCP time is render delay from main-thread JS at bootstrap; polyfills alone account for roughly 1.8s of scripting and 2116 tasks run before first paint.",
+          "recommendation": "Reduce bootstrap main-thread work; bundle-analyze chunk-XUXLWVSP.js, the largest shared chunk at 69 KB transfer."
+        },
+        {
+          "title": "HTTP/2 not enabled on nginx",
+          "severity": "High",
+          "description": "Verified via curl and Lighthouse: every first-party request on both pages is served over HTTP/1.1 by nginx 1.28.3, while only the Google Fonts CDN uses h2. This forces first-party assets through HTTP/1.1's six-connection cap and compounds the LCP render delay.",
+          "recommendation": "Add http2 to the nginx listen directive."
+        },
+        {
+          "title": "Font payload before paint",
+          "severity": "Medium",
+          "description": "The homepage downloads four Inter woff2 files totalling 177 KB transfer before paint. Cormorant Garamond was not observed loading on either tested page.",
+          "recommendation": "Trim to the weights actually used, self-host, and check whether Cormorant Garamond is dead weight in the shared head."
+        },
+        {
+          "title": "No Brotli compression",
+          "severity": "Low",
+          "description": "gzip is correctly configured; Brotli would improve on it.",
+          "recommendation": "Enable Brotli alongside gzip in nginx."
+        },
+        {
+          "title": "No field data available",
+          "severity": "Info",
+          "description": "No CrUX, Search Console or GA4 credentials were configured, so every performance number here is lab data. Real user measurements are unknown.",
+          "recommendation": "Connect Search Console and Analytics before treating any of these numbers as the user experience."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 41,
+      "what_works": [
+        "All AI crawlers permitted: GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot and Google-Extended are covered by the wildcard Allow",
+        "Pages are prerendered, so crawlers see full content without executing JS",
+        "Homepage already uses question-style H2 headings"
+      ],
+      "findings": [
+        {
+          "title": "No citable passages",
+          "severity": "High",
+          "description": "No page carries a self-contained 134-167 word answer paragraph a model could quote. Content is fragmented into checkmark bullets and interface labels.",
+          "recommendation": "Add substantive answer paragraphs to /uslugi and /o-nas, and open each future article with one."
+        },
+        {
+          "title": "No external brand footprint",
+          "severity": "Critical",
+          "description": "No LinkedIn, YouTube or Facebook links anywhere on the site, no case studies, no client names, no bylines, no third-party listings. This is why a query like 'agencja marketingowa dla przychodni' in ChatGPT or Perplexity would not surface mediaso.",
+          "recommendation": "Establish external profiles and earn listings and mentions; this is the same work as the backlink gap."
+        },
+        {
+          "title": "No llms.txt",
+          "severity": "Low",
+          "description": "https://mediaso.pl/llms.txt returns 404. Google ignores it, but some AI crawlers use it.",
+          "recommendation": "Cheap to add; low priority."
+        },
+        {
+          "title": "No video or downloadable assets",
+          "severity": "Medium",
+          "description": "Video correlates strongly with AI citation and the site has none.",
+          "recommendation": "Consider short explainer video on service pages once the content architecture exists."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 60,
+      "what_works": [
+        "Both images on the site carry alt text and explicit dimensions, so there is no CLS risk",
+        "Favicon and og-image replaced 2026-08-27 with a logo crop (white M on a rounded black square)"
+      ],
+      "findings": [
+        {
+          "title": "Only two images exist site-wide",
+          "severity": "Medium",
+          "description": "The logo in the header and the footer, and nothing else. No team photos, no work screenshots, no process diagrams, no charts. For a buyer evaluating an agency this is the absence of every visual proof of work, and the site has no presence in image search.",
+          "recommendation": "Add team photos to /o-nas, before/after screenshots to case studies, and process visuals to service pages."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Add A record for www plus nginx 301 to apex",
+          "Connect Google Search Console and Analytics",
+          "Add Strict-Transport-Security header",
+          "Add Content-Security-Policy header",
+          "Enable HTTP/2 in nginx listen directive",
+          "Fix tel: links containing spaces",
+          "Restore Polish diacritics in the JSON-LD in src/index.html"
+        ]
+      },
+      {
+        "name": "Phase 2: Content Architecture",
+        "timeframe": "Weeks 2-6",
+        "items": [
+          "Rewrite /o-nas with named people, credentials and NIP/REGON",
+          "Publish 2-3 real case studies on /portfolio, then remove noindex",
+          "Split /uslugi into six dedicated service pages, starting with pozycjonowanie klinik and marketing stomatologiczny",
+          "Launch /wiedza or /blog with the first three articles targeting definitional queries",
+          "Add visible FAQ sections plus FAQPage markup",
+          "Substantiate or soften the patient-data security claim"
+        ]
+      },
+      {
+        "name": "Phase 3: Authority and Visibility",
+        "timeframe": "Months 2-3",
+        "items": [
+          "Build a backlink profile: industry directories, publications for practice owners, guest articles",
+          "Create and link a Google Business Profile configured as a service-area business",
+          "Add sameAs to Organization schema once social profiles exist",
+          "Surface /diagnostyka as a secondary homepage CTA and close every article with it",
+          "Add Person entities to structured data"
+        ]
+      },
+      {
+        "name": "Phase 4: Performance and Maintenance",
+        "timeframe": "Ongoing",
+        "items": [
+          "Reduce bootstrap main-thread JS work to fix LCP",
+          "Trim Google Fonts to latin and latin-ext subsets; drop unused families",
+          "Build an automated sitemap generator before adding service pages and blog routes",
+          "Add Brotli compression",
+          "Monitor Core Web Vitals with real field data once Search Console is connected"
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "No Google API credentials: no Search Console, CrUX or GA4 data, so real positions, impressions, traffic and field Core Web Vitals are unknown and all performance figures are lab-only",
+    "No Moz or Bing Webmaster keys: the backlink profile rests on Common Crawl alone, which has no record of the domain",
+    "No DataForSEO: SERP positions were estimated from web search rather than a rank-tracking API, so page-type dominance percentages are directional",
+    "Polish business directories could not be verified programmatically - Google hit a consent wall, GoWork returned 403, Aleo failed to connect",
+    "Mobile screenshot skipped at the user's request"
+  ],
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

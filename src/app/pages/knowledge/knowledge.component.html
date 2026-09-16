@@ -1,0 +1,45 @@
+<div class="content-page">
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
+        <a routerLink="/">Strona główna</a>
+        <span aria-hidden="true">/</span>
+        <span class="current">Wiedza</span>
+      </nav>
+      <h1>Baza wiedzy dla placówek medycznych</h1>
+      <p class="lead">
+        Piszemy o rzeczach, które właściciele placówek rozstrzygają w praktyce: co wolno pokazać
+        w materiałach marketingowych, ile kosztuje strona internetowa dla przychodni, jak zbierać
+        opinie pacjentów bez łamania zasad Google i RODO oraz w jakiej kolejności prowadzić
+        pozycjonowanie kliniki. Teksty powstają na podstawie naszej pracy z placówkami i z
+        obowiązujących przepisów - bez obietnic wyników leczenia i bez porad medycznych.
+      </p>
+    </div>
+  </section>
+
+  <section class="section content-section">
+    <div class="container">
+      <h2>Artykuły</h2>
+      <div class="card-grid">
+        @for (article of articles; track article.slug) {
+          <a class="entry-card" [routerLink]="articlePath(article.slug)">
+            <span class="entry-meta">{{ article.readingMinutes }} min czytania</span>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.seoDescription }}</p>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-bg content-cta">
+    <div class="container">
+      <h2>Sprawdź swoją placówkę</h2>
+      <p>
+        Diagnostyka wzrostu to 20 pytań o strategię, pozyskiwanie pacjentów, rejestrację, stronę
+        i pomiar wyników. Wypełnienie zajmuje kilka minut i pokazuje, który obszar blokuje rozwój.
+      </p>
+      <a routerLink="/diagnostyka" class="btn btn-primary">Przejdź do diagnostyki</a>
+    </div>
+  </section>
+</div>

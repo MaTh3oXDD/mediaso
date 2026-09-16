@@ -1,6 +1,10 @@
-<app-navbar />
-<main class="main-content">
+@if (!isLanding()) {
+  <app-navbar />
+}
+<main class="main-content" [class.is-landing]="isLanding()">
   <router-outlet />
 </main>
-<app-footer />
-<a routerLink="/kontakt" class="floating-contact-btn">{{ tr().floatingContact }}</a>
+@if (!isLanding()) {
+  <app-footer />
+  <a routerLink="/kontakt" class="floating-contact-btn">{{ tr().floatingContact }}</a>
+}

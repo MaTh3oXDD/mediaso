@@ -1,0 +1,179 @@
+{
+  "block_count": 2,
+  "processed_count": 2,
+  "total_bytes": 4247,
+  "truncated": false,
+  "blocks": [
+    {
+      "index": 1,
+      "size_bytes": 3443,
+      "valid": true,
+      "types": [
+        "ContactPoint",
+        "Country",
+        "ImageObject",
+        "Offer",
+        "OfferCatalog",
+        "Organization",
+        "Service",
+        "WebSite"
+      ],
+      "types_truncated": false,
+      "data": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://mediaso.pl/#organization",
+            "name": "mediaso",
+            "url": "https://mediaso.pl/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://mediaso.pl/logo-mediaso.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://mediaso.pl/logo-mediaso.png",
+            "email": "kontakt@mediaso.pl",
+            "telephone": "+48517910330",
+            "description": "Agencja marketingowa dla placowek medycznych: strony internetowe, social media i optymalizacja Google.",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Polska"
+            },
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "kontakt@mediaso.pl",
+                "telephone": "+48517910330",
+                "areaServed": "PL",
+                "availableLanguage": [
+                  "pl"
+                ]
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Uslugi mediaso",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "@id": "https://mediaso.pl/uslugi#strony-internetowe",
+                    "name": "Strony internetowe dla placowek medycznych",
+                    "description": "Projekt, wdrozenie i utrzymanie stron dla klinik i przychodni, z optymalizacja SEO i systemem zarzadzania trescia.",
+                    "serviceType": "Tworzenie stron internetowych",
+                    "url": "https://mediaso.pl/uslugi",
+                    "provider": {
+                      "@id": "https://mediaso.pl/#organization"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "Polska"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "@id": "https://mediaso.pl/uslugi#social-media",
+                    "name": "Prowadzenie social media",
+                    "description": "Strategia tresci, grafiki, wideo oraz obsluga profili Facebook i Instagram placowek medycznych.",
+                    "serviceType": "Zarzadzanie mediami spolecznosciowymi",
+                    "url": "https://mediaso.pl/uslugi",
+                    "provider": {
+                      "@id": "https://mediaso.pl/#organization"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "Polska"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "@id": "https://mediaso.pl/uslugi#optymalizacja-google",
+                    "name": "Optymalizacja Google",
+                    "description": "Wizytowka Google, mapy i lokalne wyniki wyszukiwania dla placowek medycznych.",
+                    "serviceType": "Optymalizacja wizytowki Google",
+                    "url": "https://mediaso.pl/uslugi",
+                    "provider": {
+                      "@id": "https://mediaso.pl/#organization"
+                    },
+                    "areaServed": {
+                      "@type": "Country",
+                      "name": "Polska"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://mediaso.pl/#website",
+            "url": "https://mediaso.pl/",
+            "name": "mediaso",
+            "inLanguage": "pl-PL",
+            "publisher": {
+              "@id": "https://mediaso.pl/#organization"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "size_bytes": 804,
+      "valid": true,
+      "types": [
+        "BreadcrumbList",
+        "ListItem",
+        "WebPage"
+      ],
+      "types_truncated": false,
+      "data": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://mediaso.pl/uslugi#webpage",
+            "url": "https://mediaso.pl/uslugi",
+            "name": "Usługi marketingowe dla placówek medycznych | mediaso",
+            "description": "Strony internetowe zoptymalizowane pod SEO, prowadzenie Facebooka i Instagrama, optymalizacja wizytówki Google i map. Kompleksowa obsługa placówek medycznych.",
+            "isPartOf": {
+              "@id": "https://mediaso.pl/#website"
+            },
+            "inLanguage": "pl-PL",
+            "publisher": {
+              "@id": "https://mediaso.pl/#organization"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://mediaso.pl/uslugi#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "mediaso",
+                "item": "https://mediaso.pl/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Usługi marketingowe dla placówek medycznych",
+                "item": "https://mediaso.pl/uslugi"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

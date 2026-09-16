@@ -4,6 +4,7 @@ export const pl = {
     services: 'Usługi',
     about: 'O nas',
     portfolio: 'Portfolio',
+    knowledge: 'Wiedza',
     contact: 'Kontakt',
   },
   floatingContact: 'Skontaktuj się',
@@ -17,19 +18,22 @@ export const pl = {
       subtitle: 'Tworzymy strategie marketingowe dla klinik, przychodni i gabinetów. Budujemy rozpoznawalność marki, pozyskujemy nowych pacjentów i wspieramy rozwój placówek medycznych.',
       subtitleStrong: 'Pomagamy placówkom medycznym rosnąć szybciej -',
       subtitleSoft: ' budujemy rozpoznawalność marki, pozyskujemy nowych pacjentów i wspieramy rozwój.',
-      trust: 'DANE PACJENTÓW W PEŁNI BEZPIECZNE.',
-      cta1: 'Umów bezpłatną konsultację',
+      trust: 'MARKETING ZGODNY Z RODO I ZASADAMI REKLAMY USŁUG MEDYCZNYCH.',
+      cta1: 'Umów bezpłatną konsultację (30 min)',
+      ctaPortfolio: 'Zobacz nasze realizacje',
+      callLabel: 'lub zadzwoń',
       cta2: 'Porozmawiajmy o rozwoju Twojej placówki - otrzymaj indywidualną strategię',
     },
     why: {
       title: 'Dlaczego my?',
-      intro: 'Wiemy, jak budować zaufanie pacjentów, prowadzić skuteczną komunikację i tworzyć kampanie zgodne z charakterem branży medycznej. Łączymy strategię, kreatywność i analizę danych, aby marketing realnie wspierał rozwój placówki.',
+      intro: 'Pracowaliśmy po obu stronach placówki: przy stronach i profilach klinik oraz przy zarządzaniu grafikami, rejestracją i procedurami. Dlatego zaczynamy od pytania, co dzieje się z telefonem od pacjenta, a nie od liczby zasięgów.',
       items: [
-        { title: 'Wiemy, jak budować zaufanie pacjentów' },
-        { title: 'Prowadzimy skuteczną komunikację' },
-        { title: 'Tworzymy kampanie zgodne z charakterem branży medycznej' },
-        { title: 'Łączymy strategię, kreatywność i analizę danych' },
-        { title: 'Dbamy, aby marketing realnie wspierał rozwój placówki' },
+        { title: 'Pracujemy wyłącznie z placówkami medycznymi: klinikami, przychodniami i gabinetami' },
+        { title: 'Piszemy treści zgodne z zasadami reklamy usług medycznych i RODO' },
+        { title: 'Treści medyczne publikujemy dopiero po akceptacji osoby merytorycznej z placówki' },
+        { title: 'Nie kupujemy opinii i nie obiecujemy pierwszego miejsca w Google w miesiąc' },
+        { title: 'Domena, hosting i kod strony zostają u Ciebie' },
+        { title: 'Pracujemy zdalnie z placówkami z całej Polski' },
       ],
     },
     benefits: {
@@ -92,6 +96,18 @@ export const pl = {
       ],
     },
     manifesto: 'Zanim pacjent zadzwoni do kliniki, sprawdza opinie, stronę internetową, media społecznościowe i specjalistów. Profesjonalny marketing sprawia, że wybiera właśnie Twoją placówkę.',
+    pricingPreview: {
+      label: 'Cennik',
+      title: 'Ile to kosztuje?',
+      intro: 'Widełki startowe dla trzech najczęściej zamawianych zakresów. Pełne pakiety z limitami podstron i rund poprawek opisujemy w cenniku usług.',
+      items: [
+        { name: 'Strona internetowa', price: 'od 2 900 zł', period: 'jednorazowo' },
+        { name: 'Prowadzenie social mediów', price: 'od 2 700 zł', period: 'miesięcznie' },
+        { name: 'Hosting', price: 'od 80 zł', period: 'miesięcznie' },
+      ],
+      note: 'Ceny netto. Systemy rezerwacji i sklepy wyceniamy osobno.',
+      link: 'Zobacz pełny cennik',
+    },
     cta: {
       title: 'Gotowy na zmianę?',
       subtitle: 'Umów się na bezpłatną konsultację i dowiedz się, jak możemy pomóc Twojej placówce.',
@@ -143,44 +159,6 @@ export const pl = {
         'Raportowanie widoczności',
       ],
     },
-    facilityDevelopment: {
-      title: 'Rozwój placówki medycznej',
-      subtitle: 'Pomagamy właścicielom klinik rozwijać biznes. Analizujemy sposób funkcjonowania placówki, identyfikujemy obszary wymagające poprawy i wdrażamy rozwiązania zwiększające przychody oraz efektywność pracy.',
-      features: [
-        'Analiza organizacji',
-        'Analiza rentowności poradni',
-        'Analiza grafików',
-        'Analiza wykorzystania gabinetów',
-        'Analiza ścieżki pacjenta',
-      ],
-    },
-    registrationOptimization: {
-      title: 'Optymalizacja rejestracji medycznej',
-      subtitle: 'Rejestracja jest pierwszym kontaktem pacjenta z placówką. Pomagamy stworzyć z niej skuteczne centrum sprzedaży i obsługi pacjenta.',
-      features: [
-        'Audyt rozmów',
-        'Standardy obsługi',
-        'Procedury',
-        'Szkolenia',
-        'KPI',
-        'Monitoring jakości',
-        'Skrypty rozmów',
-        'Organizacja pracy',
-        'Analiza obciążenia',
-        'Wdrożenie systemów kolejkowych',
-      ],
-    },
-    medicalHelpline: {
-      title: 'Infolinia medyczna',
-      subtitle: 'Pomagamy stworzyć profesjonalną infolinię od podstaw. Oferujemy odbieranie telefonów, umawianie wizyt, przypomnienia, kwalifikację pacjentów, wsparcie sprzedaży usług komercyjnych.',
-      features: [
-        'Odbieranie telefonów',
-        'Umawianie wizyt',
-        'Przypomnienia',
-        'Kwalifikacja pacjentów',
-        'Wsparcie sprzedaży usług komercyjnych',
-      ],
-    },
     process: {
       title: 'Jak pracujemy',
       steps: [
@@ -192,14 +170,28 @@ export const pl = {
     },
     pricing: {
       title: 'Cennik',
-      note: '* Ceny netto. Każdy projekt wyceniamy indywidualnie - napisz do nas.',
+      note: '* Ceny netto. Cena pakietowa obowiązuje w granicach opisanych limitów - liczba podstron, formularzy i rund poprawek jest maksymalna. Prace poza pakietem: 160-220 zł netto za godzinę, zawsze po wcześniejszej estymacji. Systemy rezerwacji i sklepy wyceniamy osobno.',
       plans: [
         {
-          name: 'Strona WWW',
-          price: 'od 3 500 zł',
+          name: 'Wizytówka Basic',
+          price: '2 900 - 3 900 zł',
           period: 'jednorazowo',
-          desc: 'Profesjonalna strona dla Twojej placówki medycznej.',
-          features: ['Projekt graficzny', 'Responsywna na każdym urządzeniu', 'SEO podstawowe', 'Panel CMS', 'Certyfikat SSL'],
+          desc: 'Do 3 podstron na dopasowanym szablonie. Termin 1-2 tygodnie.',
+          features: ['Maksymalnie 3 podstrony', 'Responsywna na każdym urządzeniu', 'Formularz kontaktowy', 'Podstawowe SEO on-page', 'Certyfikat SSL', 'Jedna runda poprawek'],
+        },
+        {
+          name: 'Wizytówka Custom',
+          price: '4 900 - 6 500 zł',
+          period: 'jednorazowo',
+          desc: 'Do 6 podstron z indywidualnym projektem. Termin 2-4 tygodnie.',
+          features: ['Maksymalnie 6 podstron', 'Indywidualny projekt i typografia', 'Mapa Google i galeria', 'Sekcja opinii lub referencji', 'Konfiguracja analityki', 'Dwie rundy poprawek'],
+        },
+        {
+          name: 'Strona z blogiem i CMS',
+          price: '7 000 - 11 000 zł',
+          period: 'jednorazowo',
+          desc: 'Do 10 podstron z panelem do samodzielnej edycji. Termin 3-6 tygodni.',
+          features: ['Maksymalnie 10 podstron', 'System zarządzania treścią', 'Blog z kategoriami i wyszukiwaniem', 'Integracja z 2 profilami społecznościowymi', 'SEO techniczne i mapa witryny', 'Szkolenie z obsługi'],
         },
         {
           name: 'Social - Start',
@@ -215,6 +207,13 @@ export const pl = {
           desc: 'Pełna obsługa z kampaniami i dedykowanym opiekunem.',
           features: ['8 postów tygodniowo', 'Facebook + Instagram + Google', 'Kampanie Meta Ads', 'Dedykowany opiekun'],
         },
+        {
+          name: 'Opieka techniczna',
+          price: '250 - 1 200 zł',
+          period: 'miesięcznie',
+          desc: 'Utrzymanie strony po wdrożeniu. Basic do 2 h, Pro do 5 h pracy.',
+          features: ['Aktualizacje oprogramowania', 'Kopie zapasowe i monitoring', 'Drobne poprawki treści', 'Raport wykonanych prac w pakiecie Pro', 'Hosting od 80 zł miesięcznie'],
+        },
       ],
     },
     cta: { title: 'Zacznijmy razem', button: 'Skontaktuj się' },
@@ -227,6 +226,23 @@ export const pl = {
     mission: {
       title: 'Nasza misja',
       text: 'MediaSO to agencja cyfrowa stworzona z myślą o placówkach medycznych. Doskonale rozumiemy, że lekarze oraz osoby zarządzające przychodniami każdego dnia koncentrują się na tym, co najważniejsze – zdrowiu i opiece nad pacjentami. Dlatego cały obszar marketingu powierzają nam. Kompleksowo planujemy działania, skutecznie pozyskujemy nowych pacjentów i dbamy o rozwój wizerunku placówki, opierając nasze działania na konkretnych danych i mierzalnych efektach.',
+    },
+    story: {
+      title: 'Skąd się wzięliśmy',
+      paragraphs: [
+        'mediaso powstało z pracy po dwóch stronach placówki medycznej: przy tworzeniu stron i profili społecznościowych dla klinik oraz przy zarządzaniu samą placówką - grafikami, rejestracją, procedurami i uruchamianiem nowych poradni. To połączenie zmienia sposób, w jaki prowadzimy marketing.',
+        'Agencja, która zna tylko reklamę, dowozi telefony i kończy pracę. My zaczynamy od pytania, co się z tymi telefonami dzieje: kto je odbiera, w jakich godzinach, ile przepada i czy w grafiku są w ogóle wolne terminy. Kampania uruchomiona przed uporządkowaniem rejestracji podnosi koszt pozyskania pacjenta i zostawia właściciela z rachunkiem bez efektu.',
+        'Dlatego zakres naszej pracy obejmuje zarówno stronę internetową, wizytówkę Google i social media, jak i to, co dzieje się po drugiej stronie słuchawki. Pracujemy z placówkami zdalnie, z całej Polski, i rozliczamy się z liczb, nie z zasięgów.',
+      ],
+    },
+    promise: {
+      title: 'Czego u nas nie ma',
+      items: [
+        'Obietnic pierwszego miejsca w Google w miesiąc. SEO w medycynie to kwartały, nie tygodnie.',
+        'Kupowanych opinii i selekcji pacjentów, których prosimy o ocenę. To łamie zasady Google i wraca po latach.',
+        'Treści medycznych publikowanych bez akceptacji osoby merytorycznej z placówki.',
+        'Umów, które blokują dostęp do domeny, hostingu i kodu strony. Wszystko, co robimy, zostaje u klienta.',
+      ],
     },
     values: {
       title: 'Nasze wartości',
@@ -243,7 +259,9 @@ export const pl = {
       title: 'Portfolio',
       subtitle: 'Nasze realizacje w branży medycznej',
     },
-    comingSoon: 'Pracujemy nad case studies z naszych projektów. Wkrótce udostępnimy szczegółowe analizy naszych realizacji dla klientów.',
+    comingSoon: 'Nie publikujemy tu jeszcze case studies. Realizacje dla placówek medycznych opisujemy dopiero po zebraniu wyników z kilku miesięcy i po pisemnej zgodzie klienta na podanie nazwy - a to trwa dłużej niż wstawienie logotypu. Do tego czasu pokazujemy konkretne rozwiązania na rozmowie: strukturę wdrożenia, zakres prac i liczby, na których pracujemy.',
+    ctaTitle: 'Chcesz zobaczyć, jak pracujemy?',
+    ctaText: 'Umów bezpłatną konsultację. Pokażemy zakres wdrożenia i to, co mierzymy po drodze - bez prezentacji na czterdzieści slajdów.',
   },
   contact: {
     hero: {
@@ -255,6 +273,15 @@ export const pl = {
       email: 'Adres e-mail',
       company: 'Nazwa placówki / firmy',
       message: 'Wiadomość',
+      service: 'Czym jesteś zainteresowany?',
+      servicePlaceholder: 'Wybierz (opcjonalnie)',
+      serviceOptions: ['Strona internetowa', 'Social media', 'Pozycjonowanie (SEO)', 'Wizytówka Google', 'Jeszcze nie wiem'],
+      consentBefore: 'Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na wiadomość. Szczegóły w',
+      consentLink: 'polityce prywatności',
+      errorName: 'Podaj imię i nazwisko.',
+      errorEmail: 'Podaj poprawny adres e-mail.',
+      errorMessage: 'Napisz kilka słów o swojej placówce.',
+      errorConsent: 'Zaznacz zgodę, żebyśmy mogli odpowiedzieć.',
       send: 'Wyślij wiadomość',
       sending: 'Wysyłanie...',
       success: 'Wiadomość wysłana! Odezwiemy się w ciągu 24 godzin.',
@@ -265,7 +292,7 @@ export const pl = {
     info: {
       title: 'Dane kontaktowe',
       email: 'kontakt@mediaso.pl',
-      phone: '+48 517 910 330',
+      phone: '+48 504 103 154',
       location: 'Polska - pracujemy zdalnie z całym krajem',
     },
   },
@@ -309,7 +336,7 @@ export const pl = {
       },
       {
         title: 'Pliki cookie i statystyki',
-        body: 'Strona nie używa plików cookie do śledzenia ani nie korzysta z zewnętrznych narzędzi analitycznych. Wybór języka zapamiętywany jest wyłącznie na czas wizyty, w pamięci przeglądarki. Czcionki wczytujemy z serwerów Google Fonts, co oznacza, że przy wejściu na stronę Twój adres IP trafia do Google.',
+        body: 'Strona nie używa plików cookie do śledzenia ani nie korzysta z zewnętrznych narzędzi analitycznych. Wybór języka zapamiętywany jest wyłącznie na czas wizyty, w pamięci przeglądarki. Czcionki serwujemy z własnego serwera - przy wejściu na stronę nie łączysz się z żadnym zewnętrznym dostawcą.',
       },
       {
         title: 'Zmiany',
@@ -341,12 +368,22 @@ export const pl = {
     contact: {
       title: 'Kontakt | mediaso - marketing placówek medycznych',
       description:
-        'Napisz na kontakt@mediaso.pl lub zadzwoń +48 517 910 330. Odpowiadamy w ciągu 24 godzin. Umów bezpłatną konsultację rozwoju Twojej placówki.',
+        'Napisz na kontakt@mediaso.pl lub zadzwoń +48 504 103 154. Odpowiadamy w ciągu 24 godzin. Umów bezpłatną konsultację rozwoju Twojej placówki.',
+    },
+    knowledge: {
+      title: 'Baza wiedzy dla placówek medycznych | mediaso',
+      description:
+        'Marketing medyczny w praktyce: pozycjonowanie klinik, koszty strony dla przychodni, opinie pacjentów i RODO w materiałach marketingowych.',
     },
     privacy: {
       title: 'Polityka prywatności | mediaso',
       description:
         'Kto odpowiada za dane z formularza kontaktowego mediaso, w jakim celu je przetwarzamy, komu je powierzamy i jak długo je przechowujemy.',
+    },
+    landing: {
+      title: 'Marketing dla placówek medycznych | mediaso',
+      description:
+        'Strona internetowa, social media i wizytówka Google dla klinik, przychodni i gabinetów. Jawny cennik i bezpłatna 30-minutowa konsultacja.',
     },
     assessment: {
       title: 'Diagnostyka wzrostu placówki medycznej | mediaso',

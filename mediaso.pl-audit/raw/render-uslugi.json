@@ -1,0 +1,66 @@
+{
+  "url": "https://mediaso.pl/uslugi",
+  "status_code": 200,
+  "content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Us\u0142ugi marketingowe dla plac\u00f3wek medycznych | mediaso</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Strony internetowe zoptymalizowane pod SEO, prowadzenie Facebooka i Instagrama, optymalizacja wizyt\u00f3wki Google i map. Kompleksowa obs\u0142uga plac\u00f3wek medycznych.\">\n  <meta name=\"robots\" content=\"index, follow, max-image-...",
+  "raw_content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Us\u0142ugi marketingowe dla plac\u00f3wek medycznych | mediaso</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" ...",
+  "is_spa": false,
+  "extracted_text": "mediaso\nNasze Us\u0142ugi\nKompleksowe rozwi\u0105zania cyfrowe dla plac\u00f3wek medycznych\nStrony Internetowe\nProfesjonalna strona to wizyt\u00f3wka Twojej przychodni w internecie.\n- \u2713Indywidualny projekt graficzny\n- \u2713Responsywno\u015b\u0107 na ka\u017cdym urz\u0105dzeniu\n- \u2713Optymalizacja SEO\n- \u2713System zarz\u0105dzania tre\u015bci\u0105 (CMS)\n- \u2713Szybki czas \u0142adowania\n- \u2713Integracja z Google Maps i kalendarzem\n- \u2713Certyfikat SSL\n- \u2713Obs\u0142uga techniczna i aktualizacje\nSocial Media\nZbuduj obecno\u015b\u0107 w mediach spo\u0142eczno\u015bciowych i pozyskaj nowych pacjent\u00f3w.\n-...",
+  "publication_date": "2026-01-01",
+  "accessibility_tree": null,
+  "headers": {
+    "Server": "nginx/1.28.3 (Ubuntu)",
+    "Date": "Thu, 27 Aug 2026 16:44:28 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Last-Modified": "Thu, 27 Aug 2026 16:31:41 GMT",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Accept-Encoding",
+    "ETag": "W/\"6a90666d-1102a\"",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Encoding": "gzip"
+  },
+  "redirect_chain": [],
+  "console_errors": [],
+  "render_diagnostics": [],
+  "render_engine": null,
+  "render_ms": null,
+  "mode_used": "raw",
+  "error": null,
+  "structured_data": {
+    "block_count": 2,
+    "processed_count": 2,
+    "total_bytes": 4247,
+    "truncated": false,
+    "blocks": [
+      {
+        "index": 1,
+        "size_bytes": 3443,
+        "valid": true,
+        "types": [
+          "ContactPoint",
+          "Country",
+          "ImageObject",
+          "Offer",
+          "OfferCatalog",
+          "Organization",
+          "Service",
+          "WebSite"
+        ],
+        "types_truncated": false
+      },
+      {
+        "index": 2,
+        "size_bytes": 804,
+        "valid": true,
+        "types": [
+          "BreadcrumbList",
+          "ListItem",
+          "WebPage"
+        ],
+        "types_truncated": false
+      }
+    ]
+  }
+}

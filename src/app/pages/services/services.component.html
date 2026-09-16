@@ -8,6 +8,25 @@
   </div>
 </section>
 
+<!-- SERVICE HUB: dedykowane podstrony -->
+<section class="section">
+  <div class="container">
+    <p class="services-hub-intro">
+      Każdą z usług prowadzimy jako osobny zakres z własnym procesem, cennikiem i raportowaniem.
+      Poniżej pełny opis każdej z nich - z tym, co obejmuje, ile trwa i czego realnie oczekiwać.
+    </p>
+    <div class="services-hub-grid">
+      @for (page of servicePages; track page.slug) {
+        <a class="services-hub-card" [routerLink]="servicePath(page.slug)">
+          <h2>{{ page.navLabel }}</h2>
+          <p>{{ page.seoDescription }}</p>
+          <span class="services-hub-more">Zobacz szczegóły</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
 <!-- WEB SERVICES -->
 <section class="section">
   <div class="container service-block">
@@ -68,66 +87,6 @@
   </div>
 </section>
 
-<!-- FACILITY DEVELOPMENT -->
-<section class="section alt-bg">
-  <div class="container service-block">
-    <div class="service-block-header">
-      <div>
-        <h2>{{ tr().services.facilityDevelopment.title }}</h2>
-        <p>{{ tr().services.facilityDevelopment.subtitle }}</p>
-      </div>
-    </div>
-    <ul class="features-list">
-      @for (feature of tr().services.facilityDevelopment.features; track feature) {
-        <li class="feature-item">
-          <span class="feature-check">✓</span>
-          <span>{{ feature }}</span>
-        </li>
-      }
-    </ul>
-  </div>
-</section>
-
-<!-- REGISTRATION OPTIMIZATION -->
-<section class="section">
-  <div class="container service-block">
-    <div class="service-block-header">
-      <div>
-        <h2>{{ tr().services.registrationOptimization.title }}</h2>
-        <p>{{ tr().services.registrationOptimization.subtitle }}</p>
-      </div>
-    </div>
-    <ul class="features-list">
-      @for (feature of tr().services.registrationOptimization.features; track feature) {
-        <li class="feature-item">
-          <span class="feature-check">✓</span>
-          <span>{{ feature }}</span>
-        </li>
-      }
-    </ul>
-  </div>
-</section>
-
-<!-- MEDICAL HELPLINE -->
-<section class="section alt-bg">
-  <div class="container service-block">
-    <div class="service-block-header">
-      <div>
-        <h2>{{ tr().services.medicalHelpline.title }}</h2>
-        <p>{{ tr().services.medicalHelpline.subtitle }}</p>
-      </div>
-    </div>
-    <ul class="features-list">
-      @for (feature of tr().services.medicalHelpline.features; track feature) {
-        <li class="feature-item">
-          <span class="feature-check">✓</span>
-          <span>{{ feature }}</span>
-        </li>
-      }
-    </ul>
-  </div>
-</section>
-
 <!-- PROCESS -->
 <section class="section">
   <div class="container">
@@ -156,33 +115,6 @@
       <p>Diagnostyka pomoże Ci zidentyfikować obszary, które potrzebują poprawy w Twojej placówce</p>
       <a routerLink="/diagnostyka" class="btn btn-primary">Sprawdź Swoje Możliwości</a>
     </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="section pricing-section">
-  <div class="container">
-    <p class="section-label">{{ tr().services.pricing.title }}</p>
-    <div class="pricing-grid">
-      @for (plan of tr().services.pricing.plans; track plan.name) {
-        <div class="pricing-plan">
-          <div class="plan-header">
-            <h3 class="plan-name">{{ plan.name }}</h3>
-            <p class="plan-desc">{{ plan.desc }}</p>
-          </div>
-          <div class="plan-price">
-            <span class="price-amount">{{ plan.price }}</span>
-            <span class="price-period">{{ plan.period }}</span>
-          </div>
-          <ul class="plan-features">
-            @for (feature of plan.features; track feature) {
-              <li>{{ feature }}</li>
-            }
-          </ul>
-        </div>
-      }
-    </div>
-    <p class="pricing-note">{{ tr().services.pricing.note }}</p>
   </div>
 </section>
 

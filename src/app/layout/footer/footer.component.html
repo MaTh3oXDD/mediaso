@@ -12,8 +12,9 @@
       <ul>
         <li><a routerLink="/">{{ tr().nav.home }}</a></li>
         <li><a routerLink="/uslugi">{{ tr().nav.services }}</a></li>
+        <li><a routerLink="/wiedza">{{ tr().nav.knowledge }}</a></li>
         <li><a routerLink="/o-nas">{{ tr().nav.about }}</a></li>
-        <li><a routerLink="/portfolio">{{ tr().nav.portfolio }}</a></li>
+        <li><a routerLink="/diagnostyka">Diagnostyka</a></li>
         <li><a routerLink="/kontakt">{{ tr().nav.contact }}</a></li>
       </ul>
     </div>
@@ -21,8 +22,9 @@
     <div class="footer-col">
       <h4>{{ tr().footer.services.title }}</h4>
       <ul>
-        <li><a routerLink="/uslugi">{{ tr().footer.services.web }}</a></li>
-        <li><a routerLink="/uslugi">{{ tr().footer.services.social }}</a></li>
+        @for (page of servicePages; track page.slug) {
+          <li><a [routerLink]="servicePath(page.slug)">{{ page.navLabel }}</a></li>
+        }
       </ul>
     </div>
 
@@ -30,7 +32,7 @@
       <h4>{{ tr().contact.info.title }}</h4>
       <ul>
         <li><a [href]="'mailto:' + tr().contact.info.email">{{ tr().contact.info.email }}</a></li>
-        <li><a [href]="'tel:' + tr().contact.info.phone">{{ tr().contact.info.phone }}</a></li>
+        <li><a [href]="telHref">{{ tr().contact.info.phone }}</a></li>
       </ul>
     </div>
   </div>

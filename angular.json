@@ -32,9 +32,6 @@
                 "input": "public"
               }
             ],
-            "polyfills": [
-              "zone.js"
-            ],
             "styles": [
               "src/styles.scss"
             ],
@@ -55,7 +52,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "8kb",
-                  "maximumError": "14kb"
+                  "maximumError": "16kb"
                 }
               ],
               "outputHashing": "all",

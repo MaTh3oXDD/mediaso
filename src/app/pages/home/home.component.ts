@@ -12,6 +12,9 @@ import { PLATFORM_ID } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import gsap from 'gsap';
 import { TranslationService } from '../../core/services/translation.service';
+import { ARTICLES, articlePath } from '../../content/content.registry';
+import { PORTFOLIO_PROJECTS } from '../../content/portfolio.data';
+import { SITE } from '../../core/seo/site.config';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +27,12 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   private ts = inject(TranslationService);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   protected tr = this.ts.tr;
+
+  // Trzy najświeższe teksty z bazy wiedzy - strona główna ma linkować w głąb serwisu.
+  protected previewArticles = ARTICLES.slice(0, 3);
+  protected projects = PORTFOLIO_PROJECTS;
+  protected telHref = `tel:${SITE.phone}`;
+  protected articlePath = articlePath;
 
   @ViewChild('heroSection') private heroSectionRef?: ElementRef<HTMLElement>;
   @ViewChild('heroBg') private heroBgRef?: ElementRef<HTMLElement>;

@@ -14,69 +14,7 @@
 
     <!-- FORM -->
     <div class="form-wrapper">
-      @if (status() !== 'sent') {
-        <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm" novalidate>
-          <div class="form-group">
-            <label [for]="'name'">{{ tr().contact.form.name }}</label>
-            <input
-              id="name"
-              type="text"
-              [(ngModel)]="form.name"
-              name="name"
-              required
-              [placeholder]="tr().contact.form.name"
-            />
-          </div>
-          <div class="form-group">
-            <label [for]="'email'">{{ tr().contact.form.email }}</label>
-            <input
-              id="email"
-              type="email"
-              [(ngModel)]="form.email"
-              name="email"
-              required
-              [placeholder]="tr().contact.form.email"
-            />
-          </div>
-          <div class="form-group">
-            <label [for]="'company'">{{ tr().contact.form.company }}</label>
-            <input
-              id="company"
-              type="text"
-              [(ngModel)]="form.company"
-              name="company"
-              [placeholder]="tr().contact.form.company"
-            />
-          </div>
-          <div class="form-group">
-            <label [for]="'message'">{{ tr().contact.form.message }}</label>
-            <textarea
-              id="message"
-              [(ngModel)]="form.message"
-              name="message"
-              required
-              rows="5"
-              [placeholder]="tr().contact.form.message"
-            ></textarea>
-          </div>
-          @if (status() === 'error') {
-            <p class="form-error" role="alert">{{ errorMessage() }}</p>
-          }
-
-          <button
-            type="submit"
-            class="btn btn-primary submit-btn"
-            [disabled]="contactForm.invalid || status() === 'sending'"
-          >
-            {{ status() === 'sending' ? tr().contact.form.sending : tr().contact.form.send }}
-          </button>
-        </form>
-      } @else {
-        <div class="success-message" role="status">
-          <div class="success-icon">✓</div>
-          <p>{{ tr().contact.form.success }}</p>
-        </div>
-      }
+      <app-contact-form source="kontakt" />
     </div>
 
     <!-- INFO -->
@@ -98,7 +36,7 @@
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
           </span>
-          <a [href]="'tel:' + tr().contact.info.phone">{{ tr().contact.info.phone }}</a>
+          <a [href]="telHref">{{ tr().contact.info.phone }}</a>
         </li>
         <li>
           <span class="info-icon">

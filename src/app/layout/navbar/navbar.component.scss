@@ -183,6 +183,37 @@
   z-index: 101;
 }
 
+// Telefon w pasku: na telefonie sama ikona z polem dotyku 44 px, od desktopu z numerem.
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 14px 10px;
+  margin: -14px -10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition);
+
+  svg {
+    color: var(--accent);
+  }
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  .nav-phone-number {
+    display: none;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+}
+
 .lang-toggle {
   display: flex;
   align-items: center;

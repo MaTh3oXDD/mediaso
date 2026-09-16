@@ -51,79 +51,6 @@
   padding: 2.5rem;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-
-  label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--ink-2);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  input, textarea {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 0;
-    padding: 0.75rem 0.875rem;
-    font-size: 0.95rem;
-    color: var(--ink);
-    transition: border-color var(--transition);
-    resize: none;
-
-    &::placeholder {
-      color: var(--ink-3);
-    }
-
-    &:focus {
-      outline: none;
-      border-color: var(--ink);
-    }
-  }
-}
-
-.submit-btn {
-  align-self: flex-start;
-  margin-top: 0.5rem;
-
-  &:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-}
-
-.success-message {
-  text-align: center;
-  padding: 3rem 1rem;
-
-  .success-icon {
-    width: 52px;
-    height: 52px;
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    color: var(--accent);
-    margin: 0 auto 1.5rem;
-  }
-
-  p {
-    color: var(--ink-2);
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-}
-
 .contact-info {
   padding-top: 0.25rem;
 
@@ -183,27 +110,4 @@
     font-weight: 600;
     color: var(--ink-2);
   }
-}
-
-// Honeypot - poza ekranem, niedostepny dla czytnikow i klawiatury.
-.hp-field {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.form-error {
-  margin: 0 0 1rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #c0392b;
-  background: rgba(192, 57, 43, 0.08);
-  color: #c0392b;
-  font-size: 0.875rem;
-}
-
-.submit-btn[disabled] {
-  opacity: 0.6;
-  cursor: not-allowed;
 }

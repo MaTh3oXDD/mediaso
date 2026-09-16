@@ -8,11 +8,39 @@
   </div>
 </section>
 
-<!-- PORTFOLIO COMING SOON -->
+<!-- REALIZACJE -->
+<section class="section">
+  <div class="container">
+    <div class="portfolio-grid">
+      @for (project of projects; track project.url) {
+        <a class="portfolio-card" [href]="project.url" target="_blank" rel="noopener">
+          <div class="portfolio-thumb">
+            <span class="thumb-type">{{ project.type }}</span>
+          </div>
+          <div class="portfolio-body">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.summary }}</p>
+            <ul class="portfolio-features">
+              @for (feature of project.features; track feature) {
+                <li>{{ feature }}</li>
+              }
+            </ul>
+            <span class="portfolio-result">{{ project.domain }} <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="section">
   <div class="container">
     <div class="portfolio-coming-soon">
-      <p>{{ tr().portfolio.comingSoon }}</p>
+      <h2>{{ tr().portfolio.ctaTitle }}</h2>
+      <p>{{ tr().portfolio.ctaText }}</p>
+      <a routerLink="/kontakt" class="btn btn-primary">Umów konsultację</a>
+      <a routerLink="/uslugi" class="btn btn-text">Zobacz zakres usług</a>
     </div>
   </div>
 </section>

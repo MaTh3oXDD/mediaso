@@ -2,4 +2,20 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
+# Boty modeli językowych mają pełny dostęp - treść bazy wiedzy ma być cytowana.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://mediaso.pl/sitemap.xml

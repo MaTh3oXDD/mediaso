@@ -1,0 +1,66 @@
+{
+  "url": "https://mediaso.pl/kontakt",
+  "status_code": 200,
+  "content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Kontakt | mediaso - marketing plac\u00f3wek medycznych</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Napisz na kontakt@mediaso.pl lub zadzwo\u0144 +48 517 910 330. Odpowiadamy w ci\u0105gu 24 godzin. Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119 rozwoju Twojej plac\u00f3wki.\">\n  <meta name=\"robots\" content=\"index, follow, max-image-preview:large, max-sni...",
+  "raw_content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Kontakt | mediaso - marketing plac\u00f3wek medycznych</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" cont...",
+  "is_spa": false,
+  "extracted_text": "Strona g\u0142\u00f3wna\nUs\u0142ugi\nO nas\nKontakt\nDiagnostyka\nPL\n/\nEN\nMenu\nmediaso\nKontakt\nPorozmawiajmy o Twojej plac\u00f3wce\nImi\u0119 i nazwisko\nAdres e-mail\nNazwa plac\u00f3wki / firmy\nWiadomo\u015b\u0107\nWy\u015blij wiadomo\u015b\u0107\nDane kontaktowe\nkontakt@mediaso.pl\n+48 517 910 330\nPolska - pracujemy zdalnie z ca\u0142ym krajem\nOdpowiadamy w ci\u0105gu 24h\nSkontaktuj si\u0119",
+  "publication_date": "2026-01-01",
+  "accessibility_tree": null,
+  "headers": {
+    "Server": "nginx/1.28.3 (Ubuntu)",
+    "Date": "Thu, 27 Aug 2026 16:44:28 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Last-Modified": "Thu, 27 Aug 2026 16:31:41 GMT",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Accept-Encoding",
+    "ETag": "W/\"6a90666d-d4e5\"",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Encoding": "gzip"
+  },
+  "redirect_chain": [],
+  "console_errors": [],
+  "render_diagnostics": [],
+  "render_engine": null,
+  "render_ms": null,
+  "mode_used": "raw",
+  "error": null,
+  "structured_data": {
+    "block_count": 2,
+    "processed_count": 2,
+    "total_bytes": 4198,
+    "truncated": false,
+    "blocks": [
+      {
+        "index": 1,
+        "size_bytes": 3443,
+        "valid": true,
+        "types": [
+          "ContactPoint",
+          "Country",
+          "ImageObject",
+          "Offer",
+          "OfferCatalog",
+          "Organization",
+          "Service",
+          "WebSite"
+        ],
+        "types_truncated": false
+      },
+      {
+        "index": 2,
+        "size_bytes": 755,
+        "valid": true,
+        "types": [
+          "BreadcrumbList",
+          "ContactPage",
+          "ListItem"
+        ],
+        "types_truncated": false
+      }
+    ]
+  }
+}

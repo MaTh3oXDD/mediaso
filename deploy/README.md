@@ -187,3 +187,70 @@ Po diagnozie ustaw `'debug' => false`.
 
 `deploy/deploy.sh` robi to samo co `deploy.ps1`, ale wymaga Git Basha.
 Jesli pracujesz w PowerShellu, uzywaj `.ps1` i zignoruj `.sh`.
+
+---
+
+## Zmiany po audycie SEO (2026-08-29)
+
+Konfiguracja nginx w `deploy/nginx/mediaso.pl.conf` została przepisana. Zawiera teraz
+komplet bloków HTTPS, więc po wgraniu nie trzeba nic dopisywać ręcznie.
+
+### Krok A - rekord A dla `www` [PANEL DNS]
+
+`www.mediaso.pl` ma w DNS wiszący rekord AAAA (IPv6) i nic za nim nie stoi, przez co host
+nie odpowiada. Każdy link z `www` prowadzi donikąd.
+
+1. Usuń rekord AAAA dla `www` albo wskaż nim działający adres IPv6 serwera.
+2. Dodaj rekord `A`: nazwa `www`, wartość `54.38.204.179`.
+3. Sprawdź po propagacji: `nslookup www.mediaso.pl`.
+
+Bez tego kroku przekierowanie w nginx nie ma czego obsłużyć.
+
+### Krok B - wgraj nową konfigurację [KOMPUTER] + [VPS]
+
+```powershell
+# [KOMPUTER]
+cd C:\Users\Mateusz\Desktop\mediaso
+scp deploy\nginx\mediaso.pl.conf ubuntu@54.38.204.179:~/
+```
+
+```bash
+# [VPS]
+sudo cp ~/mediaso.pl.conf /etc/nginx/sites-available/mediaso.pl.conf
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+Jeśli `nginx -t` zgłasza brak certyfikatu dla `www.mediaso.pl`, rozszerz certyfikat:
+
+```bash
+sudo certbot --nginx -d mediaso.pl -d www.mediaso.pl
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+### Krok C - sprawdź, czy nagłówki wyszły [KOMPUTER]
+
+```powershell
+curl.exe -sI https://mediaso.pl/ | findstr /I "HTTP strict-transport content-security permissions"
+curl.exe -sI https://www.mediaso.pl/ | findstr /I "HTTP location"
+curl.exe -s -o NUL -w "%{http_version}\n" https://mediaso.pl/
+```
+
+Oczekiwane: `strict-transport-security`, `content-security-policy` i `permissions-policy`
+na apeksie, `301` z `www` na `https://mediaso.pl/`, wersja HTTP `2`.
+
+### Krok D - IndexNow po wdrożeniu [KOMPUTER]
+
+Klucz leży w `public/<klucz>.txt` i po wdrożeniu musi być dostępny pod
+`https://mediaso.pl/<klucz>.txt`. Zgłoszenie adresów:
+
+```powershell
+npm run indexnow
+```
+
+Google z IndexNow nie korzysta - to przyspiesza indeksowanie w Bing i Seznam.
+
+### Sitemapa generuje się sama
+
+`npm run build` uruchamia najpierw `scripts/generate-sitemap.mjs`, który czyta slugi
+podstron usług i artykułów z `src/app/content/` i zapisuje `public/sitemap.xml`.
+Nie edytuj tego pliku ręcznie - przy następnym buildzie zmiany znikną.

@@ -21,6 +21,35 @@
   </div>
 </section>
 
+<!-- STORY -->
+<section class="section">
+  <div class="container about-prose">
+    <h2>{{ tr().about.story.title }}</h2>
+    @for (paragraph of tr().about.story.paragraphs; track paragraph) {
+      <p>{{ paragraph }}</p>
+    }
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="section">
+  <div class="container about-prose">
+    <h2>{{ tr().about.promise.title }}</h2>
+    <ul class="about-promise-list">
+      @for (item of tr().about.promise.items; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+    <p class="about-prose-cta">
+      Jak to wygląda w praktyce, opisujemy na podstronach usług - od
+      <a routerLink="/uslugi/pozycjonowanie-klinik">pozycjonowania klinik</a>
+      po <a routerLink="/uslugi/wizytowka-google-dla-placowki">prowadzenie wizytówki Google</a>.
+      Zasady, którymi się kierujemy przy treściach i danych pacjentów, rozpisaliśmy w
+      <a routerLink="/wiedza/rodo-w-marketingu-placowki-medycznej">tekście o RODO w marketingu placówki</a>.
+    </p>
+  </div>
+</section>
+
 <!-- VALUES -->
 <section class="section alt-bg">
   <div class="container">

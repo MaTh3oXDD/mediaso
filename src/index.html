@@ -25,16 +25,28 @@
   <meta name="twitter:description" content="Prowadzimy marketing klinik, przychodni i gabinetów: strony internetowe, social media i wizytówka Google.">
   <meta name="twitter:image" content="https://mediaso.pl/og-image.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <!-- Inter hostowany lokalnie: bez blokujacego zapytania do Google Fonts
+       i bez wysylania IP uzytkownika do zewnetrznego serwisu.
+       Preload dotyczy obu zakresow - polskie znaki leza w latin-ext. -->
+  <link rel="preload" href="/fonts/inter-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-ext-normal.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/icon-m.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <!-- Ikony maja date w nazwie pliku, nie parametr ?v=. Googlebot i cache
+       przegladarki wiaza favikone z URL-em, a query string bywa pomijany -
+       nowa nazwa to dla nich osobny zasob, wiec pobiora go od razu.
+       /favicon.ico zostaje w korzeniu, bo tam siega przegladarka bez tagu.
+       Przy kolejnej podmianie grafiki: nowa data w nazwach i tutaj. -->
+  <link rel="icon" href="/favicon-20260904.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon-20260904.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-20260904.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-20260904.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48-20260904.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-20260904.png">
+  <link rel="manifest" href="/site-20260904.webmanifest">
 
+  <!-- Graf organizacji i witryny. Opisy z polskimi znakami - Google czyta te pola
+       wprost, a rozjazd z widocznym HTML-em oslabia dopasowanie.
+       sameAs zostaje puste do czasu podania adresow profili firmowych. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,8 +64,15 @@
         },
         "image": "https://mediaso.pl/logo-mediaso.png",
         "email": "kontakt@mediaso.pl",
-        "telephone": "+48517910330",
-        "description": "Agencja marketingowa dla placowek medycznych: strony internetowe, social media i optymalizacja Google.",
+        "telephone": "+48504103154",
+        "description": "Agencja marketingowa dla placówek medycznych: strony internetowe, pozycjonowanie w Google, prowadzenie social mediów i Profil Firmy w Google.",
+        "knowsAbout": [
+          "marketing medyczny",
+          "pozycjonowanie klinik",
+          "strony internetowe dla przychodni",
+          "social media dla placówek medycznych",
+          "Profil Firmy w Google dla placówek medycznych"
+        ],
         "areaServed": {
           "@type": "Country",
           "name": "Polska"
@@ -63,52 +82,87 @@
             "@type": "ContactPoint",
             "contactType": "sales",
             "email": "kontakt@mediaso.pl",
-            "telephone": "+48517910330",
+            "telephone": "+48504103154",
             "areaServed": "PL",
-            "availableLanguage": ["pl"]
+            "availableLanguage": [
+              "pl"
+            ]
           }
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Uslugi mediaso",
+          "name": "Usługi mediaso",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "@id": "https://mediaso.pl/uslugi#strony-internetowe",
-                "name": "Strony internetowe dla placowek medycznych",
-                "description": "Projekt, wdrozenie i utrzymanie stron dla klinik i przychodni, z optymalizacja SEO i systemem zarzadzania trescia.",
+                "@id": "https://mediaso.pl/uslugi/pozycjonowanie-klinik#service",
+                "name": "Pozycjonowanie stron placówek medycznych",
+                "description": "Audyt, architektura podstron usług i lokalizacji, treści zgodne z ograniczeniami reklamy usług medycznych oraz raportowanie pozycji.",
+                "serviceType": "SEO dla branży medycznej",
+                "url": "https://mediaso.pl/uslugi/pozycjonowanie-klinik",
+                "provider": {
+                  "@id": "https://mediaso.pl/#organization"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Polska"
+                }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://mediaso.pl/uslugi/strony-internetowe-dla-placowek-medycznych#service",
+                "name": "Strony internetowe dla placówek medycznych",
+                "description": "Projekt, wdrożenie i utrzymanie stron dla klinik i przychodni: podstrony usług, umawianie wizyt, system zarządzania treścią, zgodność z RODO.",
                 "serviceType": "Tworzenie stron internetowych",
-                "url": "https://mediaso.pl/uslugi",
-                "provider": { "@id": "https://mediaso.pl/#organization" },
-                "areaServed": { "@type": "Country", "name": "Polska" }
+                "url": "https://mediaso.pl/uslugi/strony-internetowe-dla-placowek-medycznych",
+                "provider": {
+                  "@id": "https://mediaso.pl/#organization"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Polska"
+                }
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "@id": "https://mediaso.pl/uslugi#social-media",
-                "name": "Prowadzenie social media",
-                "description": "Strategia tresci, grafiki, wideo oraz obsluga profili Facebook i Instagram placowek medycznych.",
-                "serviceType": "Zarzadzanie mediami spolecznosciowymi",
-                "url": "https://mediaso.pl/uslugi",
-                "provider": { "@id": "https://mediaso.pl/#organization" },
-                "areaServed": { "@type": "Country", "name": "Polska" }
+                "@id": "https://mediaso.pl/uslugi/social-media-dla-klinik#service",
+                "name": "Prowadzenie social media placówek medycznych",
+                "description": "Plan treści, grafiki i wideo, obsługa wiadomości od pacjentów oraz kampanie Meta Ads dla klinik, przychodni i gabinetów.",
+                "serviceType": "Zarządzanie mediami społecznościowymi",
+                "url": "https://mediaso.pl/uslugi/social-media-dla-klinik",
+                "provider": {
+                  "@id": "https://mediaso.pl/#organization"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Polska"
+                }
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "@id": "https://mediaso.pl/uslugi#optymalizacja-google",
-                "name": "Optymalizacja Google",
-                "description": "Wizytowka Google, mapy i lokalne wyniki wyszukiwania dla placowek medycznych.",
-                "serviceType": "Optymalizacja wizytowki Google",
-                "url": "https://mediaso.pl/uslugi",
-                "provider": { "@id": "https://mediaso.pl/#organization" },
-                "areaServed": { "@type": "Country", "name": "Polska" }
+                "@id": "https://mediaso.pl/uslugi/wizytowka-google-dla-placowki#service",
+                "name": "Optymalizacja Profilu Firmy w Google",
+                "description": "Kategorie, usługi, godziny, zdjęcia, posty i opinie pacjentów w Profilu Firmy oraz spójność danych placówki w sieci.",
+                "serviceType": "Local SEO",
+                "url": "https://mediaso.pl/uslugi/wizytowka-google-dla-placowki",
+                "provider": {
+                  "@id": "https://mediaso.pl/#organization"
+                },
+                "areaServed": {
+                  "@type": "Country",
+                  "name": "Polska"
+                }
               }
             }
           ]
@@ -120,7 +174,9 @@
         "url": "https://mediaso.pl/",
         "name": "mediaso",
         "inLanguage": "pl-PL",
-        "publisher": { "@id": "https://mediaso.pl/#organization" }
+        "publisher": {
+          "@id": "https://mediaso.pl/#organization"
+        }
       }
     ]
   }

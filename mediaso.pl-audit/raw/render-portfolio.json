@@ -1,0 +1,66 @@
+{
+  "url": "https://mediaso.pl/portfolio",
+  "status_code": 200,
+  "content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Portfolio realizacji dla plac\u00f3wek medycznych | mediaso</title>\n  <base href=\"/\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Nasze realizacje w bran\u017cy medycznej: strony internetowe, kampanie i profile social media klinik oraz gabinet\u00f3w. Szczeg\u00f3\u0142owe case studies w przygotowaniu.\">\n  <meta name=\"robots\" content=\"noindex, follow\">\n  <meta nam...",
+  "raw_content": "<!DOCTYPE html><html lang=\"pl\" data-beasties-container><head>\n  <meta charset=\"utf-8\">\n  <title>Portfolio realizacji dla plac\u00f3wek medycznych | mediaso</title>\n  <base href=\"/\">\n  <meta name=\"viewport\"...",
+  "is_spa": false,
+  "extracted_text": "mediaso\nNasze realizacje w bran\u017cy medycznej\nPracujemy nad case studies z naszych projekt\u00f3w. Wkr\u00f3tce udost\u0119pnimy szczeg\u00f3\u0142owe analizy naszych realizacji dla klient\u00f3w.",
+  "publication_date": "2026-01-01",
+  "accessibility_tree": null,
+  "headers": {
+    "Server": "nginx/1.28.3 (Ubuntu)",
+    "Date": "Thu, 27 Aug 2026 16:44:28 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Last-Modified": "Thu, 27 Aug 2026 16:31:41 GMT",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Vary": "Accept-Encoding",
+    "ETag": "W/\"6a90666d-c11f\"",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Content-Encoding": "gzip"
+  },
+  "redirect_chain": [],
+  "console_errors": [],
+  "render_diagnostics": [],
+  "render_engine": null,
+  "render_ms": null,
+  "mode_used": "raw",
+  "error": null,
+  "structured_data": {
+    "block_count": 2,
+    "processed_count": 2,
+    "total_bytes": 4255,
+    "truncated": false,
+    "blocks": [
+      {
+        "index": 1,
+        "size_bytes": 3443,
+        "valid": true,
+        "types": [
+          "ContactPoint",
+          "Country",
+          "ImageObject",
+          "Offer",
+          "OfferCatalog",
+          "Organization",
+          "Service",
+          "WebSite"
+        ],
+        "types_truncated": false
+      },
+      {
+        "index": 2,
+        "size_bytes": 812,
+        "valid": true,
+        "types": [
+          "BreadcrumbList",
+          "ListItem",
+          "WebPage"
+        ],
+        "types_truncated": false
+      }
+    ]
+  }
+}

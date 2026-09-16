@@ -1,0 +1,31 @@
+# mediaso
+
+> Agencja marketingowa pracująca wyłącznie z placówkami medycznymi w Polsce: klinikami, przychodniami i gabinetami. Zakres obejmuje strony internetowe, pozycjonowanie w Google, Profil Firmy w Google oraz prowadzenie social mediów. Model zdalny, obsługa z całego kraju.
+
+Kontakt: kontakt@mediaso.pl, +48 504 103 154
+Język serwisu: polski (przełącznik EN obsługuje interfejs, treść merytoryczna jest po polsku)
+
+## Usługi
+
+- [Pozycjonowanie klinik](https://mediaso.pl/uslugi/pozycjonowanie-klinik): SEO dla placówek - audyt i optymalizacja na start 1 000-2 500 zł netto, podstrony usług i lokalizacji, treści zgodne z ograniczeniami reklamy usług medycznych.
+- [Strony internetowe dla placówek medycznych](https://mediaso.pl/uslugi/strony-internetowe-dla-placowek-medycznych): pakiety 2 900-3 900 zł (do 3 podstron), 4 900-6 500 zł (do 6 podstron), 7 000-11 000 zł (blog i CMS), netto; rezerwacja wizyt od 1 800 zł; hosting od 80 zł miesięcznie.
+- [Social media dla klinik](https://mediaso.pl/uslugi/social-media-dla-klinik): prowadzenie Facebooka i Instagrama od 2 200 zł netto miesięcznie, obsługa wiadomości, kampanie Meta Ads.
+- [Wizytówka Google dla placówki](https://mediaso.pl/uslugi/wizytowka-google-dla-placowki): kategorie, usługi, zdjęcia, posty, zbieranie opinii i odpowiadanie na nie bez ujawniania danych pacjentów.
+
+## Baza wiedzy
+
+- [Czym jest marketing medyczny](https://mediaso.pl/wiedza/czym-jest-marketing-medyczny): definicja, zakres, granice prawne, kolejność działań w małej placówce.
+- [Pozycjonowanie kliniki krok po kroku](https://mediaso.pl/wiedza/pozycjonowanie-kliniki-krok-po-kroku): sześć kroków od listy fraz po pomiar wyników.
+- [RODO w marketingu placówki medycznej](https://mediaso.pl/wiedza/rodo-w-marketingu-placowki-medycznej): zgody na wizerunek, opinie, SMS-y, umowy powierzenia, piksele reklamowe.
+- [Ile kosztuje strona internetowa dla przychodni](https://mediaso.pl/wiedza/ile-kosztuje-strona-dla-przychodni): widełki cenowe, koszty utrzymania, pułapki w umowach.
+- [Jak zbierać opinie pacjentów zgodnie z prawem](https://mediaso.pl/wiedza/jak-zbierac-opinie-pacjentow): kiedy prosić, jak formułować prośbę, jak odpowiadać na negatywne opinie.
+
+## Narzędzia
+
+- [Diagnostyka wzrostu placówki](https://mediaso.pl/diagnostyka): bezpłatny test - 20 pytań w wersji podstawowej i 84 kryteria w wersji rozszerzonej, w 10 obszarach: strategia, pozyskiwanie pacjentów, rejestracja, strona, marketing, rentowność, KPI, automatyzacja, opinie, skalowalność. Odpowiedzi zostają w przeglądarce użytkownika.
+
+## Pozostałe
+
+- [O nas](https://mediaso.pl/o-nas)
+- [Kontakt](https://mediaso.pl/kontakt)
+- [Polityka prywatności](https://mediaso.pl/polityka-prywatnosci)

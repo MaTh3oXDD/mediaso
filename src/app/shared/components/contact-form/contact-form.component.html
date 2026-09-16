@@ -1,0 +1,104 @@
+@if (status() !== 'sent') {
+  <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" novalidate>
+    <div class="form-group" [class.has-error]="submitted() && name.invalid">
+      <label for="cf-name">{{ tr().contact.form.name }}</label>
+      <input
+        id="cf-name"
+        type="text"
+        [(ngModel)]="form.name"
+        name="name"
+        #name="ngModel"
+        required
+        minlength="2"
+        autocomplete="name"
+        [placeholder]="tr().contact.form.name"
+      />
+      @if (submitted() && name.invalid) {
+        <span class="field-error">{{ tr().contact.form.errorName }}</span>
+      }
+    </div>
+
+    <div class="form-group" [class.has-error]="submitted() && email.invalid">
+      <label for="cf-email">{{ tr().contact.form.email }}</label>
+      <input
+        id="cf-email"
+        type="email"
+        [(ngModel)]="form.email"
+        name="email"
+        #email="ngModel"
+        required
+        email
+        autocomplete="email"
+        [placeholder]="tr().contact.form.email"
+      />
+      @if (submitted() && email.invalid) {
+        <span class="field-error">{{ tr().contact.form.errorEmail }}</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="cf-company">{{ tr().contact.form.company }}</label>
+      <input
+        id="cf-company"
+        type="text"
+        [(ngModel)]="form.company"
+        name="company"
+        autocomplete="organization"
+        [placeholder]="tr().contact.form.company"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="cf-service">{{ tr().contact.form.service }}</label>
+      <select id="cf-service" [(ngModel)]="form.service" name="service">
+        <option value="">{{ tr().contact.form.servicePlaceholder }}</option>
+        @for (option of tr().contact.form.serviceOptions; track option) {
+          <option [value]="option">{{ option }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-group" [class.has-error]="submitted() && message.invalid">
+      <label for="cf-message">{{ tr().contact.form.message }}</label>
+      <textarea
+        id="cf-message"
+        [(ngModel)]="form.message"
+        name="message"
+        #message="ngModel"
+        required
+        minlength="2"
+        rows="5"
+        [placeholder]="tr().contact.form.message"
+      ></textarea>
+      @if (submitted() && message.invalid) {
+        <span class="field-error">{{ tr().contact.form.errorMessage }}</span>
+      }
+    </div>
+
+    <div class="form-consent" [class.has-error]="submitted() && consent.invalid">
+      <label class="consent-label">
+        <input type="checkbox" [(ngModel)]="form.consent" name="consent" #consent="ngModel" required />
+        <span>
+          {{ tr().contact.form.consentBefore }}
+          <a routerLink="/polityka-prywatnosci" target="_blank" rel="noopener">{{ tr().contact.form.consentLink }}</a>.
+        </span>
+      </label>
+      @if (submitted() && consent.invalid) {
+        <span class="field-error">{{ tr().contact.form.errorConsent }}</span>
+      }
+    </div>
+
+    @if (status() === 'error') {
+      <p class="form-error" role="alert">{{ errorMessage() }}</p>
+    }
+
+    <button type="submit" class="btn btn-primary submit-btn" [disabled]="status() === 'sending'">
+      {{ status() === 'sending' ? tr().contact.form.sending : tr().contact.form.send }}
+    </button>
+  </form>
+} @else {
+  <div class="success-message" role="status">
+    <div class="success-icon">✓</div>
+    <p>{{ tr().contact.form.success }}</p>
+  </div>
+}

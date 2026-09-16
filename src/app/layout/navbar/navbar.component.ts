@@ -4,6 +4,7 @@ import { PLATFORM_ID } from '@angular/core';
 import { NavigationStart, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { TranslationService } from '../../core/services/translation.service';
+import { SITE } from '../../core/seo/site.config';
 
 /** Powyzej tej szerokosci menu mobilne nie istnieje - patrz mixin `desktop`. */
 const DESKTOP_BREAKPOINT = 1024;
@@ -23,6 +24,7 @@ export class NavbarComponent {
 
   protected tr = this.ts.tr;
   protected currentLang = this.ts.currentLang;
+  protected telHref = `tel:${SITE.phone}`;
   protected menuOpen = signal(false);
   protected scrolled = signal(false);
 
