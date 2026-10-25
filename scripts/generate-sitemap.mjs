@@ -25,9 +25,18 @@ const articlesSource = read('src/app/content/articles.data.ts');
 /** Data ostatniej modyfikacji pliku źródłowego w formacie YYYY-MM-DD. */
 const modifiedOf = path => statSync(resolve(root, path)).mtime.toISOString().slice(0, 10);
 
-const today = new Date().toISOString().slice(0, 10);
+/** Najnowsza data modyfikacji z zestawu plików - dla stron składanych z kilku źródeł. */
+const newestOf = (...paths) => paths.map(modifiedOf).sort().at(-1);
+
 const servicesModified = modifiedOf('src/app/content/services.data.ts');
 const articlesModified = modifiedOf('src/app/content/articles.data.ts');
+const portfolioModified = modifiedOf('src/app/content/portfolio.data.ts');
+
+// Strony bez pliku z treścią biorą datę ze swojego komponentu i z tłumaczeń.
+// Wstawianie tu dzisiejszej daty dawało co build nowy `lastmod` na stronach,
+// w których nic się nie zmieniło - a taki sygnał wyszukiwarka ignoruje.
+const translations = 'src/app/core/translations';
+const pageModified = (...paths) => newestOf(...paths, `${translations}/pl.ts`);
 
 // dateModified z danych artykułu ma pierwszeństwo przed datą pliku.
 const articleDates = Object.fromEntries(
@@ -37,12 +46,33 @@ const articleDates = Object.fromEntries(
 );
 
 const staticPages = [
-  { path: '/', priority: '1.0', changefreq: 'monthly', lastmod: today },
+  {
+    path: '/',
+    priority: '1.0',
+    changefreq: 'monthly',
+    lastmod: pageModified('src/app/pages/home/home.component.html'),
+  },
   { path: '/uslugi', priority: '0.9', changefreq: 'monthly', lastmod: servicesModified },
   { path: '/wiedza', priority: '0.8', changefreq: 'weekly', lastmod: articlesModified },
-  { path: '/o-nas', priority: '0.6', changefreq: 'yearly', lastmod: today },
-  { path: '/kontakt', priority: '0.7', changefreq: 'yearly', lastmod: today },
-  { path: '/diagnostyka', priority: '0.8', changefreq: 'monthly', lastmod: today },
+  { path: '/portfolio', priority: '0.7', changefreq: 'monthly', lastmod: portfolioModified },
+  {
+    path: '/o-nas',
+    priority: '0.6',
+    changefreq: 'yearly',
+    lastmod: pageModified('src/app/pages/about/about.component.html'),
+  },
+  {
+    path: '/kontakt',
+    priority: '0.7',
+    changefreq: 'yearly',
+    lastmod: pageModified('src/app/pages/contact/contact.component.html'),
+  },
+  {
+    path: '/diagnostyka',
+    priority: '0.8',
+    changefreq: 'monthly',
+    lastmod: pageModified('src/app/pages/assessment/assessment.html'),
+  },
 ];
 
 const urls = [

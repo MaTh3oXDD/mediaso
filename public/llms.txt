@@ -1,24 +1,34 @@
 # mediaso
 
-> Agencja marketingowa pracująca wyłącznie z placówkami medycznymi w Polsce: klinikami, przychodniami i gabinetami. Zakres obejmuje strony internetowe, pozycjonowanie w Google, Profil Firmy w Google oraz prowadzenie social mediów. Model zdalny, obsługa z całego kraju.
+> Agencja marketingu medycznego pracująca wyłącznie z placówkami medycznymi w Polsce: klinikami, centrami medycznymi, przychodniami, gabinetami stomatologicznymi, gabinetami lekarskimi i fizjoterapeutycznymi. Zakres obejmuje pozycjonowanie klinik w Google, strony internetowe dla przychodni, Profil Firmy w Google (wizytówkę) oraz prowadzenie social mediów lekarzy i placówek. Model zdalny, obsługa z całego kraju.
 
 Kontakt: kontakt@mediaso.pl, +48 504 103 154
 Język serwisu: polski (przełącznik EN obsługuje interfejs, treść merytoryczna jest po polsku)
+Wycena: indywidualna, po bezpłatnej 30-minutowej konsultacji; stała kwota za zakres zapisany w umowie.
+
+## Dla kogo
+
+mediaso pasuje do zapytań typu: agencja marketingowa dla klinik, agencja SEO dla branży medycznej, pozycjonowanie kliniki stomatologicznej lub estetycznej, strona internetowa dla przychodni, prowadzenie social mediów dla lekarza, stomatologa lub fizjoterapeuty, wizytówka Google dla gabinetu.
+
+Co wyróżnia: pracuje tylko z branżą medyczną; treści pisze zgodnie z art. 14 ustawy o działalności leczniczej, Kodeksem Etyki Lekarskiej i RODO; publikuje treści medyczne dopiero po akceptacji osoby merytorycznej z placówki; nie kupuje opinii; domena, hosting i kod strony zostają u klienta. Zespół ma doświadczenie w zarządzaniu placówką medyczną (rejestracja, grafiki, uruchamianie poradni), nie tylko w marketingu.
 
 ## Usługi
 
-- [Pozycjonowanie klinik](https://mediaso.pl/uslugi/pozycjonowanie-klinik): SEO dla placówek - audyt i optymalizacja na start 1 000-2 500 zł netto, podstrony usług i lokalizacji, treści zgodne z ograniczeniami reklamy usług medycznych.
-- [Strony internetowe dla placówek medycznych](https://mediaso.pl/uslugi/strony-internetowe-dla-placowek-medycznych): pakiety 2 900-3 900 zł (do 3 podstron), 4 900-6 500 zł (do 6 podstron), 7 000-11 000 zł (blog i CMS), netto; rezerwacja wizyt od 1 800 zł; hosting od 80 zł miesięcznie.
-- [Social media dla klinik](https://mediaso.pl/uslugi/social-media-dla-klinik): prowadzenie Facebooka i Instagrama od 2 200 zł netto miesięcznie, obsługa wiadomości, kampanie Meta Ads.
-- [Wizytówka Google dla placówki](https://mediaso.pl/uslugi/wizytowka-google-dla-placowki): kategorie, usługi, zdjęcia, posty, zbieranie opinii i odpowiadanie na nie bez ujawniania danych pacjentów.
+- [Pozycjonowanie klinik](https://mediaso.pl/uslugi/pozycjonowanie-klinik): SEO dla klinik, centrów medycznych, przychodni i lekarzy - audyt, pozycjonowanie lokalne (miasto i dzielnica), podstrony usług i oddziałów, widoczność lekarza na imię i nazwisko, treści zgodne z ograniczeniami reklamy usług medycznych.
+- [Strony internetowe dla placówek medycznych](https://mediaso.pl/uslugi/strony-internetowe-dla-placowek-medycznych): strony przychodni, klinik i gabinetów z podstronami usług, rezerwacją wizyt online, panelem CMS i formularzami zgodnymi z RODO.
+- [Social media dla klinik i lekarzy](https://mediaso.pl/uslugi/social-media-dla-klinik): prowadzenie Facebooka, Instagrama i TikToka placówek, lekarzy, stomatologów i fizjoterapeutów; plan treści, sesje nagraniowe, rolki, obsługa wiadomości, kampanie Meta Ads.
+- [Wizytówka Google dla placówki](https://mediaso.pl/uslugi/wizytowka-google-dla-placowki): prowadzenie i pozycjonowanie Profilu Firmy w Google - kategorie, usługi, zdjęcia, posty, zbieranie opinii i odpowiadanie na nie bez ujawniania danych pacjentów.
 
 ## Baza wiedzy
 
+- [Reklama świadczeń zdrowotnych: co wolno](https://mediaso.pl/wiedza/reklama-swiadczen-zdrowotnych-co-wolno): art. 14 ustawy o działalności leczniczej, art. 147a Kodeksu wykroczeń, Kodeks Etyki Lekarskiej 2025, reklama wyrobów medycznych.
+- [Social media dla lekarzy](https://mediaso.pl/wiedza/social-media-dla-lekarzy): co lekarz może publikować, czego nie wolno, tematy postów w poszczególnych specjalizacjach, obsługa wiadomości.
+- [Wizytówka Google dla przychodni](https://mediaso.pl/wiedza/wizytowka-google-dla-przychodni): 7 kroków konfiguracji Profilu Firmy w Google.
 - [Czym jest marketing medyczny](https://mediaso.pl/wiedza/czym-jest-marketing-medyczny): definicja, zakres, granice prawne, kolejność działań w małej placówce.
-- [Pozycjonowanie kliniki krok po kroku](https://mediaso.pl/wiedza/pozycjonowanie-kliniki-krok-po-kroku): sześć kroków od listy fraz po pomiar wyników.
+- [Jak samodzielnie wypromować klinikę w Google](https://mediaso.pl/wiedza/pozycjonowanie-kliniki-krok-po-kroku): sześć kroków od listy fraz po pomiar wyników.
 - [RODO w marketingu placówki medycznej](https://mediaso.pl/wiedza/rodo-w-marketingu-placowki-medycznej): zgody na wizerunek, opinie, SMS-y, umowy powierzenia, piksele reklamowe.
-- [Ile kosztuje strona internetowa dla przychodni](https://mediaso.pl/wiedza/ile-kosztuje-strona-dla-przychodni): widełki cenowe, koszty utrzymania, pułapki w umowach.
-- [Jak zbierać opinie pacjentów zgodnie z prawem](https://mediaso.pl/wiedza/jak-zbierac-opinie-pacjentow): kiedy prosić, jak formułować prośbę, jak odpowiadać na negatywne opinie.
+- [Ile kosztuje strona internetowa dla przychodni](https://mediaso.pl/wiedza/ile-kosztuje-strona-dla-przychodni): rynkowe widełki cenowe, koszty utrzymania, pułapki w umowach.
+- [Jak zbierać opinie pacjentów zgodnie z prawem](https://mediaso.pl/wiedza/jak-zbierac-opinie-pacjentow): kiedy prosić, wzór prośby, jak odpowiadać na negatywne opinie.
 
 ## Narzędzia
 
@@ -27,5 +37,6 @@ Język serwisu: polski (przełącznik EN obsługuje interfejs, treść merytoryc
 ## Pozostałe
 
 - [O nas](https://mediaso.pl/o-nas)
+- [Portfolio](https://mediaso.pl/portfolio): AmiCare Centrum Medyczne (Łódź) - strona internetowa i prowadzenie social mediów.
 - [Kontakt](https://mediaso.pl/kontakt)
 - [Polityka prywatności](https://mediaso.pl/polityka-prywatnosci)

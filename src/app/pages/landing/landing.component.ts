@@ -30,15 +30,8 @@ export class LandingComponent {
       text: 'Pacjent sprawdza wizytówkę w mapach, stronę i profil na Instagramie, zanim zadzwoni. Prowadzimy wszystkie trzy tak, żeby mówiły to samo i prowadziły do jednego telefonu.',
     },
     {
-      title: 'Ceny podane z góry',
-      text: 'Cennik publikujemy na stronie, a zakres każdego pakietu ma opisane limity. Domena, hosting i kod strony zostają u Ciebie, także po zakończeniu współpracy.',
+      title: 'Stała kwota za uzgodniony zakres',
+      text: 'Wycenę dostajesz po bezpłatnej konsultacji, z zakresem i limitami zapisanymi w umowie. Domena, hosting i kod strony zostają u Ciebie, także po zakończeniu współpracy.',
     },
-  ];
-
-  protected prices = [
-    { name: 'Strona internetowa', price: 'od 2 900 zł', period: 'jednorazowo' },
-    { name: 'Social media', price: 'od 2 700 zł', period: 'miesięcznie, pierwszy miesiąc 2 999 zł' },
-    { name: 'Wizytówka Google', price: 'od 600 zł', period: 'miesięcznie, wdrożenie 900–1 400 zł' },
-    { name: 'Audyt SEO na start', price: 'od 1 000 zł', period: 'jednorazowo' },
   ];
 }

@@ -64,6 +64,18 @@
   }
 }
 
+.portfolio-section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-section-next {
+  padding-top: 0;
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -105,24 +117,35 @@
 
   &:hover {
     border-color: var(--ink);
+
+    .portfolio-thumb img {
+      transform: scale(1.03);
+    }
   }
 }
 
 .portfolio-thumb {
-  height: 100px;
+  aspect-ratio: 16 / 10;
   background: var(--bg-alt);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 
-  .thumb-type {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--ink-3);
-    text-transform: uppercase;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.4s ease;
   }
+}
+
+.thumb-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--ink-3);
+  text-transform: uppercase;
 }
 
 .portfolio-body {
@@ -167,17 +190,53 @@
   border-top: 1px solid var(--border);
 }
 
-.portfolio-coming-soon {
-  padding: 4rem 2rem;
-  text-align: center;
+.portfolio-cta {
+  display: grid;
+  gap: 2rem;
+  padding: 2.5rem 1.5rem;
   background: var(--bg-alt);
-  border-radius: 4px;
+  border: 1px solid var(--border);
+
+  @include tablet {
+    padding: 3rem;
+  }
+
+  @include desktop {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 4rem;
+    padding: 3.5rem;
+  }
+
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.125rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0 0 1rem;
+  }
 
   p {
     font-size: 1rem;
+    line-height: 1.75;
     color: var(--ink-2);
-    line-height: 1.7;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 56ch;
+    margin: 0;
+  }
+}
+
+.portfolio-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  .btn {
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
   }
 }

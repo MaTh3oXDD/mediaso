@@ -155,12 +155,7 @@
                   <h4>{{ recommendedPackage()?.name }}</h4>
                   <p class="package-desc">{{ recommendedPackage()?.desc }}</p>
                 </div>
-                <div class="package-price">
-                  <span class="price-label">od</span>
-                  <span class="price-amount">{{ recommendedPackage()?.price }}</span>
-                  <span class="price-period">{{ recommendedPackage()?.period }}</span>
-                </div>
-                <a routerLink="/uslugi" class="btn btn-primary">Dowiedz Się Więcej</a>
+                <a [routerLink]="recommendedPackage()?.path" class="btn btn-primary">Dowiedz Się Więcej</a>
               </div>
             </div>
           }

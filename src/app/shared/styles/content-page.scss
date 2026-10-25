@@ -118,6 +118,79 @@
   padding-left: 1rem;
 }
 
+// Lista źródeł pod artykułem. Linkujemy do dokumentu pierwotnego, więc bez
+// nofollow - to odnośnik redakcyjny, nie płatny ani nie wymuszony.
+.source-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 72ch;
+  display: grid;
+  gap: 0.875rem;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.75rem;
+    padding-bottom: 0.875rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9375rem;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--accent);
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  span {
+    color: var(--ink-3);
+    font-size: 0.8125rem;
+  }
+}
+
+// Odnośnik w treści sekcji. Osobny blok, żeby dało się go odróżnić od akapitu,
+// ale bez ramki i tła - to nadal część czytanego tekstu, nie wtrącona reklama.
+.content-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  max-width: 72ch;
+  margin: 0 0 1.25rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  font-size: 0.9375rem;
+
+  a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--accent);
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  span {
+    color: var(--ink-3);
+  }
+}
+
 .content-figure {
   margin: 2rem 0 0;
   max-width: 72ch;
@@ -127,6 +200,10 @@
     width: 100%;
     height: auto;
     border: 1px solid var(--border);
+    // Zdjęcia pionowe potrafią zająć cały ekran i rozbić rytm czytania.
+    // Poziome mieszczą się poniżej tego limitu, więc kadr ich nie dotyczy.
+    max-height: 34rem;
+    object-fit: cover;
   }
 
   figcaption {
@@ -146,94 +223,6 @@
     img {
       aspect-ratio: 16 / 9;
       object-fit: cover;
-    }
-  }
-}
-
-// --- Cennik na podstronach usług ---------------------------------------------
-.price-section {
-  border-top: 1px solid var(--border);
-}
-
-.price-group-title {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin: 2.5rem 0 1rem;
-}
-
-// Tabela może być szersza niż ekran telefonu - przewija się ona, nie strona.
-.price-table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-}
-
-.price-table {
-  width: 100%;
-  min-width: 640px;
-  border-collapse: collapse;
-  font-size: 0.925rem;
-  line-height: 1.6;
-
-  th,
-  td {
-    padding: 0.875rem 1rem;
-    text-align: left;
-    vertical-align: top;
-    border-bottom: 1px solid var(--border);
-    color: var(--ink-2);
-  }
-
-  tbody tr:last-child th,
-  tbody tr:last-child td {
-    border-bottom: 0;
-  }
-
-  thead th {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    background: var(--bg-alt);
-  }
-
-  tbody th {
-    font-weight: 500;
-    color: var(--ink);
-  }
-
-  .price {
-    white-space: nowrap;
-    color: var(--accent);
-  }
-
-  .price-next {
-    display: block;
-    margin-top: 0.25rem;
-    font-size: 0.825rem;
-    color: var(--ink-3);
-  }
-
-  .price-features {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      position: relative;
-      padding-left: 1rem;
-      margin-bottom: 0.35rem;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0.8em;
-        width: 6px;
-        height: 1px;
-        background: var(--accent);
-      }
     }
   }
 }

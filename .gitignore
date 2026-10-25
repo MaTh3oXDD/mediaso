@@ -46,3 +46,6 @@ Thumbs.db
 # Konfiguracja z haslem SMTP - nigdy do repo
 mediaso-config.php
 /etc-mediaso/
+
+# Umowy, leady i dokumenty robocze - nie trafiaja do public/ ani do repo
+/_prywatne/

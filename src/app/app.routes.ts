@@ -51,9 +51,7 @@ export const routes: Routes = [
     path: 'portfolio',
     loadComponent: () =>
       import('./pages/portfolio/portfolio.component').then(m => m.PortfolioComponent),
-    // Strona bez realizacji nie ma czego oferowac w wynikach wyszukiwania.
-    // Pusty wynik w indeksie obniza ocene calej domeny - wraca po dodaniu tresci.
-    data: { seo: 'portfolio', noindex: true },
+    data: { seo: 'portfolio' },
   },
   {
     path: 'kontakt',

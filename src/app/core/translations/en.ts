@@ -96,18 +96,6 @@ export const en = {
       ],
     },
     manifesto: 'Before a patient calls a clinic, they check reviews, the website, social media, and specialists. Professional marketing makes sure they choose your practice.',
-    pricingPreview: {
-      label: 'Pricing',
-      title: 'What does it cost?',
-      intro: 'Starting ranges for the three scopes we are asked for most often. Full packages, with page limits and revision rounds, live on the services page.',
-      items: [
-        { name: 'Website', price: 'from €800', period: 'one-time' },
-        { name: 'Social media management', price: 'from €500', period: 'per month' },
-        { name: 'Hosting', price: 'from €20', period: 'per month' },
-      ],
-      note: 'Prices exclude VAT. Booking systems and shops are quoted separately.',
-      link: 'See the full pricing',
-    },
     cta: {
       title: 'Ready for a change?',
       subtitle: 'Schedule a free consultation and find out how we can help your practice.',
@@ -166,33 +154,6 @@ export const en = {
         { num: '02', title: 'Strategy', desc: 'We develop a plan tailored to your goals.' },
         { num: '03', title: 'Execution', desc: 'We implement agreed solutions on time and on budget.' },
         { num: '04', title: 'Optimization', desc: 'We monitor results and continuously improve performance.' },
-      ],
-    },
-    pricing: {
-      title: 'Pricing',
-      note: '* Prices exclude VAT. Every project is quoted individually - contact us.',
-      plans: [
-        {
-          name: 'Website',
-          price: 'from €800',
-          period: 'one-time',
-          desc: 'A professional website for your medical practice.',
-          features: ['Custom graphic design', 'Responsive on every device', 'Basic SEO', 'CMS panel', 'SSL certificate'],
-        },
-        {
-          name: 'Social - Start',
-          price: 'from €500',
-          period: 'per month',
-          desc: 'Consistent social media presence for your practice.',
-          features: ['4 posts per week', 'Facebook + Instagram', 'Monthly reporting', 'Comment handling'],
-        },
-        {
-          name: 'Social - Scale',
-          price: 'from €1 000',
-          period: 'per month',
-          desc: 'Full management with ad campaigns and a dedicated account manager.',
-          features: ['8 posts per week', 'Facebook + Instagram + Google', 'Meta Ads campaigns', 'Dedicated account manager'],
-        },
       ],
     },
     cta: { title: "Let's start together", button: 'Get in touch' },
@@ -342,7 +303,7 @@ export const en = {
     portfolio: {
       title: 'Portfolio of work for medical practices | mediaso',
       description:
-        'Our work in healthcare: websites, campaigns and social media profiles for clinics and practices. Detailed case studies coming soon.',
+        'mediaso work for medical practices: the AmiCare Medical Centre website in Łódź and management of its Facebook and Instagram profiles.',
     },
     contact: {
       title: 'Contact | mediaso - marketing for medical practices',
@@ -357,7 +318,7 @@ export const en = {
     landing: {
       title: 'Marketing for medical practices | mediaso',
       description:
-        'Website, social media and Google Business Profile for clinics and private practices. Public pricing and a free 30-minute consultation.',
+        'Website, social media and Google Business Profile for clinics and private practices. Quote after a free 30-minute consultation.',
     },
     assessment: {
       title: 'Practice growth assessment | mediaso',

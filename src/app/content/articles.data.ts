@@ -6,14 +6,241 @@ import type { Article } from './content.types';
  */
 export const ARTICLES: readonly Article[] = [
   {
+    slug: 'reklama-swiadczen-zdrowotnych-co-wolno',
+    title: 'Reklama świadczeń zdrowotnych: co wolno',
+    h1: 'Reklama świadczeń zdrowotnych: gdzie kończy się informacja, a zaczyna wykroczenie',
+    seoTitle: 'Reklama usług medycznych: co wolno, a za co grozi kara (art. 14) | mediaso',
+    seoDescription:
+      'Lista dozwolonych i zakazanych treści dla placówek i lekarzy: ceny, promocje, zdjęcia przed i po, social media. Art. 14, art. 147a k.w. i Kodeks Etyki Lekarskiej 2025.',
+    datePublished: '2026-09-22',
+    dateModified: '2026-10-25',
+    readingMinutes: 9,
+    motif: 'pulse',
+    image: {
+      // Pixabay: https://pixabay.com/photos/stethoscope-hospital-doctor-health-840125/
+      src: '/blog/reklama-swiadczen-stetoskop.jpg',
+      alt: 'Stetoskop zawieszony na ścianie gabinetu, zdjęcie czarno-białe',
+      width: 1280,
+      height: 853,
+      credit: 'Pixabay, Content License',
+      creditUrl: 'https://pixabay.com/photos/stethoscope-hospital-doctor-health-840125/',
+    },
+    lead:
+      'Placówka medyczna może informować o tym, co robi, ale nie może zachęcać do skorzystania. Ta jedna różnica stoi za art. 14 ustawy o działalności leczniczej i za art. 147a Kodeksu wykroczeń, który za podanie do publicznej wiadomości informacji o świadczeniach w formie reklamy przewiduje grzywnę, ograniczenie wolności albo areszt. Przepis brzmi szeroko i stąd bierze się większość wątpliwości: ten sam post na Facebooku raz jest legalną informacją o uruchomieniu pracowni USG, a raz reklamą, bo dopisano do niego „promocja do końca miesiąca". Od 1 stycznia 2025 roku doszła druga warstwa: nowy Kodeks Etyki Lekarskiej, który usunął zdanie o zakazie reklamowania się i zastąpił je zasadami informowania. Trzecia warstwa to ustawa o wyrobach medycznych, gdzie kary sięgają milionów złotych i nakłada je Prezes UOKiK. Poniżej trzy warstwy w jednej liście: co wolno napisać, czego nie i jak sprawdzić materiał przed publikacją.',
+    sections: [
+      {
+        heading: 'Jedno zdanie ustawy, na którym opiera się cała reszta',
+        paragraphs: [
+          'Art. 14 ust. 1 ustawy o działalności leczniczej pozwala podmiotowi wykonującemu działalność leczniczą podawać do wiadomości publicznej informacje o zakresie i rodzajach udzielanych świadczeń zdrowotnych, pod warunkiem że treść i forma tych informacji nie mają cech reklamy. Ustawa nie mówi, czym są cechy reklamy. Tę granicę wyznaczyły orzecznictwo i stanowiska Naczelnej Izby Lekarskiej.',
+          'Informacja to przekaz rzeczowy i neutralny: jakie świadczenia placówka wykonuje, kto je wykonuje, gdzie i w jakich godzinach. Reklama to ten sam przekaz plus zachęta do skorzystania, nastawiona na wzrost liczby pacjentów i przychodu. O ocenie decyduje warstwa językowa. Zdanie o uruchomieniu pracowni endoskopii jest legalne jako komunikat oznajmujący i staje się wykroczeniem po dopisaniu hasła o promocyjnej cenie pierwszych dwudziestu badań.',
+        ],
+        bullets: [
+          'informacja opisuje stan faktyczny: zakres świadczeń, miejsce, godziny, kwalifikacje personelu',
+          'reklama dokłada zachętę: rabat, ograniczenie czasowe, wartościowanie, obietnicę efektu',
+          'kanał nie zmienia oceny: ulotka, strona, Google Ads i Instagram podlegają tej samej zasadzie',
+          'zakaz wiąże podmiot leczniczy i praktykę zawodową, nie sklep z suplementami czy gabinet kosmetyczny',
+        ],
+        note: 'Art. 147a § 2 Kodeksu wykroczeń: kto podaje do wiadomości publicznej informacje o zakresie i rodzajach udzielanych świadczeń zdrowotnych mające formę i treść reklamy, podlega karze aresztu, ograniczenia wolności albo grzywny.',
+      },
+      {
+        heading: 'Co wolno napisać bez ryzyka',
+        paragraphs: [
+          'Lista bezpiecznych treści jest dłuższa, niż wynika to z obiegowej opinii, że „w medycynie nic nie wolno". Wolno opisać całą operacyjną stronę placówki: kto przyjmuje, z czym, kiedy i jak się zapisać. Wolno podać wykształcenie, specjalizacje, staż i przynależność do towarzystw naukowych, o ile dane są prawdziwe i sprawdzalne. Wolno nazwać sprzęt i metodę, którą placówka pracuje, pod warunkiem że opis pozostaje techniczny, a nie perswazyjny.',
+          'Pacjent szukający ortopedy potrzebuje dokładnie tych informacji, więc rzetelny opis usług jest jednocześnie zgodny z prawem i lepszy sprzedażowo niż hasło reklamowe. Strona, która odpowiada na pytania o skierowanie, czas trwania wizyty, przygotowanie do badania i sposób odbioru wyników, przynosi więcej rejestracji niż nagłówek o najnowocześniejszym sprzęcie w województwie.',
+        ],
+        bullets: [
+          'nazwa, adres, dojazd, parking, dostępność dla osób z niepełnosprawnościami',
+          'zakres świadczeń nazwany językiem pacjenta, bez wartościowania',
+          'imiona, nazwiska, tytuły i specjalizacje osób udzielających świadczeń',
+          'godziny pracy rejestracji i poszczególnych poradni',
+          'telefon, adres rejestracji online, zasady odwoływania wizyt',
+          'nazwa i parametry sprzętu opisane rzeczowo',
+          'wysokość opłat wynikająca z regulaminu organizacyjnego',
+        ],
+        image: {
+          // Pixabay: https://pixabay.com/photos/door-entry-hospital-passage-red-349807/
+          src: '/blog/reklama-swiadczen-wejscie.jpg',
+          alt: 'Drzwi do korytarza placówki medycznej z klamką antypaniczną',
+          width: 1280,
+          height: 853,
+          credit: 'Pixabay, Content License',
+          creditUrl: 'https://pixabay.com/photos/door-entry-hospital-passage-red-349807/',
+        },
+      },
+      {
+        heading: 'Ceny i promocje: najczęstszy błąd placówek',
+        paragraphs: [
+          'Podanie cen bywa obowiązkiem. Regulamin organizacyjny podmiotu leczniczego określa wysokość opłat za świadczenia udzielane odpłatnie, a informację o nich placówka podaje do wiadomości pacjentów. Cennik na stronie i w rejestracji jest więc wykonaniem obowiązku informacyjnego, nie reklamą.',
+          'Reklamą staje się dopiero operowanie ceną: rabat, kod zniżkowy, pakiet w cenie niższej niż suma pozycji, porównanie do ceny wcześniejszej, termin ważności oferty. Ta sama logika obejmuje serwisy zakupów grupowych, bo zabieg wystawiony jako okazja dnia jest zachętą w czystej postaci. Jeśli placówka zmienia cennik, publikuje nowy cennik, a nie komunikat o obniżce.',
+        ],
+        bullets: [
+          'cennik jako tabela pozycji i kwot: dopuszczalny i potrzebny',
+          'kwota przekreślona, „-30%", „pakiet świąteczny", „do końca miesiąca": zachęta',
+          'zabiegi na platformach zakupów grupowych: reklama niezależnie od sformułowania',
+          'bezpłatna konsultacja przed zabiegiem komercyjnym: traktowana jak zachęta',
+        ],
+      },
+      {
+        heading: 'Kodeks Etyki Lekarskiej po 1 stycznia 2025 roku',
+        paragraphs: [
+          'Poprzedni Kodeks Etyki Lekarskiej zawierał zdanie, że wszelkie reklamowanie się jest zabronione. Taki zapis okazał się nie do pogodzenia z prawem unijnym i zniknął. Obowiązujący od 1 stycznia 2025 roku art. 71 nowego kodeksu nie posługuje się już słowem „reklama": mówi o informowaniu o działalności zawodowej, które ma pozostać zgodne z zasadami etyki lekarskiej. Informacją jest przy tym każda forma przekazu upowszechniającego wizerunek lekarza lub jego usługi.',
+          'Zmiana poszerza pole manewru, ale nie znosi granic. Lekarzowi nadal nie wolno deprecjonować innych lekarzy, przedstawiać się jako jedyny czy najlepszy, ani wykorzystywać autorytetu zawodu do promowania rzeczy z nim niezwiązanych, od suplementów po kosmetyki. Odpowiedzialność biegnie przed rzecznikiem odpowiedzialności zawodowej i sądem lekarskim, niezależnie od odpowiedzialności podmiotu leczniczego za treści wydane pod jego szyldem.',
+        ],
+        note: 'Zmiana w kodeksie etyki nie uchyliła art. 14 ustawy o działalności leczniczej. Lekarz jako osoba ma dziś szersze pole niż przychodnia jako podmiot i to podmiot odpowiada za treści na stronie i w kampaniach.',
+      },
+      {
+        heading: 'Wyroby medyczne to osobne przepisy i zupełnie inne kary',
+        paragraphs: [
+          'Ustawa o wyrobach medycznych z 2022 roku wprowadziła od 1 stycznia 2023 roku własny reżim reklamowy, który działa równolegle do ustawy o działalności leczniczej. Reklama wyrobu kierowana do publicznej wiadomości nie może wykorzystywać wizerunku osób wykonujących zawody medyczne ani osób podających się za takie osoby, ani przedstawiać prezentującego w sposób sugerujący wykonywanie takiego zawodu. Fartuch, stetoskop i wnętrze gabinetu w kadrze wystarczą, żeby przepis zadziałał.',
+          'Dotyczy to materiałów, które placówki publikują rutynowo: aparatu do lasera frakcyjnego, implantów, soczewek, aparatów słuchowych, skanerów wewnątrzustnych. Sankcje nakłada Prezes UOKiK i Prezes Urzędu Rejestracji: do 2 milionów złotych za reklamę niezgodną z przepisami i do 5 milionów za reklamę wprowadzającą w błąd. Współpraca z producentem sprzętu wymaga więc sprawdzenia, kto formalnie jest nadawcą materiału.',
+        ],
+      },
+      {
+        heading: 'Jak to wygląda w kanałach, których placówki używają codziennie',
+        paragraphs: [
+          'Na stronie internetowej ryzyko siedzi najczęściej w nagłówkach i sekcji „dlaczego my". Opisy usług zwykle są poprawne, bo powstają na bazie dokumentacji. Wywraca je zdanie o najlepszym zespole w mieście albo licznik zadowolonych pacjentów. Usunięcie superlatywów z trzech ekranów strony rozwiązuje zwykle większość problemu.',
+          'W Google Ads sama obecność placówki nie jest zakazana i stanowiska prawników są tu podzielone, natomiast teksty reklam podlegają art. 14 tak samo jak ulotka. Bezpieczna kampania kieruje na zapytania o konkretną usługę i mówi, co placówka robi, gdzie i kiedy przyjmuje. Do tego dochodzą polityki Google i Meta dotyczące zdrowia, które bywają ostrzejsze niż polskie prawo i odrzucą kreację.',
+          'W mediach społecznościowych granicę przekracza się najszybciej, bo format popycha do zachęty. Relacja z konferencji, wyjaśnienie procedury, przedstawienie nowego specjalisty i komunikat organizacyjny mieszczą się w informacji. Konkurs z zabiegiem w nagrodę, współpraca z influencerem opisującym zabieg jak produkt i zdjęcia przed i po używane jako dowód skuteczności to obszar, w którym izby lekarskie prowadzą postępowania.',
+        ],
+        image: {
+          // Pixabay: https://pixabay.com/photos/doctor-telemedicine-laptop-6161898/
+          src: '/blog/reklama-swiadczen-teleporada.jpg',
+          alt: 'Laptop na drewnianym biurku z lekarzem trzymającym stetoskop na ekranie',
+          width: 1280,
+          height: 705,
+          credit: 'Pixabay, Content License',
+          creditUrl: 'https://pixabay.com/photos/doctor-telemedicine-laptop-6161898/',
+        },
+        link: {
+          path: '/wiedza/czym-jest-marketing-medyczny',
+          label: 'Czym jest marketing medyczny',
+          description: 'Pełna lista kanałów i tego, co w każdym z nich wolno pokazać.',
+        },
+      },
+      {
+        heading: 'Czerwone flagi, po których poznasz reklamę we własnym tekście',
+        paragraphs: [
+          'Przy ocenie materiału pomaga proste ćwiczenie: wykreśl z tekstu każde zdanie, którego nie da się zweryfikować dokumentem, zdjęciem albo wpisem w rejestrze. To, co zostanie, jest informacją. To, co wykreśliłeś, było najczęściej zachętą.',
+        ],
+        bullets: [
+          'superlatywy i porównania: najlepszy, najnowocześniejszy, najtańszy, lider w regionie',
+          'obietnica albo gwarancja efektu leczenia',
+          'rabaty, kody, pakiety, konkursy i nagrody w postaci świadczeń',
+          'zdjęcia przed i po prezentowane jako dowód skuteczności',
+          'opinie pacjentów pozyskane w zamian za rabat lub upominek',
+          'influencer relacjonujący zabieg w konwencji recenzji produktu',
+          'wizerunek osoby w fartuchu w materiale promującym wyrób medyczny',
+        ],
+        note: 'Opinie zbierane za korzyść łamią jednocześnie wytyczne Google i przepisy o nieuczciwych praktykach rynkowych. Sposób na zbieranie ich legalnie opisaliśmy osobno.',
+      },
+      {
+        heading: 'Proces akceptacji treści zamiast sprawdzania każdego posta osobno',
+        paragraphs: [
+          'Placówki wpadają w kłopoty nie dlatego, że nie znają przepisu, tylko dlatego, że posta publikuje o 22:00 osoba, która nigdy o tym przepisie nie słyszała. Działa proces akceptacji treści. Jedna osoba w placówce akceptuje treści przed publikacją i zadaje trzy pytania: czy zdanie opisuje fakt, czy fakt da się udowodnić, czy tekst zawiera zachętę, rabat lub wartościowanie.',
+          'Do tego wystarczy archiwum: zrzut każdej publikacji z datą, w jednym folderze. Jeśli izba albo konkurencja zgłosi sprawę po roku, materiał dowodowy jest pod ręką. W umowie z agencją marketingową warto zapisać wprost, kto odpowiada za zgodność treści z art. 14 i kto akceptuje kreacje przed emisją.',
+        ],
+        bullets: [
+          'jedna osoba akceptująca treści, wskazana z imienia, nie „zespół"',
+          'trzy pytania kontrolne przed publikacją',
+          'archiwum zrzutów wszystkich publikacji i kreacji reklamowych',
+          'zapis w umowie z agencją o odpowiedzialności za zgodność treści',
+          'przegląd strony raz na kwartał pod kątem superlatywów',
+        ],
+        image: {
+          // Pixabay: https://pixabay.com/photos/stairs-corridor-hospital-orange-2105208/
+          src: '/blog/reklama-swiadczen-schody.jpg',
+          alt: 'Klatka schodowa w budynku szpitala z pomarańczowymi stopniami',
+          width: 853,
+          height: 1280,
+          credit: 'Pixabay, Content License',
+          creditUrl: 'https://pixabay.com/photos/stairs-corridor-hospital-orange-2105208/',
+        },
+      },
+      {
+        heading: 'Kto to egzekwuje i od czego zwykle się zaczyna',
+        paragraphs: [
+          'Sprawy rzadko wychodzą od urzędu. Najczęściej zgłasza je konkurencyjna placówka z tej samej dzielnicy, czasem pacjent, czasem izba po tym, jak materiał zrobił zasięgi. Dalej postępowanie idzie dwiema drogami: zawodową, przed rzecznikiem odpowiedzialności zawodowej i sądem lekarskim, oraz wykroczeniową, na podstawie art. 147a Kodeksu wykroczeń. Przy wyrobach medycznych dochodzi droga administracyjna z karami pieniężnymi.',
+          'Ryzyko rośnie razem z zasięgiem. Materiał, który dobrze się niesie, prędzej trafi przed oczy kogoś, kto go zgłosi. Dlatego treści przeznaczone do promocji płatnej warto sprawdzać uważniej niż wpis widoczny dla stu osób.',
+        ],
+        note: 'Ten tekst opisuje stan przepisów na wrzesień 2026 roku i nie jest poradą prawną. Przy wątpliwej kreacji taniej wychodzi godzina konsultacji z prawnikiem medycznym niż postępowanie przed sądem lekarskim.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Czy placówka medyczna może prowadzić kampanie Google Ads?',
+        answer:
+          'Sama obecność w płatnych wynikach nie jest zakazana, natomiast treść reklamy podlega art. 14 ustawy o działalności leczniczej tak samo jak ulotka czy baner. Bezpieczna kampania informuje o zakresie świadczeń, lokalizacji i godzinach przyjęć, bez rabatów, superlatywów i obietnic efektu. Stanowiska prawników co do samej dopuszczalności kampanii są podzielone, więc kreacje warto skonsultować.',
+      },
+      {
+        question: 'Czy wolno podawać ceny zabiegów na stronie?',
+        answer:
+          'Tak. Wysokość opłat za świadczenia udzielane odpłatnie wynika z regulaminu organizacyjnego podmiotu leczniczego i podaje się ją do wiadomości pacjentów. Reklamą staje się dopiero operowanie ceną: rabaty, kwoty przekreślone, pakiety promocyjne i oferty ograniczone terminem.',
+      },
+      {
+        question: 'Czy zdjęcia przed i po są dozwolone?',
+        answer:
+          'Prezentowane jako dowód skuteczności i zachęta do zabiegu są traktowane jako reklama, a dodatkowo pokazują dane o zdrowiu konkretnej osoby, co wymaga odrębnej zgody. W materiałach edukacyjnych i naukowych, kierowanych do profesjonalistów, ocena bywa inna. W komunikacji do pacjentów to jedno z najczęściej kwestionowanych narzędzi.',
+      },
+      {
+        question: 'Czy nowy Kodeks Etyki Lekarskiej zniósł zakaz reklamy?',
+        answer:
+          'Nie zniósł granic, tylko zmienił język. Od 1 stycznia 2025 roku kodeks nie posługuje się słowem „reklama" i pozwala lekarzowi informować o działalności zawodowej zgodnie z zasadami etyki. Nadal zabronione jest deprecjonowanie innych lekarzy, przedstawianie się jako najlepszy czy jedyny oraz wykorzystywanie autorytetu zawodu do promocji usług i produktów niezwiązanych z medycyną. Przepisy ustawy o działalności leczniczej obowiązują niezależnie od kodeksu.',
+      },
+      {
+        question: 'Jaka kara grozi za reklamę świadczeń zdrowotnych?',
+        answer:
+          'Za podanie do wiadomości publicznej informacji o świadczeniach w formie reklamy Kodeks wykroczeń przewiduje karę aresztu, ograniczenia wolności albo grzywny, a lekarzowi grozi dodatkowo odpowiedzialność zawodowa. Przy reklamie wyrobów medycznych kary są administracyjne i sięgają 2 milionów złotych, a przy reklamie wprowadzającej w błąd 5 milionów złotych.',
+      },
+    ],
+    sources: [
+      {
+        label: 'Ustawa z dnia 15 kwietnia 2011 r. o działalności leczniczej',
+        url: 'https://eli.gov.pl/eli/DU/2011/654/ogl',
+        publisher: 'Dziennik Ustaw',
+      },
+      {
+        label: 'Informowanie o działalności leczniczej a jej reklama',
+        url: 'https://nil.org.pl/dla-lekarzy/praktyka-lekarska/4240-informowanie-o-dzialalnosci-leczniczej-a-jej-reklama',
+        publisher: 'Naczelna Izba Lekarska',
+      },
+      {
+        label: 'Kodeks Etyki Lekarskiej',
+        url: 'https://nil.org.pl/dla-lekarzy/prawo/kodeks-etyki-lekarskiej',
+        publisher: 'Naczelna Izba Lekarska',
+      },
+      {
+        label: 'Reklama wyrobów medycznych. Nowe przepisy od 1 stycznia 2023 r.',
+        url: 'https://nil.org.pl/aktualnosci/7005-reklama-wyrobow-medycznych-nowe-przepisy-od-1-stycznia-2023-r',
+        publisher: 'Naczelna Izba Lekarska',
+      },
+    ],
+    related: [
+      {
+        path: '/wiedza/rodo-w-marketingu-placowki-medycznej',
+        label: 'RODO w marketingu placówki medycznej',
+        description: 'Druga warstwa ograniczeń: dane pacjentów w zdjęciach, opiniach i remarketingu.',
+      },
+      {
+        path: '/wiedza/jak-zbierac-opinie-pacjentow',
+        label: 'Jak zbierać opinie pacjentów zgodnie z prawem',
+        description: 'Prośba o opinię bez korzyści majątkowej i bez łamania wytycznych Google.',
+      },
+      {
+        path: '/uslugi/social-media-dla-klinik',
+        label: 'Social media dla klinik',
+        description: 'Prowadzimy profile placówek z akceptacją treści po stronie zgodności z art. 14.',
+      },
+    ],
+  },
+  {
     slug: 'wizytowka-google-dla-przychodni',
     title: 'Wizytówka Google dla przychodni',
     h1: 'Wizytówka Google dla przychodni: jak ją ustawić, żeby pacjenci trafiali do Ciebie',
-    seoTitle: 'Wizytówka Google dla przychodni - jak ją ustawić krok po kroku | mediaso',
+    seoTitle: 'Wizytówka Google dla przychodni: 7 kroków i błędy, które blokują mapy | mediaso',
     seoDescription:
-      'Profil Firmy w Google dla przychodni i gabinetu: weryfikacja, kategoria główna, usługi, godziny, zdjęcia, posty i pytania pacjentów. Instrukcja krok po kroku.',
+      'Jak ustawić Profil Firmy w Google dla przychodni i gabinetu: kategoria główna, usługi, godziny, zdjęcia, posty. 7 kroków na jedno popołudnie, bez żadnych opłat.',
     datePublished: '2026-09-11',
-    dateModified: '2026-09-11',
+    dateModified: '2026-10-25',
     readingMinutes: 8,
     image: {
       src: '/blog/wizytowka-google-telefon.jpg',
@@ -111,6 +338,11 @@ export const ARTICLES: readonly Article[] = [
           'Posty w profilu to krótkie komunikaty ze zdjęciem: nowy specjalista, zmiana godzin, szczepienia sezonowe, dostępne terminy. Pojedynczy post nie przesunie placówki w wynikach, ale regularne publikowanie pokazuje pacjentowi i Google, że profil ktoś prowadzi. Wystarczy jeden post na dwa tygodnie. Treść podlega tym samym ograniczeniom co reklama świadczeń zdrowotnych: informujesz, nie zachęcasz i nie obiecujesz efektu.',
           'Sekcję pytań i odpowiedzi może wypełnić każdy użytkownik Google, także w imieniu placówki. Zajrzyj tam i odpowiedz na pytania, które już wiszą. Potem dodaj z konta placówki pięć pytań, które rejestracja słyszy codziennie: czy jest NFZ, czy potrzebne jest skierowanie, gdzie zaparkować, ile trwa pierwsza wizyta, czy przyjmujecie dzieci. Każda odpowiedź to jeden telefon mniej do rejestracji.',
         ],
+        link: {
+          path: '/wiedza/reklama-swiadczen-zdrowotnych-co-wolno',
+          label: 'Reklama świadczeń zdrowotnych: co wolno',
+          description: 'Posty w profilu podlegają tym samym przepisom co ulotka.',
+        },
       },
       {
         heading: 'Krok 7: sprawdzaj statystyki raz w miesiącu',
@@ -147,6 +379,18 @@ export const ARTICLES: readonly Article[] = [
           'Poprawki kategorii, usług i godzin zaczynają działać zwykle po dwóch do sześciu tygodni. Efekt zależy od odległości pacjentów, liczby i świeżości opinii oraz od tego, jak dopracowane są profile konkurencyjnych placówek w okolicy.',
       },
     ],
+    sources: [
+      {
+        label: 'Wytyczne dotyczące reprezentowania firmy w Google',
+        url: 'https://support.google.com/business/answer/3038177',
+        publisher: 'Pomoc Google',
+      },
+      {
+        label: 'Jak poprawić pozycję w wynikach lokalnych',
+        url: 'https://support.google.com/business/answer/7091',
+        publisher: 'Pomoc Google',
+      },
+    ],
     related: [
       {
         path: '/uslugi/wizytowka-google-dla-placowki',
@@ -160,8 +404,163 @@ export const ARTICLES: readonly Article[] = [
       },
       {
         path: '/wiedza/pozycjonowanie-kliniki-krok-po-kroku',
-        label: 'Pozycjonowanie kliniki krok po kroku',
+        label: 'Jak samodzielnie wypromować klinikę w Google',
         description: 'Wizytówka jako jeden z sześciu etapów widoczności w Google.',
+      },
+    ],
+  },
+  {
+    slug: 'social-media-dla-lekarzy',
+    title: 'Social media dla lekarzy',
+    h1: 'Social media dla lekarzy: co publikować, czego nie wolno i jak prowadzić profil',
+    seoTitle: 'Social media dla lekarzy i gabinetów: co publikować, czego nie wolno | mediaso',
+    seoDescription:
+      'Jak lekarz, stomatolog czy fizjoterapeuta może prowadzić Instagram, Facebook i TikTok zgodnie z Kodeksem Etyki Lekarskiej: tematy postów, rytm publikacji, zgody i wiadomości.',
+    datePublished: '2026-10-25',
+    dateModified: '2026-10-25',
+    readingMinutes: 8,
+    lead:
+      'Profil lekarza w mediach społecznościowych ma jedno zadanie: pacjent, który usłyszał nazwisko od znajomego albo znalazł je w wyszukiwarce, ma zobaczyć konkretną osobę, jej zakres przyjęć i sposób pracy, zanim zadzwoni do rejestracji. Od 1 stycznia 2025 roku Kodeks Etyki Lekarskiej nie mówi już o zakazie reklamowania się, tylko o informowaniu o działalności zawodowej, więc pole do publikacji jest szersze niż kilka lat temu. Granice zostały: lekarz nie może przedstawiać się jako najlepszy ani jedyny, deprecjonować innych lekarzy, obiecywać efektu leczenia ani pokazywać pacjentów bez pisemnej zgody. Poniżej opisujemy, jak wybrać między profilem lekarza a profilem gabinetu, które tematy przynoszą pacjentów w poszczególnych specjalizacjach, ile publikować i jak obsługiwać wiadomości, żeby nie ujawnić danych o zdrowiu.',
+    sections: [
+      {
+        heading: 'Profil lekarza czy profil gabinetu',
+        paragraphs: [
+          'Lekarz, który przyjmuje w jednym miejscu i jest twarzą gabinetu, zwykle nie potrzebuje dwóch profili. Jeden profil gabinetu prowadzony z perspektywy lekarza ma większy zasięg niż dwa profile publikujące to samo. Osobny profil lekarza ma sens, gdy specjalista przyjmuje w kilku placówkach, gdy buduje rozpoznawalność w swojej dziedzinie albo gdy pacjenci szukają go po nazwisku.',
+          'Przy profilu lekarza ustal na starcie, co należy do niego, a co do placówki. Treści o zakresie przyjęć, doświadczeniu i wystąpieniach są jego. Komunikaty o godzinach, cenach i wolnych terminach należą do placówki. Ten podział chroni oba profile przy zmianie miejsca pracy.',
+        ],
+        bullets: [
+          'jeden gabinet, jeden lekarz: jeden profil gabinetu z lekarzem w roli głównej',
+          'lekarz w kilku placówkach: osobny profil lekarza i linki do miejsc przyjęć',
+          'przychodnia wieloosobowa: profil placówki i krótkie prezentacje specjalistów',
+        ],
+      },
+      {
+        heading: 'Co lekarz może publikować po zmianie Kodeksu Etyki Lekarskiej',
+        paragraphs: [
+          'Art. 71 obowiązującego Kodeksu Etyki Lekarskiej pozwala lekarzowi informować o działalności zawodowej, o ile forma i treść pozostają zgodne z zasadami etyki. W praktyce to szeroki katalog treści, a większość z nich lepiej buduje zaufanie pacjenta niż hasło reklamowe.',
+        ],
+        bullets: [
+          'zakres przyjęć: z czym przyjść, z czym nie, czy potrzebne jest skierowanie',
+          'wykształcenie, specjalizacje, szkolenia i wystąpienia na konferencjach',
+          'przebieg wizyty, badania lub zabiegu opisany rzeczowo',
+          'odpowiedzi na pytania, które pacjenci zadają w gabinecie',
+          'sprzęt i metoda pracy opisane technicznie, bez superlatywów',
+          'komunikaty organizacyjne: miejsca przyjęć, urlopy, nowe terminy',
+        ],
+        link: {
+          path: '/wiedza/reklama-swiadczen-zdrowotnych-co-wolno',
+          label: 'Reklama świadczeń zdrowotnych: co wolno',
+          description: 'Pełna lista dozwolonych i zakazanych sformułowań z podstawą prawną.',
+        },
+      },
+      {
+        heading: 'Czego nie publikować',
+        paragraphs: [
+          'Większość problemów bierze się z formatów, które dobrze działają w innych branżach. Konkurs z zabiegiem w nagrodę, rabat dla obserwujących czy metamorfoza przed i po pokazana jako dowód skuteczności to w medycynie zachęta do korzystania ze świadczeń. Za taki materiał lekarz odpowiada przed rzecznikiem odpowiedzialności zawodowej, a placówka na podstawie art. 147a Kodeksu wykroczeń.',
+        ],
+        bullets: [
+          'superlatywy: najlepszy, jedyny, najnowocześniejszy w mieście',
+          'obietnica lub gwarancja efektu leczenia',
+          'rabaty, kody zniżkowe, konkursy z zabiegiem w nagrodę',
+          'zdjęcia pacjentów i ich historie bez pisemnej zgody',
+          'polecanie suplementów, kosmetyków i produktów niezwiązanych z leczeniem',
+          'komentowanie pracy innych lekarzy w sposób, który ich deprecjonuje',
+        ],
+      },
+      {
+        heading: 'Tematy, które przynoszą pacjentów w poszczególnych specjalizacjach',
+        paragraphs: [
+          'Dobry temat to pytanie, które pacjent zadaje przed wizytą. Rejestracja i sam lekarz słyszą je codziennie, więc lista tematów na kwartał powstaje w godzinę rozmowy. Ogólne grafiki o zdrowym stylu życia wypełniają kalendarz, ale nie dają powodu, żeby zadzwonić akurat do tego gabinetu.',
+          'Stomatolog zyskuje najwięcej na treściach zdejmujących lęk: jak wygląda znieczulenie, ile trwa leczenie kanałowe, co dzieje się na pierwszej wizycie dziecka. Fizjoterapeuta na krótkim wideo z ćwiczeniem i wyjaśnieniem, kiedy ból wymaga wizyty. Ginekolog na rzeczowym opisie badań profilaktycznych i tego, jak się do nich przygotować. Dermatolog na tym, kiedy znamię wymaga kontroli i jak przebiega dermatoskopia.',
+        ],
+        bullets: [
+          'stomatolog: znieczulenie, leczenie kanałowe, wizyta adaptacyjna dziecka, implanty krok po kroku',
+          'fizjoterapeuta: ćwiczenia na wideo, pierwsza wizyta, kiedy iść do lekarza',
+          'ginekolog: badania profilaktyczne, przygotowanie do wizyty, prowadzenie ciąży',
+          'dermatolog: kontrola znamion, dermatoskopia, przygotowanie do zabiegu',
+          'psycholog i psychiatra: jak wygląda pierwsza konsultacja, czym różnią się specjaliści',
+        ],
+      },
+      {
+        heading: 'Ile publikować i ile to zajmuje czasu',
+        paragraphs: [
+          'Dwie do czterech publikacji tygodniowo utrzymują profil w rotacji. Poniżej jednej tygodniowo profil wygląda na porzucony, a pacjent szukający śladu, że gabinet działa, go nie znajduje. Krótkie wideo z lekarzem zwykle dociera do większej liczby osób niż grafika, bo pokazuje człowieka, z którym pacjent będzie rozmawiał.',
+          'Najmniej czasu lekarza zabiera rytm miesięczny: jedna sesja nagraniowa na godzinę lub dwie, z której powstaje materiał na cały miesiąc, plan treści zatwierdzany z wyprzedzeniem i publikacja rozłożona w kalendarzu. Montaż, opisy, grafiki i harmonogram może przejąć asystentka albo agencja.',
+        ],
+      },
+      {
+        heading: 'Wiadomości i komentarze od pacjentów',
+        paragraphs: [
+          'Pacjenci piszą na Instagramie i Messengerze o objawy, wyniki i terminy. Odpowiedź z poradą medyczną w wiadomości jest ryzykowna: lekarz nie widział pacjenta, a historia rozmowy zostaje na serwerach platformy. Bezpieczny standard to przekierowanie do rejestracji lub na wizytę, z informacją, jak się umówić.',
+          'W komentarzach obowiązuje ta sama zasada co przy opiniach w Google. Nie potwierdzasz publicznie, że ktoś jest pacjentem, i nie odnosisz się do przebiegu leczenia, nawet gdy autor sam o nim pisze. Samo potwierdzenie wizyty jest ujawnieniem danych o zdrowiu.',
+        ],
+        link: {
+          path: '/wiedza/rodo-w-marketingu-placowki-medycznej',
+          label: 'RODO w marketingu placówki medycznej',
+          description: 'Zgody na wizerunek, opinie i obsługa wiadomości od pacjentów.',
+        },
+      },
+      {
+        heading: 'Kiedy zlecić prowadzenie profilu',
+        paragraphs: [
+          'Samodzielne prowadzenie profilu działa, dopóki lekarz ma na nie stały czas w tygodniu. Kiedy publikacje zaczynają się urywać na kilka tygodni, lepiej oddać montaż, grafiki, harmonogram i moderację komuś, kto zna ograniczenia branży, a sobie zostawić nagrania i akceptację treści. Akceptacja zawsze zostaje po stronie lekarza, bo to on odpowiada zawodowo za treść publikowaną w jego imieniu.',
+        ],
+        link: {
+          path: '/uslugi/social-media-dla-klinik',
+          label: 'Prowadzenie social mediów dla lekarzy i klinik',
+          description: 'Plan treści, nagrania w gabinecie, montaż i obsługa wiadomości.',
+        },
+      },
+    ],
+    faq: [
+      {
+        question: 'Czy lekarz może prowadzić konto na Instagramie lub TikToku?',
+        answer:
+          'Tak. Kodeks Etyki Lekarskiej obowiązujący od 1 stycznia 2025 roku pozwala lekarzowi informować o działalności zawodowej w każdej formie przekazu, w tym w mediach społecznościowych. Treść musi pozostać rzetelna: bez superlatywów, obietnic efektu leczenia, deprecjonowania innych lekarzy i promowania produktów niezwiązanych z medycyną.',
+      },
+      {
+        question: 'Czy lekarz może pokazywać pacjentów w social mediach?',
+        answer:
+          'Tylko za pisemną zgodą pacjenta, która wskazuje kanały publikacji i daje możliwość wycofania. Sam wizerunek osoby w gabinecie ujawnia informację o korzystaniu ze świadczeń zdrowotnych, czyli dane szczególnej kategorii. Bez zgody publikuje się zespół, wnętrza, sprzęt i modele anatomiczne.',
+      },
+      {
+        question: 'Ile postów tygodniowo powinien publikować lekarz?',
+        answer:
+          'Dwie do czterech publikacji tygodniowo wystarczą, żeby profil wyglądał na aktywny i był widoczny dla obserwujących. Regularność ma większe znaczenie niż liczba: dwa posty co tydzień przez rok dają więcej niż dziesięć w jednym miesiącu i przerwa na kwartał.',
+      },
+      {
+        question: 'Czy lekarz może odpowiadać na pytania pacjentów w wiadomościach?',
+        answer:
+          'Na pytania organizacyjne tak: o terminy, miejsca przyjęć i przygotowanie do wizyty. Pytania o objawy i wyniki lepiej przekierować na wizytę lub teleporadę, bo porada udzielona w wiadomości odbywa się bez badania i bez dokumentacji medycznej.',
+      },
+    ],
+    sources: [
+      {
+        label: 'Kodeks Etyki Lekarskiej',
+        url: 'https://nil.org.pl/dla-lekarzy/prawo/kodeks-etyki-lekarskiej',
+        publisher: 'Naczelna Izba Lekarska',
+      },
+      {
+        label: 'Informowanie o działalności leczniczej a jej reklama',
+        url: 'https://nil.org.pl/dla-lekarzy/praktyka-lekarska/4240-informowanie-o-dzialalnosci-leczniczej-a-jej-reklama',
+        publisher: 'Naczelna Izba Lekarska',
+      },
+    ],
+    related: [
+      {
+        path: '/uslugi/social-media-dla-klinik',
+        label: 'Social media dla klinik, gabinetów i lekarzy',
+        description: 'Prowadzimy profile lekarzy i placówek z akceptacją treści po stronie lekarza.',
+      },
+      {
+        path: '/wiedza/reklama-swiadczen-zdrowotnych-co-wolno',
+        label: 'Reklama świadczeń zdrowotnych: co wolno',
+        description: 'Granica między informacją a reklamą w przepisach.',
+      },
+      {
+        path: '/wiedza/jak-zbierac-opinie-pacjentow',
+        label: 'Jak zbierać opinie pacjentów zgodnie z prawem',
+        description: 'Opinie w Google i komentarze w social mediach rządzą się tymi samymi zasadami.',
       },
     ],
   },
@@ -173,7 +572,7 @@ export const ARTICLES: readonly Article[] = [
     seoDescription:
       'Marketing medyczny to informowanie o usługach placówki w granicach przepisów o reklamie świadczeń zdrowotnych. Wyjaśniamy zakres, ograniczenia i kanały.',
     datePublished: '2026-08-29',
-    dateModified: '2026-08-29',
+    dateModified: '2026-09-22',
     readingMinutes: 7,
     lead:
       'Marketing medyczny to całość działań, którymi placówka zdrowotna informuje pacjentów o swoich usługach, dostępności i kompetencjach zespołu, prowadzonych w granicach przepisów ograniczających reklamę świadczeń zdrowotnych. Od marketingu w innych branżach różni go przede wszystkim to, czego nie wolno: nie można obiecywać efektu leczenia, zachęcać do korzystania ze świadczeń w sposób nachalny, wykorzystywać wizerunku pacjenta bez pisemnej zgody ani budować przekazu na porównaniach z konkretnymi placówkami. Zostaje bardzo dużo miejsca na komunikację opartą na faktach: zakres usług, ceny, terminy, kwalifikacje specjalistów, przebieg wizyty, przygotowanie do badań. Praktyka pokazuje, że to właśnie ta rzeczowa warstwa przynosi placówkom najwięcej kontaktów, bo odpowiada na pytania, które pacjent zadaje przed telefonem.',
@@ -200,6 +599,11 @@ export const ARTICLES: readonly Article[] = [
           'W praktyce dzieli to komunikaty na dwie grupy. Bezpieczne: opis usługi, cena, czas trwania, przygotowanie, kwalifikacje lekarza, dostępne terminy, wyposażenie. Ryzykowne: obietnice wyniku, przekaz oparty na strachu, promocje w stylu handlowym, porównania z konkurencją po nazwie, przed i po bez zgody i kontekstu.',
         ],
         note: 'To skrót, nie opinia prawna. Przy usługach z pogranicza - medycyna estetyczna, stomatologia komercyjna - warto skonsultować materiały z prawnikiem branżowym.',
+        link: {
+          path: '/wiedza/reklama-swiadczen-zdrowotnych-co-wolno',
+          label: 'Reklama świadczeń zdrowotnych: co wolno',
+          description: 'Art. 14, Kodeks Etyki Lekarskiej i wyroby medyczne w jednym miejscu.',
+        },
       },
       {
         heading: 'Skąd realnie przychodzą pacjenci',
@@ -239,12 +643,24 @@ export const ARTICLES: readonly Article[] = [
       {
         question: 'Ile kosztuje marketing medyczny w małej przychodni?',
         answer:
-          'Pierwsze kroki - uporządkowanie wizytówki Google i proces zbierania opinii - kosztują pracę, nie budżet mediowy. Stała obsługa social mediów zaczyna się w okolicach 2 000-2 500 złotych netto miesięcznie, strona internetowa od kilku tysięcy złotych jednorazowo, a budżet reklamowy zależy od tego, ile wolnych terminów placówka ma do zapełnienia.',
+          'Pierwsze kroki - uporządkowanie wizytówki Google i proces zbierania opinii - kosztują pracę, nie budżet mediowy. Stała obsługa social mediów i strona internetowa to koszty zależne od zakresu: liczby kanałów, publikacji i podstron. Budżet reklamowy zależy od tego, ile wolnych terminów placówka ma do zapełnienia.',
       },
       {
         question: 'Czy marketing medyczny to to samo co SEO?',
         answer:
           'Nie. SEO jest jego częścią i odpowiada za widoczność w wynikach wyszukiwania. Marketing medyczny obejmuje też wizytówkę Google, social media, komunikację z pacjentami i obsługę zgłoszeń w rejestracji.',
+      },
+    ],
+    sources: [
+      {
+        label: 'Ustawa z dnia 15 kwietnia 2011 r. o działalności leczniczej',
+        url: 'https://eli.gov.pl/eli/DU/2011/654/ogl',
+        publisher: 'Dziennik Ustaw',
+      },
+      {
+        label: 'Informowanie o działalności leczniczej a jej reklama',
+        url: 'https://nil.org.pl/dla-lekarzy/praktyka-lekarska/4240-informowanie-o-dzialalnosci-leczniczej-a-jej-reklama',
+        publisher: 'Naczelna Izba Lekarska',
       },
     ],
     related: [
@@ -259,6 +675,11 @@ export const ARTICLES: readonly Article[] = [
         description: 'Zgody, wizerunek i dane pacjentów w materiałach marketingowych.',
       },
       {
+        path: '/wiedza/reklama-swiadczen-zdrowotnych-co-wolno',
+        label: 'Reklama świadczeń zdrowotnych: co wolno',
+        description: 'Granica między informacją a reklamą w przepisach, z listą zakazanych sformułowań.',
+      },
+      {
         path: '/diagnostyka',
         label: 'Diagnostyka wzrostu placówki',
         description: 'Sprawdź w 20 pytaniach, który etap ścieżki pacjenta się urywa.',
@@ -267,13 +688,13 @@ export const ARTICLES: readonly Article[] = [
   },
   {
     slug: 'pozycjonowanie-kliniki-krok-po-kroku',
-    title: 'Pozycjonowanie kliniki krok po kroku',
-    h1: 'Pozycjonowanie kliniki krok po kroku',
-    seoTitle: 'Pozycjonowanie kliniki krok po kroku - poradnik | mediaso',
+    title: 'Jak samodzielnie wypromować klinikę w Google',
+    h1: 'Jak samodzielnie wypromować klinikę w Google: 6 kroków',
+    seoTitle: 'Jak samodzielnie wypromować klinikę w Google - 6 kroków | mediaso',
     seoDescription:
-      'Kolejność działań SEO dla kliniki: audyt, frazy lokalne, podstrony usług, wizytówka Google, treści i pomiar. Konkretne kroki do wykonania samodzielnie.',
+      'Poradnik dla właściciela placówki: lista fraz z Search Console, indeksowanie, podstrony usług, wizytówka Google, treści i pomiar. Do zrobienia bez agencji.',
     datePublished: '2026-08-29',
-    dateModified: '2026-08-29',
+    dateModified: '2026-10-25',
     readingMinutes: 9,
     lead:
       'Pozycjonowanie kliniki daje się rozłożyć na sześć kroków wykonywanych po kolei, a nie równolegle. Najpierw ustalasz, na jakie zapytania pacjenci realnie szukają twoich usług w twoim mieście. Potem sprawdzasz, czy strona w ogóle jest indeksowana i jak długo się ładuje na telefonie. Trzeci krok to rozbicie oferty na osobne podstrony - jedna usługa, jeden adres. Czwarty to wizytówka Google, która w medycynie odpowiada za większość ruchu lokalnego. Piąty to treść odpowiadająca na pytania zadawane przed wizytą. Szósty to pomiar: pozycje, wejścia i telefony. Ta kolejność ma znaczenie, bo każdy krok korzysta z poprzedniego. Publikowanie treści na stronie, której Google nie indeksuje, jest pracą wyrzuconą w błoto.',
@@ -311,6 +732,11 @@ export const ARTICLES: readonly Article[] = [
           'W medycynie mapy odpowiadają za większość kontaktów lokalnych. Ustaw kategorię główną na tę usługę, na której najbardziej ci zależy - kategoria „przychodnia" nie wyświetli cię na zapytanie o konkretnego specjalistę. Uzupełnij kategorie dodatkowe, listę usług, godziny łącznie ze świętami, zdjęcia wejścia od ulicy i wnętrz.',
           'Potem opinie. Poproś o nie wszystkich pacjentów z danej grupy, nie tylko zadowolonych, i nie oferuj niczego w zamian. Odpowiadaj na każdą, także negatywną, nie potwierdzając publicznie, że autor był pacjentem - to informacja o jego zdrowiu.',
         ],
+        link: {
+          path: '/wiedza/wizytowka-google-dla-przychodni',
+          label: 'Wizytówka Google dla przychodni',
+          description: 'Kategoria, usługi, zdjęcia i posty krok po kroku.',
+        },
       },
       {
         heading: 'Krok 5: treść, która odpowiada na pytania',
@@ -331,6 +757,11 @@ export const ARTICLES: readonly Article[] = [
           'Raz w miesiącu zapisuj cztery liczby: pozycje na uzgodnionej liście fraz, wejścia z wyszukiwarki, telefony i kliknięcia w trasę z wizytówki oraz liczbę nowych pacjentów. Bez tego nie odróżnisz efektu sezonu od efektu pracy.',
           'Pierwszych ruchów spodziewaj się po 6-10 tygodniach na frazach lokalnych. Frazy ogólne w dużym mieście wymagają kwartałów. Jeżeli po pół roku systematycznej pracy nic się nie rusza, problem leży zwykle w tym, że konkurencja ma dziesiątki podstron, a ty trzy.',
         ],
+        link: {
+          path: '/uslugi/pozycjonowanie-klinik',
+          label: 'Pozycjonowanie kliniki: zakres naszej usługi',
+          description: 'Audyt, architektura podstron, treść i raport z pozycji co miesiąc.',
+        },
       },
     ],
     faq: [
@@ -348,6 +779,18 @@ export const ARTICLES: readonly Article[] = [
         question: 'Jak długo czeka się na efekty SEO w branży medycznej?',
         answer:
           'Frazy lokalne o niskiej konkurencji ruszają zwykle po 6-10 tygodniach od wdrożenia zmian. Zapytania ogólne w dużych miastach zajmują od dwóch do czterech kwartałów. Tempo zależy głównie od tego, ile podstron ma konkurencja i od jak dawna publikuje.',
+      },
+    ],
+    sources: [
+      {
+        label: 'Google Search Essentials',
+        url: 'https://developers.google.com/search/docs/essentials',
+        publisher: 'Google Search Central',
+      },
+      {
+        label: 'Jak poprawić pozycję w wynikach lokalnych',
+        url: 'https://support.google.com/business/answer/7091',
+        publisher: 'Pomoc Google',
       },
     ],
     related: [
@@ -376,7 +819,7 @@ export const ARTICLES: readonly Article[] = [
     seoDescription:
       'Zgody na wizerunek, opinie pacjentów, SMS-y marketingowe, umowy powierzenia z agencją i piksele reklamowe. Co placówka musi mieć na piśmie.',
     datePublished: '2026-08-29',
-    dateModified: '2026-08-29',
+    dateModified: '2026-09-22',
     readingMinutes: 8,
     lead:
       'W placówce medycznej niemal każdy materiał marketingowy dotyka danych szczególnej kategorii, bo sam fakt korzystania ze świadczeń zdrowotnych jest informacją o zdrowiu. Dlatego zdjęcie pacjenta w poczekalni, publiczna odpowiedź na opinię potwierdzająca, że ktoś był u was na wizycie, czy SMS z zaproszeniem na badanie kontrolne wymagają innej ostrożności niż analogiczne działania w restauracji. Reguła praktyczna brzmi: nie publikuj i nie wysyłaj niczego, co pozwala powiązać konkretną osobę z korzystaniem z twoich usług, dopóki nie masz na to zgody na piśmie. Druga reguła dotyczy dostawców: agencja, infolinia i firma wysyłająca SMS-y przetwarzają dane w twoim imieniu, więc potrzebujesz z nimi umowy powierzenia przetwarzania.',
@@ -401,6 +844,11 @@ export const ARTICLES: readonly Article[] = [
           'Prośba o opinię wysłana pacjentowi po wizycie to komunikacja związana z wykonaną usługą, ale sposób jej wysłania ma znaczenie: SMS z linkiem do wystawienia opinii bywa kwalifikowany jako informacja handlowa, więc bezpieczniej jest opierać go na zgodzie zebranej przy rejestracji.',
           'Odpowiadając publicznie na opinię, nigdy nie potwierdzaj, że autor był twoim pacjentem, nie odnoś się do przebiegu leczenia i nie prostuj faktów medycznych w komentarzu. Standardowa odpowiedź to podziękowanie i zaproszenie do kontaktu bezpośredniego. Wyjaśnienia prowadzi się poza publiczną częścią.',
         ],
+        link: {
+          path: '/wiedza/jak-zbierac-opinie-pacjentow',
+          label: 'Jak zbierać opinie pacjentów zgodnie z prawem',
+          description: 'Moment prośby, jej treść i odpowiadanie na opinie negatywne.',
+        },
       },
       {
         heading: 'Umowa powierzenia z agencją i dostawcami',
@@ -452,6 +900,18 @@ export const ARTICLES: readonly Article[] = [
           'Są dozwolone przy pisemnej zgodzie pacjenta obejmującej publikację wizerunku i dokumentacji przebiegu leczenia we wskazanych kanałach. Zdjęcia muszą pokazywać rzeczywisty efekt - obróbka zmieniająca wynik wprowadza pacjentów w błąd i naraża placówkę na zarzut nieuczciwej praktyki.',
       },
     ],
+    sources: [
+      {
+        label: 'Rozporządzenie 2016/679 (RODO), tekst w języku polskim',
+        url: 'https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX%3A32016R0679',
+        publisher: 'EUR-Lex',
+      },
+      {
+        label: 'Urząd Ochrony Danych Osobowych',
+        url: 'https://uodo.gov.pl/',
+        publisher: 'UODO',
+      },
+    ],
     related: [
       {
         path: '/wiedza/jak-zbierac-opinie-pacjentow',
@@ -476,48 +936,53 @@ export const ARTICLES: readonly Article[] = [
     h1: 'Ile kosztuje strona internetowa dla przychodni',
     seoTitle: 'Ile kosztuje strona internetowa dla przychodni | mediaso',
     seoDescription:
-      'Widełki cenowe stron dla placówek medycznych, z czego składa się wycena, koszty utrzymania i miejsca, w których wykonawcy ukrywają koszty.',
+      'Rynkowe widełki cenowe stron dla przychodni i gabinetów, z czego składa się wycena, koszty utrzymania i miejsca, w których wykonawcy ukrywają koszty.',
     datePublished: '2026-08-29',
-    dateModified: '2026-08-29',
+    dateModified: '2026-10-25',
     readingMinutes: 7,
     lead:
-      'Strona internetowa dla przychodni kosztuje w Polsce od około 3 000 złotych netto za prosty serwis gabinetu do kilkudziesięciu tysięcy za rozbudowany portal placówki wieloodziałowej z własnym systemem rezerwacji. Rozpiętość bierze się z trzech rzeczy: liczby podstron, które ktoś musi zaprojektować i napisać, sposobu umawiania wizyt oraz tego, czy treści powstają od zera, czy placówka dostarcza gotowe. Do ceny wykonania dochodzą koszty stałe: domena, hosting od 80 złotych miesięcznie i opieka techniczna od 250 złotych miesięcznie. Poniżej rozkładamy wycenę na części, żeby dało się porównać oferty, które na pierwszy rzut oka różnią się o połowę.',
+      'Strona internetowa dla przychodni kosztuje w Polsce od około 3 000 złotych netto za prosty serwis gabinetu do kilkudziesięciu tysięcy za rozbudowany portal placówki wieloodziałowej z własnym systemem rezerwacji. Rozpiętość bierze się z trzech rzeczy: liczby podstron, które ktoś musi zaprojektować i napisać, sposobu umawiania wizyt oraz tego, czy treści powstają od zera, czy placówka dostarcza gotowe. Do ceny wykonania dochodzą koszty stałe: domena, hosting i opieka techniczna. Poniżej rozkładamy rynkowe wyceny na części, żeby dało się porównać oferty, które na pierwszy rzut oka różnią się o połowę.',
     sections: [
       {
-        heading: 'Trzy poziomy i realne widełki',
+        heading: 'Trzy poziomy i rynkowe widełki',
         paragraphs: [
-          'Wizytówka na gotowym szablonie, do trzech podstron, to 2 900-3 900 złotych netto: strona główna, opis usług, cennik, kontakt z mapą i formularz. Wystarcza praktyce jednoosobowej i nie udaje więcej. Termin realizacji 1-2 tygodnie.',
-          'Strona z indywidualnym projektem i sześcioma podstronami kosztuje 4 900-6 500 złotych. Tu pojawia się praca, której nie widać w wycenie: struktura podstron pod wyszukiwarkę, teksty do każdej usługi i akceptacja merytoryczna. Wersja z blogiem i systemem zarządzania treścią, do dziesięciu podstron, to 7 000-11 000 złotych.',
-          'Powyżej tego poziomu wchodzą rezerwacje. Osadzenie gotowego systemu typu Booksy czy Calendly kosztuje 1 800-3 500 złotych. Własny system rezerwacji z kalendarzem dostępności, panelem administratora i płatnościami zaczyna się od 12 000 złotych, a przy wielu lokalizacjach i integracjach z oprogramowaniem gabinetowym od 20 000 - i tam cena powstaje dopiero po specyfikacji.',
+          'Poniższe kwoty to przedziały, które widać w ofertach polskich wykonawców w 2026 roku, nie cennik jednej firmy. Prosta strona gabinetu na gotowym szablonie, do trzech podstron, kosztuje zwykle od 2 500 do 5 000 złotych netto: strona główna, opis usług, cennik, kontakt z mapą i formularz. Wystarcza praktyce jednoosobowej. Termin realizacji to najczęściej 1-2 tygodnie.',
+          'Strona z indywidualnym projektem i kilkoma podstronami usług to przedział od 5 000 do 10 000 złotych. Tu pojawia się praca, której nie widać w wycenie: struktura podstron pod wyszukiwarkę, teksty do każdej usługi i akceptacja merytoryczna. Serwis z blogiem i systemem zarządzania treścią mieści się zwykle między 8 000 a 15 000 złotych.',
+          'Powyżej tego poziomu wchodzą rezerwacje. Osadzenie gotowego systemu typu Booksy czy Calendly to zwykle kilka tysięcy złotych. Własny system rezerwacji z kalendarzem dostępności, panelem administratora i płatnościami zaczyna się w okolicach kilkunastu tysięcy, a przy wielu lokalizacjach i integracjach z oprogramowaniem gabinetowym cena powstaje dopiero po specyfikacji.',
         ],
         bullets: [
-          'wizytówka do 3 podstron: 2 900-3 900 zł netto, 1-2 tygodnie',
-          'strona indywidualna do 6 podstron: 4 900-6 500 zł netto, 2-4 tygodnie',
-          'strona z blogiem i CMS do 10 podstron: 7 000-11 000 zł netto, 3-6 tygodni',
-          'osadzenie gotowego systemu rezerwacji: 1 800-3 500 zł netto',
-          'własny system rezerwacji: od 12 000 zł netto',
+          'strona gabinetu na szablonie, do 3 podstron: ok. 2 500-5 000 zł netto, 1-2 tygodnie',
+          'strona z indywidualnym projektem: ok. 5 000-10 000 zł netto, 2-4 tygodnie',
+          'serwis z blogiem i CMS: ok. 8 000-15 000 zł netto, 3-6 tygodni',
+          'osadzenie gotowego systemu rezerwacji: kilka tysięcy złotych',
+          'własny system rezerwacji: od kilkunastu tysięcy złotych',
         ],
       },
       {
         heading: 'Co realnie napędza cenę',
         paragraphs: [
           'Liczba unikalnych układów strony, a nie liczba podstron. Dwadzieścia podstron usług na jednym szablonie to jeden projekt i dwadzieścia wypełnień. Pięć podstron, z których każda wygląda inaczej, to pięć projektów.',
-          'Sposób umawiania wizyt jest drugim czynnikiem. Formularz zgłoszenia to kilka godzin pracy. Integracja z systemem gabinetowym przez API to dni albo tygodnie, zależnie od jakości dokumentacji dostawcy - a bywa, że integracja jest po prostu niemożliwa i trzeba to sprawdzić przed podpisaniem umowy.',
+          'Sposób umawiania wizyt jest drugim czynnikiem. Formularz zgłoszenia to kilka godzin pracy. Integracja z systemem gabinetowym przez API to dni albo tygodnie, zależnie od jakości dokumentacji dostawcy - a bywa, że integracja jest niemożliwa i trzeba to sprawdzić przed podpisaniem umowy.',
           'Trzeci czynnik to treść. Napisanie opisów usług medycznych wymaga rozmowy z lekarzem i poprawek po akceptacji. Wykonawca, który wycenia stronę bez pytania o to, kto pisze teksty, prawdopodobnie zakłada, że dostarczy je placówka.',
         ],
+        link: {
+          path: '/wiedza/czym-jest-marketing-medyczny',
+          label: 'Czym jest marketing medyczny',
+          description: 'Gdzie strona mieści się w całym budżecie placówki.',
+        },
       },
       {
         heading: 'Koszty, które pojawiają się po wdrożeniu',
         paragraphs: [
-          'Domena to kilkadziesiąt złotych rocznie i zwykle opłaca ją placówka bezpośrednio. Hosting z certyfikatem SSL, kopiami zapasowymi i monitoringiem dostępności kosztuje 80-200 złotych miesięcznie, zależnie od tego, czy serwis potrzebuje bazy danych.',
-          'Opieka techniczna to aktualizacje, kontrola działania i drobne poprawki. Wariant podstawowy, 250-450 złotych miesięcznie, obejmuje do dwóch godzin pracy; rozszerzony, 700-1 200 złotych, do pięciu godzin z priorytetową obsługą i raportem. Przy stronie na systemie CMS to nie jest opcja, tylko warunek bezpieczeństwa - nieaktualizowana instalacja zostaje zwykle przejęta w ciągu kilku miesięcy.',
-          'Nowe funkcje i większe zmiany rozliczane są godzinowo, zwykle po 160-220 złotych netto za godzinę, z estymacją przed rozpoczęciem prac.',
+          'Domena to kilkadziesiąt złotych rocznie i zwykle opłaca ją placówka bezpośrednio. Hosting z certyfikatem SSL, kopiami zapasowymi i monitoringiem dostępności kosztuje od kilkudziesięciu do około dwustu złotych miesięcznie, zależnie od tego, czy serwis potrzebuje bazy danych.',
+          'Opieka techniczna to aktualizacje, kontrola działania i drobne poprawki. Rynkowo kosztuje od około 200 złotych miesięcznie za podstawowy pakiet z godziną lub dwiema pracy do ponad tysiąca złotych przy kilku godzinach, priorytetowej obsłudze i raporcie. Przy stronie na systemie CMS aktualizacje są warunkiem bezpieczeństwa: nieaktualizowana instalacja zostaje zwykle przejęta w ciągu kilku miesięcy.',
+          'Nowe funkcje i większe zmiany wykonawcy rozliczają najczęściej godzinowo, z estymacją przed rozpoczęciem prac. Pytaj o estymację na piśmie, zanim zlecisz zmianę.',
         ],
         bullets: [
           'domena: kilkadziesiąt złotych rocznie',
-          'hosting z SSL, kopiami i monitoringiem: 80-200 zł miesięcznie',
-          'opieka techniczna: 250-450 zł (do 2 h) albo 700-1 200 zł (do 5 h) miesięcznie',
-          'nowe funkcje i zmiany poza pakietem: 160-220 zł netto za godzinę',
+          'hosting z SSL, kopiami i monitoringiem: od kilkudziesięciu do ok. 200 zł miesięcznie',
+          'opieka techniczna: od ok. 200 zł do ponad 1 000 zł miesięcznie, zależnie od liczby godzin',
+          'nowe funkcje i zmiany poza zakresem: rozliczenie godzinowe po estymacji',
         ],
       },
       {
@@ -539,7 +1004,7 @@ export const ARTICLES: readonly Article[] = [
       {
         question: 'Ile kosztuje strona dla gabinetu lekarskiego?',
         answer:
-          'Serwis gabinetu z opisem usług, cennikiem i formularzem kontaktowym mieści się w przedziale 2 900-3 900 złotych netto przy trzech podstronach na gotowym szablonie, a 4 900-6 500 złotych przy indywidualnym projekcie i sześciu podstronach. Poniżej tych kwot dostaje się najczęściej szablon z podmienionym logo, bez pracy nad strukturą i treścią.',
+          'Serwis gabinetu z opisem usług, cennikiem i formularzem kontaktowym kosztuje na rynku zwykle od 2 500 do 5 000 złotych netto przy kilku podstronach na gotowym szablonie, a od 5 000 do 10 000 złotych przy indywidualnym projekcie. Poniżej tych kwot dostaje się najczęściej szablon z podmienionym logo, bez pracy nad strukturą i treścią.',
       },
       {
         question: 'Czy warto płacić abonament za stronę?',
@@ -552,15 +1017,27 @@ export const ARTICLES: readonly Article[] = [
           'Od 1-2 tygodni przy prostej wizytówce do 3-6 tygodni przy stronie z blogiem i systemem zarządzania treścią, licząc od kompletu materiałów. Własny system rezerwacji to dodatkowe 5-8 tygodni. Termin wydłuża się najczęściej przez oczekiwanie na materiały placówki: zdjęcia zespołu, zatwierdzony cennik i akceptację opisów usług.',
       },
     ],
+    sources: [
+      {
+        label: 'Web Vitals: wskaźniki szybkości i stabilności strony',
+        url: 'https://web.dev/articles/vitals',
+        publisher: 'web.dev, Google',
+      },
+      {
+        label: 'Google Search Essentials',
+        url: 'https://developers.google.com/search/docs/essentials',
+        publisher: 'Google Search Central',
+      },
+    ],
     related: [
       {
         path: '/uslugi/strony-internetowe-dla-placowek-medycznych',
         label: 'Strony internetowe dla placówek medycznych',
-        description: 'Zakres, harmonogram i widełki cenowe naszej realizacji.',
+        description: 'Zakres i harmonogram naszej realizacji, wycena po krótkiej rozmowie.',
       },
       {
         path: '/wiedza/pozycjonowanie-kliniki-krok-po-kroku',
-        label: 'Pozycjonowanie kliniki krok po kroku',
+        label: 'Jak samodzielnie wypromować klinikę w Google',
         description: 'Strona bez widoczności w Google nie zwraca się nigdy.',
       },
       {
@@ -574,11 +1051,11 @@ export const ARTICLES: readonly Article[] = [
     slug: 'jak-zbierac-opinie-pacjentow',
     title: 'Jak zbierać opinie pacjentów zgodnie z prawem',
     h1: 'Jak zbierać opinie pacjentów zgodnie z prawem',
-    seoTitle: 'Jak zbierać opinie pacjentów w Google - procedura | mediaso',
+    seoTitle: 'Jak zbierać opinie pacjentów w Google: wzór prośby i zasady | mediaso',
     seoDescription:
-      'Procedura zbierania opinii pacjentów: kiedy prosić, jak formułować prośbę, czego nie wolno robić i jak odpowiadać na negatywne opinie bez łamania RODO.',
+      'Gotowy wzór prośby o opinię, najlepszy moment wysyłki i odpowiedzi na negatywne opinie bez łamania RODO. Czego Google zabrania placówkom medycznym.',
     datePublished: '2026-08-29',
-    dateModified: '2026-08-29',
+    dateModified: '2026-10-25',
     readingMinutes: 6,
     lead:
       'Opinie w Google są w ochronie zdrowia jednym z najmocniejszych czynników decyzji: pacjent czyta je przed pierwszym telefonem, a placówka z dwudziestoma świeżymi opiniami wygrywa z placówką z trzema sprzed czterech lat. Zbieranie opinii jest dozwolone i sensowne, ale ma trzy twarde ograniczenia. Nie wolno wybierać, kogo się pyta, na podstawie przewidywanej oceny. Nie wolno oferować niczego w zamian - ani zniżki, ani drobnego upominku. Nie wolno publicznie potwierdzać, że autor opinii był pacjentem, bo to ujawnia informację o jego zdrowiu. Reszta to kwestia procedury: kiedy wysłać prośbę, jak ją sformułować, kto odpowiada na opinie i w jakim czasie. Poniżej gotowy proces do wdrożenia w rejestracji.',
@@ -602,6 +1079,11 @@ export const ARTICLES: readonly Article[] = [
           'jeden kanał kontaktu, ustalony i zapisany w procedurze',
           'brak ponagleń - jedna prośba wystarczy',
         ],
+        link: {
+          path: '/wiedza/wizytowka-google-dla-przychodni',
+          label: 'Wizytówka Google dla przychodni',
+          description: 'Profil, w którym te opinie lądują i który decyduje o pozycji w mapach.',
+        },
       },
       {
         heading: 'Jak sformułować prośbę',
@@ -654,6 +1136,18 @@ export const ARTICLES: readonly Article[] = [
           'Liczy się nie tyle łączna liczba, co regularny dopływ. Kilka nowych opinii miesięcznie utrzymuje profil w rotacji i pokazuje pacjentowi, że placówka działa. Nagły skok z kilku do kilkudziesięciu w krótkim czasie bywa oznaczany jako podejrzany.',
       },
     ],
+    sources: [
+      {
+        label: 'Treści zabronione i objęte ograniczeniami w Mapach Google',
+        url: 'https://support.google.com/contributionpolicy/answer/7400114',
+        publisher: 'Pomoc Google',
+      },
+      {
+        label: 'Opinie w Profilu Firmy w Google',
+        url: 'https://support.google.com/business/answer/2622994',
+        publisher: 'Pomoc Google',
+      },
+    ],
     related: [
       {
         path: '/uslugi/wizytowka-google-dla-placowki',
@@ -664,6 +1158,11 @@ export const ARTICLES: readonly Article[] = [
         path: '/wiedza/rodo-w-marketingu-placowki-medycznej',
         label: 'RODO w marketingu placówki medycznej',
         description: 'Zgody i granice publikowania informacji o pacjentach.',
+      },
+      {
+        path: '/wiedza/reklama-swiadczen-zdrowotnych-co-wolno',
+        label: 'Reklama świadczeń zdrowotnych: co wolno',
+        description: 'Opinie to jeden z materiałów, które podlegają zakazowi reklamy świadczeń.',
       },
     ],
   },

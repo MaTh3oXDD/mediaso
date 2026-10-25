@@ -33,6 +33,22 @@ export interface ContentSection {
   note?: string;
   /** Zdjęcie pod treścią sekcji. */
   image?: ContentImage;
+  /**
+   * Odnośnik w treści sekcji, do strony rozwijającej wątek. Linki z akapitów
+   * niosą więcej niż lista „czytaj dalej" na dole: mają kontekst zdania obok.
+   */
+  link?: RelatedLink;
+}
+
+/**
+ * Źródło zewnętrzne pod artykułem: akt prawny, wytyczne izby albo dokumentacja
+ * dostawcy. Linkujemy do pierwotnego dokumentu, nie do cudzego omówienia.
+ */
+export interface SourceLink {
+  label: string;
+  url: string;
+  /** Kto wydał dokument - czytelnik ma wiedzieć, na co klika. */
+  publisher: string;
 }
 
 /** Pytanie i odpowiedź. Odpowiedź pełnym zdaniem - trafia też do FAQPage w JSON-LD. */
@@ -46,24 +62,6 @@ export interface RelatedLink {
   path: string;
   label: string;
   description: string;
-}
-
-/** Pozycja cennika. Kwoty jako gotowy tekst - widełki i jednostki są różne. */
-export interface PriceRow {
-  name: string;
-  /** Cena końcowa - sprzedawca zwolniony z VAT, więc bez podziału na netto i brutto. */
-  price: string;
-  /** Cena kolejnych okresów, gdy pierwszy kosztuje inaczej (np. abonament z wdrożeniem). */
-  priceNext?: string;
-  scope?: string;
-  /** Zakres jako lista - dla pakietów z wieloma elementami. */
-  features?: string[];
-}
-
-/** Grupa pozycji cennika pod wspólnym nagłówkiem, np. „Pakiety stron". */
-export interface PriceGroup {
-  title: string;
-  rows: PriceRow[];
 }
 
 export interface ServicePage {
@@ -82,10 +80,6 @@ export interface ServicePage {
   /** Nazwa usługi w schema.org Service. */
   schemaName: string;
   schemaServiceType: string;
-  /** Widełki cenowe, jeśli są jawne. Puste, gdy wycena zawsze indywidualna. */
-  priceFrom?: string;
-  /** Cennik na dole podstrony. Kwoty z cennika usług, wersja sierpień 2026. */
-  pricing?: PriceGroup[];
   sections: ContentSection[];
   faq: FaqItem[];
   related: RelatedLink[];
@@ -105,7 +99,15 @@ export interface Article {
   readingMinutes: number;
   /** Zdjęcie główne: pod nagłówkiem, w og:image i w JSON-LD Article. */
   image?: ContentImage;
+  /**
+   * Animowana warstwa graficzna artykułu: linia EKG pod nagłówkiem i dryfujące
+   * kontury medyczne w tle. Włączana per artykuł, bo dokłada SVG do każdej strony,
+   * na której jest ustawiona. Gaszona przy `prefers-reduced-motion`.
+   */
+  motif?: 'pulse';
   sections: ContentSection[];
   faq: FaqItem[];
   related: RelatedLink[];
+  /** Dokumenty, na których opiera się tekst. Renderowane pod treścią artykułu. */
+  sources?: SourceLink[];
 }

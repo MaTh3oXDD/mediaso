@@ -1,0 +1,107 @@
+// Warstwa graficzna artykułów z `motif: 'pulse'`.
+// Dwa elementy i nic poza nimi: linia EKG rysowana raz pod nagłówkiem
+// oraz kontury medyczne dryfujące za treścią na poziomie tekstury.
+// Reszta strony zostaje na wspólnym content-page.scss.
+
+.content-page.has-motif {
+  position: relative;
+  // Własny kontekst układania: warstwa z z-index -1 ma zostać pod treścią
+  // artykułu, a nie wypaść pod tło strony.
+  isolation: isolate;
+}
+
+.motif-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mo {
+    fill: none;
+    stroke: rgba(var(--white-rgb), 0.07);
+    stroke-width: 1.1;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: mo-drift 46s ease-in-out infinite alternate;
+  }
+
+  // Dwa kontury w akcencie, żeby warstwa miała punkt zaczepienia
+  // w kolorze marki zamiast być równomierną szarością.
+  .mo-c,
+  .mo-f {
+    stroke: rgba(var(--accent-rgb), 0.18);
+  }
+
+  .mo-b { animation-duration: 58s; animation-delay: -12s; }
+  .mo-c { animation-duration: 64s; animation-delay: -30s; }
+  .mo-d { animation-duration: 52s; animation-delay: -6s; }
+  .mo-e { animation-duration: 70s; animation-delay: -22s; }
+  .mo-f { animation-duration: 44s; animation-delay: -38s; }
+  .mo-g { animation-duration: 61s; animation-delay: -16s; }
+  .mo-h { animation-duration: 49s; animation-delay: -44s; }
+
+  @media (max-width: 767px) {
+    // Na telefonie widać mniejszy wycinek, więc kontury robią się nachalne.
+    opacity: 0.5;
+  }
+}
+
+@keyframes mo-drift {
+  from { transform: translate(-6px, 4px) rotate(-5deg); }
+  to   { transform: translate(7px, -6px) rotate(6deg); }
+}
+
+.pulse-line {
+  display: block;
+  width: 100%;
+  height: 3rem;
+  margin: -0.5rem 0 1.75rem;
+  overflow: visible;
+
+  @media (min-width: 768px) {
+    height: 4rem;
+  }
+}
+
+.pulse-track {
+  fill: none;
+  stroke: rgba(var(--white-rgb), 0.12);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.pulse-trace {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 7px rgba(var(--accent-rgb), 0.45));
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: pulse-draw 2.8s cubic-bezier(0.62, 0, 0.3, 1) 0.2s forwards;
+}
+
+@keyframes pulse-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motif-field .mo {
+    animation: none;
+  }
+
+  .pulse-trace {
+    animation: none;
+    stroke-dashoffset: 0;
+    filter: none;
+  }
+}

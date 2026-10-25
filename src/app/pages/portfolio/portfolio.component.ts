@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslationService } from '../../core/services/translation.service';
-import { PORTFOLIO_PROJECTS } from '../../content/portfolio.data';
+import { PORTFOLIO_PROJECTS, SOCIAL_PROJECTS } from '../../content/portfolio.data';
 
 @Component({
   selector: 'app-portfolio',
@@ -15,4 +15,5 @@ export class PortfolioComponent {
   protected tr = this.ts.tr;
 
   protected projects = PORTFOLIO_PROJECTS;
+  protected socialProfiles = SOCIAL_PROJECTS;
 }

@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 import gsap from 'gsap';
 import { TranslationService } from '../../core/services/translation.service';
 import { ARTICLES, articlePath } from '../../content/content.registry';
-import { PORTFOLIO_PROJECTS } from '../../content/portfolio.data';
+import { PORTFOLIO_PROJECTS, SOCIAL_PROJECTS } from '../../content/portfolio.data';
 import { SITE } from '../../core/seo/site.config';
 
 @Component({
@@ -31,6 +31,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   // Trzy najświeższe teksty z bazy wiedzy - strona główna ma linkować w głąb serwisu.
   protected previewArticles = ARTICLES.slice(0, 3);
   protected projects = PORTFOLIO_PROJECTS;
+  protected socialProfiles = SOCIAL_PROJECTS;
   protected telHref = `tel:${SITE.phone}`;
   protected articlePath = articlePath;
 

@@ -8,13 +8,15 @@ import { ARTICLES, findArticle } from '../../content/content.registry';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './article-detail.component.html',
-  styleUrl: '../../shared/styles/content-page.scss',
+  styleUrls: ['../../shared/styles/content-page.scss', './article-motif.scss'],
 })
 export class ArticleDetailComponent {
   private route = inject(ActivatedRoute);
   private data = toSignal(this.route.data, { initialValue: this.route.snapshot.data });
 
   protected article = computed(() => findArticle(this.data()['slug'] as string) ?? ARTICLES[0]);
+
+  protected hasMotif = computed(() => this.article().motif === 'pulse');
 
   protected publishedLabel = computed(() =>
     new Date(this.article().datePublished).toLocaleDateString('pl-PL', {

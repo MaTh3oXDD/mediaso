@@ -195,22 +195,6 @@ export class SeoService {
           url: canonical,
           provider: { '@id': `${SITE.origin}/#organization` },
           areaServed: { '@type': 'Country', name: 'Polska' },
-          ...(service.priceFrom
-            ? {
-                offers: {
-                  '@type': 'Offer',
-                  priceCurrency: 'PLN',
-                  price: service.priceFrom,
-                  // Cena wyjściowa; pełna wycena zależy od zakresu.
-                  priceSpecification: {
-                    '@type': 'PriceSpecification',
-                    priceCurrency: 'PLN',
-                    minPrice: service.priceFrom,
-                    valueAddedTaxIncluded: false,
-                  },
-                },
-              }
-            : {}),
         });
         this.pushFaq(graph, canonical, service.faq);
       }

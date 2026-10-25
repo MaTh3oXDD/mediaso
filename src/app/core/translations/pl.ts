@@ -10,7 +10,7 @@ export const pl = {
   floatingContact: 'Skontaktuj się',
   home: {
     hero: {
-      eyebrow: 'Rozwijamy kliniki dzięki skutecznemu marketingowi',
+      eyebrow: 'Agencja marketingu medycznego dla klinik, przychodni i gabinetów',
       title: 'Pomagamy placówkom medycznym rosnąć szybciej dzięki większej liczbie pacjentów, silniejszej marce i lepszym wynikom',
       titleLine1: 'Więcej pacjentów.',
       titleLine2: 'Silniejsza marka.',
@@ -96,18 +96,6 @@ export const pl = {
       ],
     },
     manifesto: 'Zanim pacjent zadzwoni do kliniki, sprawdza opinie, stronę internetową, media społecznościowe i specjalistów. Profesjonalny marketing sprawia, że wybiera właśnie Twoją placówkę.',
-    pricingPreview: {
-      label: 'Cennik',
-      title: 'Ile to kosztuje?',
-      intro: 'Widełki startowe dla trzech najczęściej zamawianych zakresów. Pełne pakiety z limitami podstron i rund poprawek opisujemy w cenniku usług.',
-      items: [
-        { name: 'Strona internetowa', price: 'od 2 900 zł', period: 'jednorazowo' },
-        { name: 'Prowadzenie social mediów', price: 'od 2 700 zł', period: 'miesięcznie' },
-        { name: 'Hosting', price: 'od 80 zł', period: 'miesięcznie' },
-      ],
-      note: 'Ceny netto. Systemy rezerwacji i sklepy wyceniamy osobno.',
-      link: 'Zobacz pełny cennik',
-    },
     cta: {
       title: 'Gotowy na zmianę?',
       subtitle: 'Umów się na bezpłatną konsultację i dowiedz się, jak możemy pomóc Twojej placówce.',
@@ -166,54 +154,6 @@ export const pl = {
         { num: '02', title: 'Strategia', desc: 'Opracowujemy plan działań dopasowany do Twoich celów.' },
         { num: '03', title: 'Realizacja', desc: 'Wdrażamy uzgodnione rozwiązania w terminie i budżecie.' },
         { num: '04', title: 'Optymalizacja', desc: 'Monitorujemy efekty i stale poprawiamy wyniki.' },
-      ],
-    },
-    pricing: {
-      title: 'Cennik',
-      note: '* Ceny netto. Cena pakietowa obowiązuje w granicach opisanych limitów - liczba podstron, formularzy i rund poprawek jest maksymalna. Prace poza pakietem: 160-220 zł netto za godzinę, zawsze po wcześniejszej estymacji. Systemy rezerwacji i sklepy wyceniamy osobno.',
-      plans: [
-        {
-          name: 'Wizytówka Basic',
-          price: '2 900 - 3 900 zł',
-          period: 'jednorazowo',
-          desc: 'Do 3 podstron na dopasowanym szablonie. Termin 1-2 tygodnie.',
-          features: ['Maksymalnie 3 podstrony', 'Responsywna na każdym urządzeniu', 'Formularz kontaktowy', 'Podstawowe SEO on-page', 'Certyfikat SSL', 'Jedna runda poprawek'],
-        },
-        {
-          name: 'Wizytówka Custom',
-          price: '4 900 - 6 500 zł',
-          period: 'jednorazowo',
-          desc: 'Do 6 podstron z indywidualnym projektem. Termin 2-4 tygodnie.',
-          features: ['Maksymalnie 6 podstron', 'Indywidualny projekt i typografia', 'Mapa Google i galeria', 'Sekcja opinii lub referencji', 'Konfiguracja analityki', 'Dwie rundy poprawek'],
-        },
-        {
-          name: 'Strona z blogiem i CMS',
-          price: '7 000 - 11 000 zł',
-          period: 'jednorazowo',
-          desc: 'Do 10 podstron z panelem do samodzielnej edycji. Termin 3-6 tygodni.',
-          features: ['Maksymalnie 10 podstron', 'System zarządzania treścią', 'Blog z kategoriami i wyszukiwaniem', 'Integracja z 2 profilami społecznościowymi', 'SEO techniczne i mapa witryny', 'Szkolenie z obsługi'],
-        },
-        {
-          name: 'Social - Start',
-          price: 'od 2 200 zł',
-          period: 'miesięcznie',
-          desc: 'Stała, spójna obecność w mediach społecznościowych.',
-          features: ['4 posty tygodniowo', 'Facebook + Instagram', 'Raportowanie miesięczne', 'Obsługa komentarzy'],
-        },
-        {
-          name: 'Social - Scale',
-          price: 'od 4 500 zł',
-          period: 'miesięcznie',
-          desc: 'Pełna obsługa z kampaniami i dedykowanym opiekunem.',
-          features: ['8 postów tygodniowo', 'Facebook + Instagram + Google', 'Kampanie Meta Ads', 'Dedykowany opiekun'],
-        },
-        {
-          name: 'Opieka techniczna',
-          price: '250 - 1 200 zł',
-          period: 'miesięcznie',
-          desc: 'Utrzymanie strony po wdrożeniu. Basic do 2 h, Pro do 5 h pracy.',
-          features: ['Aktualizacje oprogramowania', 'Kopie zapasowe i monitoring', 'Drobne poprawki treści', 'Raport wykonanych prac w pakiecie Pro', 'Hosting od 80 zł miesięcznie'],
-        },
       ],
     },
     cta: { title: 'Zacznijmy razem', button: 'Skontaktuj się' },
@@ -346,14 +286,14 @@ export const pl = {
   },
   seo: {
     home: {
-      title: 'Marketing dla placówek medycznych | mediaso',
+      title: 'Agencja marketingu medycznego dla klinik i przychodni | mediaso',
       description:
-        'Prowadzimy marketing klinik, przychodni i gabinetów: strony internetowe, social media i wizytówka Google. Więcej zapytań od pacjentów, silniejsza marka.',
+        'Agencja marketingowa pracująca tylko z placówkami medycznymi: pozycjonowanie klinik, strony dla przychodni, social media dla lekarzy i wizytówka Google.',
     },
     services: {
-      title: 'Usługi marketingowe dla placówek medycznych | mediaso',
+      title: 'Marketing dla placówek medycznych - usługi | mediaso',
       description:
-        'Strony internetowe zoptymalizowane pod SEO, prowadzenie Facebooka i Instagrama, optymalizacja wizytówki Google i map. Kompleksowa obsługa placówek medycznych.',
+        'Pozycjonowanie klinik, strony internetowe dla przychodni, social media dla lekarzy i gabinetów oraz wizytówka Google. Marketing usług medycznych zgodny z prawem.',
     },
     about: {
       title: 'O nas - znamy branżę medyczną od środka | mediaso',
@@ -363,7 +303,7 @@ export const pl = {
     portfolio: {
       title: 'Portfolio realizacji dla placówek medycznych | mediaso',
       description:
-        'Nasze realizacje w branży medycznej: strony internetowe, kampanie i profile social media klinik oraz gabinetów. Szczegółowe case studies w przygotowaniu.',
+        'Realizacje mediaso dla placówek medycznych: strona internetowa AmiCare Centrum Medyczne z Łodzi i prowadzenie jej profili na Facebooku i Instagramie.',
     },
     contact: {
       title: 'Kontakt | mediaso - marketing placówek medycznych',
@@ -371,7 +311,7 @@ export const pl = {
         'Napisz na kontakt@mediaso.pl lub zadzwoń +48 504 103 154. Odpowiadamy w ciągu 24 godzin. Umów bezpłatną konsultację rozwoju Twojej placówki.',
     },
     knowledge: {
-      title: 'Baza wiedzy dla placówek medycznych | mediaso',
+      title: 'Marketing medyczny w praktyce - baza wiedzy | mediaso',
       description:
         'Marketing medyczny w praktyce: pozycjonowanie klinik, koszty strony dla przychodni, opinie pacjentów i RODO w materiałach marketingowych.',
     },
@@ -383,7 +323,7 @@ export const pl = {
     landing: {
       title: 'Marketing dla placówek medycznych | mediaso',
       description:
-        'Strona internetowa, social media i wizytówka Google dla klinik, przychodni i gabinetów. Jawny cennik i bezpłatna 30-minutowa konsultacja.',
+        'Strona internetowa, social media i wizytówka Google dla klinik, przychodni i gabinetów. Wycena po bezpłatnej 30-minutowej konsultacji.',
     },
     assessment: {
       title: 'Diagnostyka wzrostu placówki medycznej | mediaso',

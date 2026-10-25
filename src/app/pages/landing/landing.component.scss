@@ -148,52 +148,6 @@
   margin: 0 0 1.5rem;
 }
 
-.lp-price-list {
-  list-style: none;
-  margin: 0 0 1.5rem;
-  padding: 0;
-  border-top: 1px solid var(--border);
-
-  li {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0.25rem 1rem;
-    padding: 1.1rem 0;
-    border-bottom: 1px solid var(--border);
-
-    @include tablet {
-      grid-template-columns: 1.2fr 0.8fr 1.5fr;
-      align-items: baseline;
-    }
-  }
-}
-
-.lp-price-name {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.lp-price-amount {
-  color: var(--accent);
-  font-weight: 600;
-  white-space: nowrap;
-  text-align: right;
-
-  @include tablet {
-    text-align: left;
-  }
-}
-
-.lp-price-period {
-  grid-column: 1 / -1;
-  font-size: 0.85rem;
-  color: var(--ink-3);
-
-  @include tablet {
-    grid-column: auto;
-  }
-}
-
 .lp-note {
   font-size: 0.85rem;
   color: var(--ink-3);

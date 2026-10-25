@@ -8,39 +8,12 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
   {
     slug: 'pozycjonowanie-klinik',
     navLabel: 'Pozycjonowanie klinik',
-    h1: 'Pozycjonowanie klinik i przychodni',
-    seoTitle: 'Pozycjonowanie klinik i przychodni (SEO medyczne) | mediaso',
+    h1: 'Pozycjonowanie klinik, przychodni i centrów medycznych',
+    seoTitle: 'Pozycjonowanie klinik medycznych i przychodni - SEO dla klinik | mediaso',
     seoDescription:
-      'SEO dla klinik, przychodni i gabinetów: audyt od 1 000 zł netto, podstrony usług i lokalizacji, wizytówka Google, treści zgodne z zasadami branży.',
-    schemaName: 'Pozycjonowanie stron placówek medycznych',
+      'Pozycjonowanie klinik, centrów medycznych, przychodni i gabinetów lekarskich. Frazy lokalne, podstrony usług, wizytówka Google i treści zgodne z zakazem reklamy.',
+    schemaName: 'Pozycjonowanie klinik i placówek medycznych',
     schemaServiceType: 'SEO dla branży medycznej',
-    pricing: [
-      {
-        title: 'Pozycjonowanie',
-        rows: [
-          {
-            name: 'Audyt i optymalizacja SEO na start',
-            price: '1 000 – 2 500 zł',
-            scope: 'analiza techniczna, podstawowe rekomendacje i wdrożenie uzgodnionych poprawek',
-          },
-          {
-            name: 'Nowe podstrony usług i lokalizacji',
-            price: '160 – 220 zł/h',
-            scope: 'rozbudowa serwisu po estymacji; przy nowej stronie w cenie pakietu',
-          },
-          {
-            name: 'Opieka Pro',
-            price: '700 – 1 200 zł/mies.',
-            scope: 'do 5 godzin pracy w miesiącu, priorytetowa obsługa, comiesięczny raport',
-          },
-          {
-            name: 'Konsultacja techniczna',
-            price: '160 – 220 zł/h',
-            scope: 'analiza problemu, rekomendacja lub plan wdrożenia',
-          },
-        ],
-      },
-    ],
     lead:
       'Pozycjonowanie kliniki polega na tym, żeby strona placówki pojawiała się w Google wtedy, gdy pacjent szuka konkretnej usługi w konkretnym mieście. W praktyce oznacza to trzy rzeczy naraz: osobną podstronę dla każdej usługi, którą placówka realnie sprzedaje, uporządkowaną wizytówkę Google spiętą z tymi podstronami oraz techniczną stronę serwisu, którą Google potrafi przeczytać i szybko wyświetlić na telefonie. Największy ruch w medycynie jest lokalny i bardzo konkretny: „ortodonta Wrocław Krzyki", „USG jamy brzusznej Poznań", „endokrynolog prywatnie Gdańsk". Jedna strona z listą wszystkich usług nie wygra żadnego z tych zapytań, bo odpowiada na wszystkie po trochu. Prowadzimy pozycjonowanie w modelu: audyt, architektura podstron, treści, wdrożenie techniczne, comiesięczne raportowanie pozycji i telefonów z Google.',
     sections: [
@@ -78,10 +51,41 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
         ],
       },
       {
-        heading: 'Jak to wyceniamy',
+        heading: 'Pozycjonowanie lokalne placówki medycznej',
         paragraphs: [
-          'Zaczynamy od pozycji „audyt i optymalizacja SEO na start": 1 000-2 500 zł netto. Obejmuje analizę techniczną, listę fraz, rekomendacje i wdrożenie uzgodnionych poprawek na istniejącej stronie. Po audycie wiadomo, co dalej ma sens - i dopiero wtedy powstaje wycena.',
-          'Rozbudowa serwisu o podstrony usług i lokalizacji rozliczana jest jako praca nad stroną, po 160-220 zł netto za godzinę albo w ramach pakietu, jeśli stronę budujemy od zera. Stała opieka nad widocznością mieści się w pakiecie Opieka Pro, 700-1 200 zł miesięcznie, razem z comiesięcznym raportem wykonanych prac.',
+          'Pacjent rzadko wpisuje samą nazwę specjalizacji. Wpisuje „ginekolog Mokotów", „rezonans magnetyczny Łódź prywatnie" albo „stomatolog blisko mnie". Google odpowiada na takie zapytania dwoma blokami naraz: mapą z trzema placówkami i zwykłymi wynikami pod nią. Pozycjonowanie lokalne obsługuje oba: wizytówkę Google z właściwą kategorią i opiniami oraz podstrony usług z nazwą miasta i dzielnicy w treści, tytule i danych strukturalnych.',
+          'Przy centrum medycznym z kilkoma poradniami układamy frazy w siatkę: specjalizacja razem z miastem, badanie razem z miastem, a przy dużych miastach dodatkowo dzielnica. Każde pole siatki dostaje jeden adres na stronie, a wizytówka linkuje do podstrony, której zapytanie dotyczy, zamiast do strony głównej.',
+        ],
+        bullets: [
+          'frazy „usługa + miasto" i „usługa + dzielnica" przypisane do konkretnych podstron',
+          'spójna nazwa, adres i telefon na stronie, w wizytówce i w katalogach medycznych',
+          'dane strukturalne MedicalClinic lub Physician z adresem i godzinami',
+          'linki z wizytówki Google do podstron usług, nie tylko do strony głównej',
+        ],
+        link: {
+          path: '/uslugi/wizytowka-google-dla-placowki',
+          label: 'Wizytówka Google dla placówki',
+          description: 'Druga połowa pozycjonowania lokalnego: mapy, kategorie i opinie.',
+        },
+      },
+      {
+        heading: 'SEO dla klinik stomatologicznych, estetycznych i dla lekarzy',
+        paragraphs: [
+          'Każdy typ placówki ma inny rozkład zapytań. Klinika stomatologiczna zarabia na implantach, ortodoncji i protetyce, więc to te trzy usługi dostają najbardziej rozbudowane podstrony z przebiegiem leczenia, etapami i pytaniami o ból i czas gojenia. Klinika medycyny estetycznej i chirurgii plastycznej konkuruje na frazach zabiegowych, gdzie treść musi omijać obietnicę efektu i zdjęcia przed i po bez zgody - tu ograniczenia reklamy są najczęściej łamane przez konkurencję i najczęściej zgłaszane.',
+          'Przy pozycjonowaniu lekarza pracujemy też na nazwisku. Pacjent, który dostał polecenie, wpisuje imię i nazwisko specjalisty, a w wynikach widzi zwykle profil w katalogu lekarzy zamiast strony samego lekarza. Osobna podstrona specjalisty z zakresem przyjęć, kwalifikacjami i miejscami przyjęć, spięta danymi strukturalnymi Physician, odzyskuje ten ruch. Fizjoterapia, diagnostyka obrazowa i laboratoria mają własne wzorce zapytań, głównie cenowe i lokalne, i dla nich budujemy osobną mapę fraz.',
+        ],
+        bullets: [
+          'stomatologia: implanty, ortodoncja, protetyka, leczenie kanałowe pod mikroskopem',
+          'medycyna estetyczna i chirurgia plastyczna: frazy zabiegowe bez obietnic efektu',
+          'lekarze specjaliści: podstrona lekarza i widoczność na imię i nazwisko',
+          'diagnostyka, laboratoria, fizjoterapia: zapytania o cenę, przygotowanie i dostępność',
+        ],
+      },
+      {
+        heading: 'Jak wyceniamy pozycjonowanie',
+        paragraphs: [
+          'Nie sprzedajemy pakietów z góry. Koszt pozycjonowania kliniki zależy od trzech rzeczy: liczby usług, które mają się wyświetlać w Google, liczby miast i oddziałów oraz od tego, ile pracy wymaga obecna strona. Przychodnia w mieście powiatowym z pięcioma usługami i centrum medyczne z trzema oddziałami w Warszawie to dwa różne projekty, a wspólny cennik zawyżyłby cenę pierwszemu albo zaniżył zakres drugiemu.',
+          'Wycena powstaje po bezpłatnej 30-minutowej konsultacji i krótkim przeglądzie strony oraz wizytówki. Dostajesz zakres prac rozpisany na miesiące, listę fraz, od których zaczynamy, i stałą kwotę za uzgodniony zakres.',
         ],
       },
       {
@@ -104,9 +108,19 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
           'Tak, o ile treści trzymają się ograniczeń branżowych. Publikujemy rzetelne informacje o zakresie usług, przebiegu wizyty i cenach, nie obiecujemy skutków leczenia i nie budujemy przekazu na porównaniach z konkretnymi placówkami. Każdy tekst medyczny akceptuje osoba merytoryczna po stronie placówki.',
       },
       {
-        question: 'Ile kosztuje audyt SEO placówki?',
+        question: 'Ile kosztuje pozycjonowanie kliniki?',
         answer:
-          'Audyt i optymalizacja SEO na start to 1 000-2 500 zł netto: analiza techniczna, lista fraz, rekomendacje i wdrożenie uzgodnionych poprawek. Dalsze prace - nowe podstrony usług, treści, stała opieka - wyceniamy dopiero po audycie, bo wcześniej nie wiadomo, ile ich potrzeba.',
+          'Koszt zależy od liczby usług, które mają się wyświetlać w Google, liczby miast i oddziałów oraz stanu obecnej strony. Wycenę przygotowujemy po bezpłatnej 30-minutowej konsultacji: zakres prac rozpisany na miesiące i stała kwota za uzgodniony zakres, bez dopłat za wyniki.',
+      },
+      {
+        question: 'Czym różni się pozycjonowanie lekarza od pozycjonowania kliniki?',
+        answer:
+          'Klinika walczy o frazy usługowe z miastem, na przykład „ortopeda Kraków". Lekarz dodatkowo o własne imię i nazwisko, bo polecony pacjent szuka konkretnej osoby. Lekarz potrzebuje więc podstrony z kwalifikacjami, zakresem przyjęć i adresami gabinetów, danych strukturalnych Physician i spójnego wpisu w katalogach lekarzy.',
+      },
+      {
+        question: 'Dlaczego pozycjonowanie placówki medycznej warto zlecić agencji z branży?',
+        answer:
+          'Bo tekst, który dobrze sprzedaje w innej branży, w medycynie może być wykroczeniem z art. 147a Kodeksu wykroczeń. Agencja pracująca wyłącznie z placówkami medycznymi zna ograniczenia reklamy świadczeń zdrowotnych, zasady publikowania danych pacjentów i wzorce zapytań w poszczególnych specjalizacjach, więc nie traci miesięcy na naukę na koszt klienta.',
       },
       {
         question: 'Czy potrzebuję nowej strony, żeby zacząć pozycjonowanie?',
@@ -132,7 +146,7 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
       },
       {
         path: '/wiedza/pozycjonowanie-kliniki-krok-po-kroku',
-        label: 'Pozycjonowanie kliniki krok po kroku',
+        label: 'Jak samodzielnie wypromować klinikę w Google',
         description: 'Kolejność działań opisana tak, żeby dało się ją zrobić samodzielnie.',
       },
     ],
@@ -141,104 +155,11 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     slug: 'strony-internetowe-dla-placowek-medycznych',
     navLabel: 'Strony internetowe',
     h1: 'Strony internetowe dla placówek medycznych',
-    seoTitle: 'Strony internetowe dla przychodni i klinik | mediaso',
+    seoTitle: 'Strony internetowe dla placówek medycznych, przychodni i klinik | mediaso',
     seoDescription:
-      'Strony dla przychodni, klinik i gabinetów: od 2 900 zł netto, podstrony usług, rezerwacja wizyt, CMS, RODO. Realizacja od 1 do 6 tygodni.',
+      'Projektujemy strony dla przychodni, klinik i gabinetów lekarskich: podstrony usług pod Google, rezerwacja wizyt online, panel CMS, formularze zgodne z RODO.',
     schemaName: 'Strony internetowe dla placówek medycznych',
     schemaServiceType: 'Tworzenie stron internetowych',
-    priceFrom: '2900',
-    pricing: [
-      {
-        title: 'Pakiety stron',
-        rows: [
-          {
-            name: 'Wizytówka Basic',
-            price: '2 900 – 3 900 zł',
-            scope: 'do 3 podstron, gotowy szablon, formularz kontaktowy, podstawowe SEO, 1 runda poprawek; 1–2 tygodnie',
-          },
-          {
-            name: 'Wizytówka Custom',
-            price: '4 900 – 6 500 zł',
-            scope: 'do 6 podstron, indywidualny wygląd, mapa, galeria, opinie, SEO on-page, 2 rundy poprawek; 2–4 tygodnie',
-          },
-          {
-            name: 'Strona firmowa z blogiem i CMS',
-            price: '7 000 – 11 000 zł',
-            scope: 'do 10 podstron, system CMS, blog, szkolenie z obsługi, 2 rundy poprawek; 3–6 tygodni',
-          },
-        ],
-      },
-      {
-        title: 'Rezerwacja wizyt i płatności',
-        rows: [
-          {
-            name: 'Integracja gotowego systemu rezerwacji',
-            price: '1 800 – 3 500 zł',
-            scope: 'Booksy, Calendly, SimplyBook.me lub podobny; do 5 usług; 3–7 dni roboczych',
-          },
-          {
-            name: 'Dedykowany system rezerwacji Basic',
-            price: '12 000 – 18 000 zł',
-            scope: 'kalendarz, do 10 usług i 5 pracowników, panel administratora, e-maile; 5–8 tygodni',
-          },
-          {
-            name: 'Dedykowany system rezerwacji Pro',
-            price: 'od 20 000 zł',
-            scope: 'wiele lokalizacji, role, integracje; cena po specyfikacji',
-          },
-          {
-            name: 'Integracja płatności online',
-            price: '1 200 – 2 500 zł',
-            scope: 'jedna bramka (Przelewy24, Stripe, PayU), do 3 metod płatności',
-          },
-        ],
-      },
-      {
-        title: 'Utrzymanie',
-        rows: [
-          {
-            name: 'Hosting',
-            price: '80 – 200 zł/mies.',
-            scope: 'SSL, kopie zapasowe, monitoring dostępności; domena osobno',
-          },
-          {
-            name: 'Opieka Basic',
-            price: '250 – 450 zł/mies.',
-            scope: 'do 2 godzin pracy w miesiącu: aktualizacje, kopie, drobne poprawki',
-          },
-          {
-            name: 'Opieka Pro',
-            price: '700 – 1 200 zł/mies.',
-            scope: 'do 5 godzin pracy w miesiącu, priorytet, raport, konsultacja do 30 minut',
-          },
-          {
-            name: 'Rozwój systemu',
-            price: '160 – 220 zł/h',
-            scope: 'nowe funkcje i większe zmiany, zawsze po estymacji',
-          },
-        ],
-      },
-      {
-        title: 'Dodatkowo',
-        rows: [
-          {
-            name: 'Migracja z innej platformy',
-            price: 'od 40% ceny projektu',
-            scope: 'wycena po sprawdzeniu danych, hostingu i możliwości eksportu',
-          },
-          {
-            name: 'Wprowadzenie treści',
-            price: '30 – 80 zł/szt.',
-            scope: 'zależnie od liczby pól, zdjęć i źródła danych',
-          },
-          {
-            name: 'Dodatkowa runda poprawek',
-            price: '160 – 220 zł/h',
-            scope: 'prace poza liczbą rund zawartą w pakiecie',
-          },
-        ],
-      },
-    ],
     lead:
       'Strona placówki medycznej ma do wykonania trzy zadania i wszystko poza nimi jest dodatkiem. Ma pozwolić pacjentowi umówić wizytę w kilka sekund, odpowiedzieć na pytania, które w innym wypadku trafiłyby do rejestracji, i pokazać się w Google wtedy, gdy ktoś szuka konkretnej usługi w okolicy. Większość stron przychodni przegrywa na pierwszym punkcie: numer telefonu jest w stopce, formularz ma dziewięć pól, a godziny otwarcia leżą w PDF-ie. Budujemy strony wokół ścieżki pacjenta, nie wokół struktury organizacyjnej placówki - bo pacjent nie szuka „działu diagnostyki obrazowej", tylko USG kolana na przyszły tydzień. Do tego dochodzą rzeczy niewidoczne: szybkość ładowania na telefonie w słabym zasięgu, dostępność dla osób starszych i formularze zgodne z RODO.',
     sections: [
@@ -277,42 +198,40 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
         ],
       },
       {
-        heading: 'Pakiety, terminy i ceny',
+        heading: 'Rezerwacja wizyt i płatności online',
         paragraphs: [
-          'Pracujemy na trzech pakietach. Cena pakietowa obowiązuje w granicach opisanych limitów - liczba podstron, formularzy i rund poprawek jest maksymalna, nie orientacyjna. Wszystkie kwoty są netto, termin liczy się od otrzymania kompletu materiałów i zaliczki.',
-          'Wizytówka Basic, 2 900-3 900 zł, do 3 podstron, gotowy szablon dopasowany do marki, formularz kontaktowy, podstawowe SEO on-page, jedna runda poprawek. Termin 1-2 tygodnie. Wystarcza praktyce jednoosobowej i gabinetowi, który potrzebuje adresu, cennika i telefonu w widocznym miejscu.',
-          'Wizytówka Custom, 4 900-6 500 zł, do 6 podstron, indywidualny układ i typografia, mapa Google, galeria, sekcja opinii, dwie rundy poprawek. Termin 2-4 tygodnie. To najczęstszy wybór przychodni, która chce osobną podstronę dla każdej z kilku usług.',
-          'Strona firmowa z blogiem i CMS, 7 000-11 000 zł, do 10 podstron, wdrożenie systemu zarządzania treścią, blog z kategoriami i wyszukiwaniem, integracja z dwoma profilami społecznościowymi, szkolenie z obsługi. Termin 3-6 tygodni. Dla placówki, która sama chce publikować i rozbudowywać serwis.',
-        ],
-        note: 'Cena pakietowa nie obejmuje przygotowania tekstów, zdjęć i identyfikacji wizualnej ani dokumentów prawnych. Prace poza pakietem rozliczamy po 160-220 zł netto za godzinę, zawsze po wcześniejszej estymacji.',
-      },
-      {
-        heading: 'Rezerwacja wizyt i płatności',
-        paragraphs: [
-          'Jeżeli placówka korzysta z gotowego systemu rezerwacji, osadzamy go na stronie: konfiguracja widżetu, do 5 usług lub typów wizyt, powiadomienia i testy na telefonie. Koszt 1 800-3 500 zł, termin 3-7 dni roboczych. Abonament samego systemu opłaca placówka osobno.',
-          'Gdy gotowe narzędzie nie wystarcza, budujemy dedykowany system rezerwacji. Wariant Basic, 12 000-18 000 zł, obejmuje publiczny kalendarz dostępności, do 10 usług i 5 pracowników lub gabinetów, panel administratora, potwierdzenia e-mail i jedną bramkę płatności. Termin 5-8 tygodni. Wariant Pro, od 20 000 zł, dotyczy wielu lokalizacji, rozbudowanych ról i integracji - tu najpierw powstaje specyfikacja i harmonogram, dopiero potem cena.',
-          'Integracja płatności online, jeśli placówka pobiera przedpłaty za wizyty komercyjne: 1 200-2 500 zł za jedną bramkę i do trzech metod płatności. Prowizje operatora są poza tą kwotą.',
+          'Jeżeli placówka korzysta z gotowego systemu rezerwacji, osadzamy go na stronie: konfiguracja widżetu, typy wizyt, powiadomienia i testy na telefonie. Abonament samego systemu placówka opłaca bezpośrednio u dostawcy.',
+          'Gdy gotowe narzędzie nie wystarcza, budujemy dedykowany system rezerwacji: publiczny kalendarz dostępności, grafik lekarzy i gabinetów, panel administratora, potwierdzenia e-mail i przedpłaty za wizyty komercyjne przez Przelewy24, PayU albo Stripe. Przy wielu lokalizacjach najpierw powstaje specyfikacja i harmonogram, dopiero potem wycena.',
         ],
       },
       {
-        heading: 'Utrzymanie po wdrożeniu',
+        heading: 'Jak wygląda realizacja i ile trwa',
         paragraphs: [
-          'Hosting z certyfikatem SSL, kopiami zapasowymi i monitoringiem dostępności: 80-200 zł miesięcznie, zależnie od rodzaju strony. Domenę placówka opłaca we własnym zakresie.',
-          'Opieka Basic, 250-450 zł miesięcznie, obejmuje do 2 godzin pracy: aktualizacje, kontrolę działania, kopie i drobne poprawki treści. Opieka Pro, 700-1 200 zł miesięcznie, to do 5 godzin, priorytetowa obsługa, comiesięczny raport wykonanych prac i konsultacja. Niewykorzystane godziny nie przechodzą na kolejny miesiąc.',
-          'Nowe funkcje i większe zmiany rozliczamy po 160-220 zł netto za godzinę. Przed rozpoczęciem dostajesz opis zadania, szacowany czas albo cenę maksymalną i termin. Przez 30 dni od publikacji bezpłatnie usuwamy błędy wynikające z niezgodności z uzgodnionym zakresem.',
+          'Praca idzie w czterech etapach: rozmowa o ścieżce pacjenta i usługach, które mają przynosić wizyty, projekt układu strony, treści z akceptacją merytoryczną po stronie placówki i wdrożenie z pomiarem szybkości na telefonie. Prosta strona gabinetu powstaje w 1-2 tygodnie, serwis przychodni z podstronami usług w 2-4 tygodnie, a strona z blogiem i systemem zarządzania treścią w 3-6 tygodni, licząc od kompletu materiałów.',
+          'Wycenę przygotowujemy po krótkiej rozmowie, bo koszt zależy od liczby podstron, sposobu umawiania wizyt i tego, kto pisze treści. Dostajesz zakres z liczbą podstron i rund poprawek zapisaną w umowie oraz stałą kwotę za ten zakres. Po wdrożeniu stronę utrzymujemy w ramach hostingu i opieki technicznej: aktualizacje, kopie zapasowe, monitoring i drobne poprawki. Przez 30 dni od publikacji bezpłatnie usuwamy błędy niezgodne z uzgodnionym zakresem.',
         ],
+        bullets: [
+          'stała kwota za zakres zapisany w umowie, bez dopłat za „drobne zmiany" w trakcie',
+          'domena, hosting i kod strony zostają u placówki',
+          'pomiar Core Web Vitals po wdrożeniu, nie deklaracja w ofercie',
+        ],
+        link: {
+          path: '/wiedza/ile-kosztuje-strona-dla-przychodni',
+          label: 'Ile kosztuje strona internetowa dla przychodni',
+          description: 'Z czego składa się wycena i jak porównać dwie oferty.',
+        },
       },
     ],
     faq: [
       {
         question: 'Ile kosztuje strona internetowa dla przychodni?',
         answer:
-          'Wizytówka do 3 podstron kosztuje 2 900-3 900 zł netto, wersja z indywidualnym projektem i sześcioma podstronami 4 900-6 500 zł, a strona z blogiem i systemem zarządzania treścią 7 000-11 000 zł. Do tego dochodzi hosting od 80 zł miesięcznie i opcjonalna opieka techniczna od 250 zł miesięcznie. Rezerwacja wizyt to osobna pozycja: od 1 800 zł za osadzenie gotowego systemu.',
+          'Koszt zależy od liczby podstron, tego, czy projekt jest indywidualny, sposobu umawiania wizyt i tego, kto przygotowuje treści. Wycenę przygotowujemy po bezpłatnej rozmowie i podajemy ją jako stałą kwotę za zakres zapisany w umowie. Do kosztów stałych dochodzą domena, hosting i opcjonalna opieka techniczna.',
       },
       {
         question: 'Ile trwa wykonanie strony dla placówki medycznej?',
         answer:
-          'Wizytówka Basic 1-2 tygodnie, Custom 2-4 tygodnie, strona z blogiem i CMS 3-6 tygodni - licząc od otrzymania kompletu materiałów i zaliczki. Termin przesuwa się najczęściej z powodu materiałów po stronie placówki: zdjęć zespołu, zatwierdzonego cennika i opisów usług wymagających akceptacji merytorycznej.',
+          'Prosta strona gabinetu 1-2 tygodnie, serwis przychodni z podstronami usług 2-4 tygodnie, strona z blogiem i CMS 3-6 tygodni - licząc od otrzymania kompletu materiałów. Termin przesuwa się najczęściej z powodu materiałów po stronie placówki: zdjęć zespołu, zatwierdzonego cennika i opisów usług wymagających akceptacji merytorycznej.',
       },
       {
         question: 'Czy strona będzie zgodna z RODO?',
@@ -341,69 +260,12 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
   {
     slug: 'social-media-dla-klinik',
     navLabel: 'Social media',
-    h1: 'Social media dla klinik, gabinetów i lekarzy',
-    seoTitle: 'Social media dla klinik, gabinetów i lekarzy | mediaso',
+    h1: 'Prowadzenie social mediów dla klinik, gabinetów i lekarzy',
+    seoTitle: 'Social media dla lekarzy, klinik i gabinetów - prowadzenie profili | mediaso',
     seoDescription:
-      'Prowadzimy Facebooka i Instagrama klinik, gabinetów i lekarzy: treści, grafiki, wideo, obsługa wiadomości. Od 2 700 zł miesięcznie, kampanie Meta Ads wyceniane osobno.',
+      'Prowadzimy Facebooka, Instagrama i TikToka lekarzy, stomatologów, fizjoterapeutów i klinik: plan treści, grafiki, rolki, obsługa wiadomości i kampanie Meta Ads.',
     schemaName: 'Prowadzenie social media placówek medycznych',
     schemaServiceType: 'Zarządzanie mediami społecznościowymi',
-    priceFrom: '2700',
-    pricing: [
-      {
-        title: 'Pakiety prowadzenia social mediów',
-        rows: [
-          {
-            name: 'Pakiet 1',
-            price: '2 999 zł pierwszy miesiąc',
-            priceNext: '2 700 zł każdy kolejny miesiąc',
-            features: [
-              'audyt i optymalizacja obecnych profili (lub ich założenie), w tym wizytówki Google',
-              'strategia komunikacji',
-              '12 postów graficznych i karuzel edukacyjnych miesięcznie',
-              'relacje (Stories) na Instagramie i Facebooku',
-              'moderacja komentarzy',
-              'miesięczny harmonogram treści i copywriting',
-              'grafiki zgodne z identyfikacją wizualną placówki',
-              '10 zdjęć do wykorzystania w social mediach, na stronie i w wizytówce Google',
-            ],
-          },
-          {
-            name: 'Pakiet 2',
-            price: '3 999 zł pierwszy miesiąc',
-            priceNext: '3 600 zł każdy kolejny miesiąc',
-            features: [
-              'audyt i optymalizacja obecnych profili (lub ich założenie), w tym wizytówki Google',
-              'strategia komunikacji',
-              '8 postów graficznych lub karuzel i 4 rolki na Instagram i Facebook',
-              'TikTok: 4 filmy miesięcznie',
-              'raz w miesiącu sesja nagraniowo-zdjęciowa w placówce',
-              'miesięczny harmonogram treści i copywriting',
-              'relacje (Stories) na Instagramie i Facebooku',
-              'dedykowana oprawa graficzna',
-              'moderacja komentarzy',
-              '20 zdjęć do wykorzystania w social mediach, na stronie i w wizytówce Google',
-            ],
-          },
-          {
-            name: 'Pakiet 3',
-            price: '4 499 zł pierwszy miesiąc',
-            priceNext: '3 900 zł każdy kolejny miesiąc',
-            features: [
-              'audyt i optymalizacja obecnych profili (lub ich założenie), w tym wizytówki Google',
-              'strategia komunikacji',
-              '8 postów graficznych lub karuzel i 6 rolek na Instagram i Facebook',
-              'TikTok: 6 filmów miesięcznie',
-              'raz w miesiącu sesja nagraniowo-zdjęciowa w placówce',
-              'miesięczny harmonogram treści i copywriting',
-              'relacje (Stories) na Instagramie i Facebooku',
-              'dedykowana oprawa graficzna',
-              'moderacja komentarzy',
-              '20 zdjęć do wykorzystania w social mediach, na stronie i w wizytówce Google',
-            ],
-          },
-        ],
-      },
-    ],
     lead:
       'Profil kliniki na Facebooku i Instagramie pełni rolę, o której łatwo zapomnieć: pacjent, który usłyszał nazwę placówki od znajomego, sprawdza ją tam, zanim zadzwoni. Widzi wtedy albo pracującą placówkę z aktualnymi informacjami i odpowiedziami na wiadomości, albo profil z ostatnim postem sprzed roku. To rozstrzyga więcej decyzji niż jakakolwiek kampania. Prowadzenie social mediów placówki medycznej sprowadza się więc najpierw do regularności i obsługi wiadomości, a dopiero potem do zasięgów. Dochodzi do tego ograniczenie, którego nie ma w innych branżach: nie wolno publikować wizerunku ani danych pacjenta bez zgody, a treść nie może obiecywać efektu leczenia. Pracujemy w rytmie miesięcznym, na planie treści zatwierdzanym z wyprzedzeniem.',
     sections: [
@@ -434,6 +296,31 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
           'rozdział treści przy lekarzu przyjmującym w kilku miejscach',
           'wideo z lekarzem jako materiał, którego nie skopiuje żadna konkurencja',
         ],
+        link: {
+          path: '/wiedza/social-media-dla-lekarzy',
+          label: 'Social media dla lekarzy: co publikować i czego nie wolno',
+          description: 'Tematy postów w poszczególnych specjalizacjach i granice Kodeksu Etyki Lekarskiej.',
+        },
+      },
+      {
+        heading: 'Social media dla stomatologów i gabinetów stomatologicznych',
+        paragraphs: [
+          'Stomatologia ma w social mediach przewagę, której nie ma większość specjalizacji: efekt pracy widać, a pacjenci boją się wizyty bardziej niż w innych gabinetach. Najlepiej działają więc treści, które zdejmują strach: jak wygląda pierwsza wizyta, co czuje pacjent przy znieczuleniu, ile trwa leczenie kanałowe pod mikroskopem, jak przebiega wizyta adaptacyjna u dziecka.',
+          'Granica przebiega przy zdjęciach przed i po. Pokazane jako dowód skuteczności są traktowane jak reklama świadczeń, a do tego wymagają pisemnej zgody pacjenta. Zamiast metamorfoz publikujemy sprzęt, etapy leczenia na modelach, zespół przy pracy i odpowiedzi lekarza na pytania pacjentów.',
+        ],
+        bullets: [
+          'pierwsza wizyta i znieczulenie: treści dla pacjentów z lękiem przed dentystą',
+          'implanty, ortodoncja i leczenie kanałowe wyjaśnione na modelach i grafikach',
+          'stomatologia dziecięca: wizyta adaptacyjna, lakowanie, profilaktyka',
+          'zespół, asystentki i higienistki jako twarze gabinetu',
+        ],
+      },
+      {
+        heading: 'Fizjoterapeuci, psycholodzy i gabinety specjalistyczne',
+        paragraphs: [
+          'Gabinet fizjoterapii, psychologa, dietetyka czy logopedy prowadzi zwykle jedna albo dwie osoby, więc profil gabinetu jest w praktyce profilem specjalisty. Pacjent wybiera człowieka, z którym będzie pracował przez kilka tygodni, i chce go zobaczyć, zanim zadzwoni. Najlepiej pracuje krótkie wideo: ćwiczenie pokazane przez fizjoterapeutę, odpowiedź na pytanie z gabinetu, przebieg pierwszej wizyty.',
+          'Przy małym gabinecie liczy się też czas właściciela. Ustalamy jedną sesję nagraniową w miesiącu, z której powstaje materiał na cały miesiąc publikacji, a resztę - montaż, opisy, harmonogram i odpowiedzi na komentarze - bierzemy na siebie.',
+        ],
       },
       {
         heading: 'Obsługa wiadomości i komentarzy',
@@ -460,7 +347,7 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
         heading: 'Jak wygląda współpraca',
         paragraphs: [
           'Zaczynamy od audytu profili i przeglądu tego, co placówka publikowała do tej pory. Potem ustalamy plan treści na miesiąc, zbieramy materiał zdjęciowy i wideo na miejscu albo pracujemy na materiałach placówki, a publikację poprzedza akceptacja.',
-          'Pracujemy w trzech pakietach, od 2 999 złotych za pierwszy miesiąc i 2 700 złotych za każdy kolejny. Pierwszy miesiąc kosztuje więcej, bo obejmuje audyt i optymalizację profili albo ich założenie, razem z wizytówką Google. Pakiety 2 i 3 dokładają rolki, filmy na TikToku i comiesięczną sesję nagraniowo-zdjęciową w placówce. Pełny zakres pakietów jest w cenniku na dole strony.',
+          'Pierwszy miesiąc obejmuje audyt i optymalizację profili albo ich założenie, razem z wizytówką Google. Dalej zakres ustalamy pod placówkę: od samych postów graficznych i karuzel edukacyjnych, przez rolki na Instagram i Facebook, po filmy na TikToku i comiesięczną sesję nagraniowo-zdjęciową na miejscu. Wycenę przygotowujemy po bezpłatnej konsultacji, jako stałą miesięczną kwotę za uzgodnioną liczbę publikacji.',
         ],
       },
     ],
@@ -474,6 +361,16 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
         question: 'Czy prowadzicie social media dla pojedynczego lekarza, nie dla całej placówki?',
         answer:
           'Tak. Profil lekarza prowadzimy jako markę osobistą: zakres przyjęć, prowadzone przypadki, sprzęt, wystąpienia i publikacje. To inna praca niż profil przychodni, która komunikuje głównie dostępność i organizację. Przy lekarzu przyjmującym w kilku miejscach ustalamy na starcie, które treści należą do jego marki, a które do marki placówki.',
+      },
+      {
+        question: 'Ile kosztuje prowadzenie social mediów dla lekarza lub kliniki?',
+        answer:
+          'Koszt zależy od liczby kanałów, liczby publikacji w miesiącu i tego, czy w zakresie są rolki i sesje nagraniowe na miejscu. Wycenę podajemy po bezpłatnej konsultacji jako stałą miesięczną kwotę. Kampanie Meta Ads i budżet wydany na same reklamy to osobne pozycje.',
+      },
+      {
+        question: 'Co lekarz może publikować w social mediach?',
+        answer:
+          'Informacje o zakresie przyjęć, kwalifikacjach, miejscach pracy i przebiegu leczenia, materiały edukacyjne oraz relacje z konferencji. Kodeks Etyki Lekarskiej od 2025 roku pozwala informować o działalności zawodowej, ale nadal zakazuje przedstawiania się jako najlepszy lub jedyny, deprecjonowania innych lekarzy i promowania produktów niezwiązanych z medycyną.',
       },
       {
         question: 'Ile postów miesięcznie ma sens dla placówki medycznej?',
@@ -493,6 +390,11 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     ],
     related: [
       {
+        path: '/wiedza/social-media-dla-lekarzy',
+        label: 'Social media dla lekarzy: co publikować i czego nie wolno',
+        description: 'Poradnik dla lekarzy i gabinetów prowadzących profil samodzielnie.',
+      },
+      {
         path: '/uslugi/wizytowka-google-dla-placowki',
         label: 'Wizytówka Google dla placówki',
         description: 'Pacjent sprawdza mapy i opinie, zanim otworzy Facebooka.',
@@ -508,43 +410,11 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
     slug: 'wizytowka-google-dla-placowki',
     navLabel: 'Wizytówka Google',
     h1: 'Wizytówka Google dla placówki medycznej',
-    seoTitle: 'Optymalizacja wizytówki Google dla placówki medycznej | mediaso',
+    seoTitle: 'Prowadzenie i pozycjonowanie wizytówki Google dla placówek medycznych | mediaso',
     seoDescription:
-      'Prowadzimy Profil Firmy w Google dla klinik i przychodni: kategorie, usługi, zdjęcia, opinie pacjentów, posty i raport widoczności w mapach.',
+      'Prowadzimy i pozycjonujemy wizytówki Google klinik, przychodni i gabinetów: kategorie, usługi, zdjęcia, opinie pacjentów, posty i raport widoczności w mapach.',
     schemaName: 'Optymalizacja Profilu Firmy w Google',
     schemaServiceType: 'Local SEO',
-    pricing: [
-      {
-        title: 'Wdrożenie',
-        rows: [
-          {
-            name: 'Audyt i wdrożenie profilu',
-            price: '900 – 1 400 zł jednorazowo',
-            scope: 'audyt wizytówki z listą priorytetów i pełna optymalizacja: kategorie, usługi, atrybuty, zdjęcia',
-          },
-        ],
-      },
-      {
-        title: 'Bieżąca obsługa',
-        rows: [
-          {
-            name: 'Pakiet Start',
-            price: '600 – 900 zł/mies.',
-            scope: 'aktualne godziny i usługi, zdjęcia, posty, odpowiedzi na opinie',
-          },
-          {
-            name: 'Pakiet Optymalny',
-            price: '900 – 1 500 zł/mies.',
-            scope: 'zakres Start oraz systemowe zbieranie opinii, frazy lokalne i comiesięczny raport widoczności',
-          },
-          {
-            name: 'Placówka z kilkoma lokalizacjami',
-            price: 'wycena indywidualna',
-            scope: 'osobna wizytówka dla każdego oddziału, jedna umowa i jeden zbiorczy raport',
-          },
-        ],
-      },
-    ],
     lead:
       'Wizytówka Google jest dla placówki medycznej ważniejsza niż strona internetowa, bo pacjent widzi ją pierwszą i często na niej kończy. Z panelu w mapach dzwoni, sprawdza godziny, czyta opinie i wyznacza trasę - bez otwierania witryny. Trzy rzeczy decydują o tym, czy placówka pojawia się w lokalnych wynikach: poprawnie dobrana kategoria główna, kompletność profilu oraz opinie, ich liczba, świeżość i odpowiedzi placówki. Większość wizytówek przychodni przegrywa na pierwszym punkcie, bo ma ustawioną kategorię ogólną zamiast tej, której realnie szuka pacjent. Prowadzimy profil jak stałą pozycję: uzupełniamy usługi i godziny, publikujemy zdjęcia i posty, pilnujemy spójności danych z innymi serwisami i odpowiadamy na opinie w sposób, który nie ujawnia, kto był pacjentem.',
     sections: [
@@ -604,6 +474,11 @@ export const SERVICE_PAGES: readonly ServicePage[] = [
         question: 'Co zrobić z fałszywą negatywną opinią?',
         answer:
           'Zgłosić ją do Google jako naruszenie zasad i równolegle odpowiedzieć publicznie w sposób rzeczowy, bez ujawniania, czy autor był pacjentem. Google usuwa część zgłoszeń, ale nie wszystkie - spokojna odpowiedź pod opinią pracuje na wizerunek nawet wtedy, gdy opinia zostaje.',
+      },
+      {
+        question: 'Ile kosztuje prowadzenie wizytówki Google dla przychodni?',
+        answer:
+          'Zależy od liczby lokalizacji i zakresu: samo wdrożenie profilu to jednorazowa praca, stałe prowadzenie z postami, zdjęciami, odpowiedziami na opinie i raportem to miesięczny abonament. Wycenę podajemy po bezpłatnym przeglądzie wizytówki, jako stałą kwotę za uzgodniony zakres.',
       },
       {
         question: 'Czy warto płacić za pozycjonowanie wizytówki?',

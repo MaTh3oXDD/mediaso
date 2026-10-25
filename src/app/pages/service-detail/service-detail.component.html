@@ -34,6 +34,12 @@
         @if (section.note) {
           <p class="content-note">{{ section.note }}</p>
         }
+        @if (section.link; as link) {
+          <p class="content-link">
+            <a [routerLink]="link.path">{{ link.label }}</a>
+            <span>{{ link.description }}</span>
+          </p>
+        }
       </div>
     </section>
   }
@@ -66,67 +72,12 @@
     </div>
   </section>
 
-  @if (page().pricing; as pricing) {
-    <section class="section content-section price-section" id="cennik">
-      <div class="container">
-        <h2>Cennik</h2>
-        <p>
-          Cena pakietowa obowiązuje w granicach opisanych limitów, ostateczną wycenę dostajesz
-          po krótkim briefie i potwierdzeniu zakresu.
-        </p>
-        @for (group of pricing; track group.title) {
-          <h3 class="price-group-title">{{ group.title }}</h3>
-          <div class="price-table-wrap">
-            <table class="price-table">
-              <thead>
-                <tr>
-                  <th scope="col">Usługa</th>
-                  <th scope="col">Cena</th>
-                  <th scope="col">Zakres</th>
-                </tr>
-              </thead>
-              <tbody>
-                @for (row of group.rows; track row.name) {
-                  <tr>
-                    <th scope="row">{{ row.name }}</th>
-                    <td class="price">
-                      {{ row.price }}
-                      @if (row.priceNext) {
-                        <span class="price-next">{{ row.priceNext }}</span>
-                      }
-                    </td>
-                    <td>
-                      @if (row.scope) {
-                        {{ row.scope }}
-                      }
-                      @if (row.features) {
-                        <ul class="price-features">
-                          @for (feature of row.features; track feature) {
-                            <li>{{ feature }}</li>
-                          }
-                        </ul>
-                      }
-                    </td>
-                  </tr>
-                }
-              </tbody>
-            </table>
-          </div>
-        }
-        <p class="content-note">
-          Ceny końcowe. Sprzedawca korzysta ze zwolnienia z VAT (art. 113 ust. 1 ustawy o VAT).
-          Cennik w wersji z sierpnia 2026.
-        </p>
-      </div>
-    </section>
-  }
-
   <section class="section alt-bg content-cta">
     <div class="container">
       <h2>Porozmawiajmy o Twojej placówce</h2>
       <p>
         Opisz sytuację w kilku zdaniach - odpiszemy z konkretnym pomysłem na pierwszy krok
-        i widełkami kosztów. Konsultacja jest bezpłatna i nie kończy się prezentacją na 40 slajdów.
+        i wyceną zakresu. Konsultacja jest bezpłatna i nie kończy się prezentacją na 40 slajdów.
       </p>
       <a routerLink="/kontakt" class="btn btn-primary">Napisz do nas</a>
     </div>

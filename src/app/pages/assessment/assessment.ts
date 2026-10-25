@@ -137,7 +137,7 @@ export class Assessment {
   resultStatus = signal('');
 
   scoreLabels = ['', 'Kiepskie', 'Słabe', 'Średnie', 'Dobre', 'Doskonałe'];
-  recommendedPackage = signal<{name: string, desc: string, price: string, period: string} | null>(null);
+  recommendedPackage = signal<{name: string, desc: string, path: string} | null>(null);
 
   selectMode(advanced: boolean) {
     this.isAdvanced.set(advanced);
@@ -221,22 +221,19 @@ export class Assessment {
       return {
         name: 'Strona WWW',
         desc: 'Profesjonalna strona dla Twojej placówki medycznej.',
-        price: '3 500',
-        period: 'zł jednorazowo'
+        path: '/uslugi/strony-internetowe-dla-placowek-medycznych'
       };
     } else if (percentage <= 60) {
       return {
-        name: 'Social media - Pakiet 1',
-        desc: 'Stała, spójna obecność w mediach społecznościowych: 12 postów i karuzel miesięcznie, relacje, moderacja komentarzy.',
-        price: '2 999',
-        period: 'zł pierwszy miesiąc, potem 2 700 zł miesięcznie'
+        name: 'Social media',
+        desc: 'Stała, spójna obecność w mediach społecznościowych: posty i karuzele edukacyjne, relacje, moderacja komentarzy.',
+        path: '/uslugi/social-media-dla-klinik'
       };
     } else {
       return {
-        name: 'Social media - Pakiet 3',
+        name: 'Social media z wideo',
         desc: 'Rolki, TikTok i comiesięczna sesja nagraniowo-zdjęciowa w placówce. Kampanie Meta Ads wyceniamy osobno.',
-        price: '4 499',
-        period: 'zł pierwszy miesiąc, potem 3 900 zł miesięcznie'
+        path: '/uslugi/social-media-dla-klinik'
       };
     }
   }

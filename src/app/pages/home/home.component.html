@@ -141,37 +141,32 @@
 <section class="section portfolio-preview">
   <div class="container">
     <p class="eyebrow-label">Realizacje</p>
-    <h2 class="section-title">Strony, które zrobiliśmy dla placówek</h2>
+    <h2 class="section-title">Strony i social media, które robimy dla placówek</h2>
+    <h3 class="project-subtitle">Strony internetowe</h3>
     <div class="knowledge-preview-grid">
       @for (project of projects; track project.url) {
-        <a class="knowledge-preview-card" [href]="project.url" target="_blank" rel="noopener">
+        <a class="knowledge-preview-card project-preview-card" [href]="project.url" target="_blank" rel="noopener">
+          <img class="project-shot" [src]="project.image" [alt]="'Strona główna ' + project.domain" width="1440" height="900" loading="lazy" />
           <h3>{{ project.name }}</h3>
           <p>{{ project.summary }}</p>
           <span class="link-arrow">{{ project.domain }} <span aria-hidden="true">↗</span></span>
         </a>
       }
     </div>
-    <a routerLink="/portfolio" class="btn btn-text">Zobacz portfolio</a>
-  </div>
-</section>
 
-<!-- PRICING PREVIEW -->
-<section class="section pricing-preview">
-  <div class="container">
-    <p class="eyebrow-label">{{ tr().home.pricingPreview.label }}</p>
-    <h2 class="section-title">{{ tr().home.pricingPreview.title }}</h2>
-    <p class="pricing-preview-intro">{{ tr().home.pricingPreview.intro }}</p>
-    <ul class="pricing-preview-list">
-      @for (item of tr().home.pricingPreview.items; track item.name) {
-        <li class="pricing-preview-item">
-          <span class="pp-name">{{ item.name }}</span>
-          <span class="pp-price">{{ item.price }}</span>
-          <span class="pp-period">{{ item.period }}</span>
-        </li>
+    <h3 class="project-subtitle">Social media</h3>
+    <div class="knowledge-preview-grid">
+      @for (profile of socialProfiles; track profile.url) {
+        <a class="knowledge-preview-card project-preview-card" [href]="profile.url" target="_blank" rel="noopener">
+          <img class="project-shot" [src]="profile.image" [alt]="'Profil ' + profile.name + ' na ' + profile.platform" width="1440" height="900" loading="lazy" />
+          <span class="project-type">{{ profile.platform }} · od {{ profile.since }}</span>
+          <h3>{{ profile.name }}</h3>
+          <p>{{ profile.summary }}</p>
+          <span class="link-arrow">{{ profile.handle }} <span aria-hidden="true">↗</span></span>
+        </a>
       }
-    </ul>
-    <p class="pricing-preview-note">{{ tr().home.pricingPreview.note }}</p>
-    <a routerLink="/uslugi/strony-internetowe-dla-placowek-medycznych" fragment="cennik" class="link-arrow">{{ tr().home.pricingPreview.link }} <span>&rarr;</span></a>
+    </div>
+    <a routerLink="/portfolio" class="btn btn-text">Zobacz portfolio</a>
   </div>
 </section>
 

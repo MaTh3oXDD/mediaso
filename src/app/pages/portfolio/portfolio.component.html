@@ -8,16 +8,18 @@
   </div>
 </section>
 
-<!-- REALIZACJE -->
+<!-- STRONY -->
 <section class="section">
   <div class="container">
+    <h2 class="portfolio-section-title">Strony internetowe</h2>
     <div class="portfolio-grid">
       @for (project of projects; track project.url) {
         <a class="portfolio-card" [href]="project.url" target="_blank" rel="noopener">
           <div class="portfolio-thumb">
-            <span class="thumb-type">{{ project.type }}</span>
+            <img [src]="project.image" [alt]="'Strona główna ' + project.domain" width="1440" height="900" loading="lazy" />
           </div>
           <div class="portfolio-body">
+            <span class="thumb-type">{{ project.type }}</span>
             <h3>{{ project.name }}</h3>
             <p>{{ project.summary }}</p>
             <ul class="portfolio-features">
@@ -33,14 +35,40 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section">
+<!-- SOCIAL MEDIA -->
+<section class="section portfolio-section-next">
   <div class="container">
-    <div class="portfolio-coming-soon">
-      <h2>{{ tr().portfolio.ctaTitle }}</h2>
-      <p>{{ tr().portfolio.ctaText }}</p>
-      <a routerLink="/kontakt" class="btn btn-primary">Umów konsultację</a>
-      <a routerLink="/uslugi" class="btn btn-text">Zobacz zakres usług</a>
+    <h2 class="portfolio-section-title">Social media</h2>
+    <div class="portfolio-grid">
+      @for (profile of socialProfiles; track profile.url) {
+        <a class="portfolio-card" [href]="profile.url" target="_blank" rel="noopener">
+          <div class="portfolio-thumb">
+            <img [src]="profile.image" [alt]="'Profil ' + profile.name + ' na ' + profile.platform" width="1440" height="900" loading="lazy" />
+          </div>
+          <div class="portfolio-body">
+            <span class="thumb-type">{{ profile.platform }} · od {{ profile.since }}</span>
+            <h3>{{ profile.name }}</h3>
+            <p>{{ profile.summary }}</p>
+            <span class="portfolio-result">{{ profile.handle }} <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section portfolio-section-next">
+  <div class="container">
+    <div class="portfolio-cta">
+      <div class="portfolio-cta-text">
+        <h2>{{ tr().portfolio.ctaTitle }}</h2>
+        <p>{{ tr().portfolio.ctaText }}</p>
+      </div>
+      <div class="portfolio-cta-actions">
+        <a routerLink="/kontakt" class="btn btn-primary">Umów konsultację</a>
+        <a routerLink="/uslugi" class="btn btn-outline">Zobacz zakres usług</a>
+      </div>
     </div>
   </div>
 </section>
